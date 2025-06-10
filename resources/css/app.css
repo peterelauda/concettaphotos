@@ -1,0 +1,68 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* #3674B5 = Biru laut
+#578FCA = Biru tua
+#A1E3F9 = Biru langit
+#D1F8EF = Biru muda */
+
+/* F7F7F7 = Putih
+#EEEEEE = Abu-abu muda
+#393E46 = Hitam
+#929AAB = Abu-abu tua */
+
+.accordion-button,
+.nav-link {
+    color: #3674B5 !important;
+    font-family: "Merriweather Sans", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+.nav-link:hover {
+    color: #A1E3F9 !important;
+}
+
+.current-page {
+    color: #A1E3F9 !important;
+}
+
+.btn-outline-primary {
+    border-color: #3674B5 !important;
+    color: #3674B5 !important;
+    font-family: "Merriweather Sans", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+.btn-outline-primary:hover {
+    border-color: #A1E3F9 !important;
+    background-color: #A1E3F9 !important;
+    color: #F7F7F7 !important;
+}
+
+.btn-primary {
+    border-color: #3674B5 !important;
+    background-color: #3674B5 !important;
+    font-family: "Merriweather Sans", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+
+.btn-primary:hover {
+    border-color: #A1E3F9 !important;
+    background-color: #A1E3F9 !important;
+}
+
+.icon {
+    fill: #3674B5;
+    transition: fill 0.3s;
+}
+
+.icon:hover {
+    fill: #A1E3F9 /* contoh warna saat hover */
+}
