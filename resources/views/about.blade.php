@@ -32,6 +32,10 @@
             scroll-margin-top: 120.55px;
         }
 
+        #tac-prewedding {
+            scroll-margin-top: 168px;
+        }
+
         .bg-body-custom {
             background-color: #f7f7f7 !important;
         }
@@ -208,8 +212,14 @@
             font-style: normal !important;
         }
 
+        .custom-line-height {
+            line-height: 28px !important;
+            color: #3674b5 !important;
+        }
+
         mark {
-            background-color: #d1f8ef !important;
+            background-color: transparent !important;
+            font-weight: 600 !important;
             padding: 0 0.2rem !important;
             border-radius: 4px !important;
         }
@@ -304,6 +314,43 @@
         .text-justify {
             text-align: justify;
         }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 100% !important;
+            margin-top: -0.25rem !important;
+            z-index: 1000 !important;
+        }
+
+        .dropdown-submenu .dropdown-menu.show {
+            display: block !important;
+        }
+
+        .submenu-arrow {
+            font-size: 20px;
+            margin-left: auto;
+            margin-bottom: 2px;
+        }
+
+        .dropdown-submenu>.dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-submenu>.dropdown-toggle::after {
+            display: none !important;
+        }
+
+        .submenu-list {
+            display: none;
+        }
+
+        .submenu-list.show {
+            display: block;
+        }
     </style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -320,279 +367,16 @@
 
 <body>
     <section id="header">
-        <header id="mainHeader"
-            class="d-flex align-items-center justify-content-between py-3 position-fixed top-0 start-0 w-100 z-3 transition-header">
-            <div class="d-none d-xl-flex align-items-start px-2" style="width: 306.97px;">
-
-                <div class="lang-toggle mx-auto">
-                    <input type="checkbox" id="langSwitch">
-                    <label for="langSwitch">
-                        <span class="switch-thumb"></span>
-                    </label>
-                </div>
-
-            </div>
-
-            <div class="d-none d-xl-flex align-items-center gap-4 mx-auto">
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/#opening" class="nav-link lang-content lang-en">CONCETTA
-                        TEAM</a>
-                    <a href="/#opening" class="nav-link lang-content lang-id d-none">TIM CONCETTA</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-en"
-                        data-bs-toggle="dropdown">ABOUT</a>
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-id d-none"
-                        data-bs-toggle="dropdown">TENTANG</a>
-                    <ul class="dropdown-menu fs-7 py-2 custom-text-0">
-                        <li><a class="dropdown-item" href="/about">CONCETTA PHOTOS</a></li>
-                        <li><a class="dropdown-item lang-content lang-en" href="/about#tac">TERMS AND CONDITIONS</a>
-                        </li>
-                        <li><a class="dropdown-item lang-content lang-id d-none" href="/about#tac">SYARAT DAN
-                                KETENTUAN</a></li>
-                        <li><a class="dropdown-item lang-content lang-en" href="/#testimonial">TESTIMONIALS</a>
-                        </li>
-                        <li><a class="dropdown-item lang-content lang-id d-none" href="/#testimonial">TESTIMONI</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/concettalk" class="nav-link">CONCETTALK</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="70px">
-                    </a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/pricelist" class="nav-link lang-content lang-en">PRICE LIST</a>
-                    <a href="/pricelist" class="nav-link lang-content lang-id d-none">DAFTAR HARGA</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/faqs" class="nav-link">FAQs</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-en"
-                        data-bs-toggle="dropdown">GALLERY</a>
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-id d-none"
-                        data-bs-toggle="dropdown">GALERI</a>
-                    <ul class="dropdown-menu fs-7 py-2 custom-text-0">
-                        <li><a class="dropdown-item" href="/gallery#holiday">HOLIDAY</a></li>
-                        <li><a class="dropdown-item" href="/gallery#couple">COUPLE</a></li>
-                        <li><a class="dropdown-item" href="/gallery#family">FAMILY</a></li>
-                        <li><a class="dropdown-item" href="/gallery#prewedding">PREWEDDING</a></li>
-                        <li><a class="dropdown-item" href="/gallery#wedding">WEDDING</a></li>
-                        <li><a class="dropdown-item" href="/gallery#brandphotoshoot">BRAND PHOTOSHOOT</a></li>
-                    </ul>
-                </li>
-            </div>
-
-            <div class="d-none d-xl-block text-end">
-                @if (Route::has('login'))
-                    <nav>
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary me-2 lang-content lang-en">COME IN</a>
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary me-2 lang-content lang-id d-none">MASUK</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary mx-2 my-2 lang-content lang-en">YOUR
-                                INQUIRIES</a>
-                            <a href="{{ route('login') }}"
-                                class="btn btn-outline-primary mx-2 my-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary mx-2 my-2 lang-content lang-en">BE
-                                    MEMBER</a>
-                                <a href="{{ route('register') }}"
-                                    class="btn btn-primary mx-2 my-2 lang-content lang-id d-none">GABUNG</a>
-                            @endif
-                        @endauth
-                    </nav>
-                @endif
-            </div>
-
-            <div class="d-flex align-items-center d-xl-none w-100 justify-content-between px-3">
-                <button class="btn p-0 bg-transparent border-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileMenu" aria-controls="mobileMenu" style="width: 32px; height: 32px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#444" class="bi bi-list icon"
-                        viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                    </svg>
-                </button>
-
-                <a href="{{ url('/') }}">
-                    <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="56px">
-                </a>
-
-                <div class="lang-toggle">
-                    <input type="checkbox" id="langSwitch1">
-                    <label for="langSwitch1">
-                        <span class="switch-thumb"></span>
-                    </label>
-                </div>
-            </div>
-
-
-        </header>
-
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-            <div class="offcanvas-header position-relative justify-content-center">
-                <h5 class="offcanvas-title m-0">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="56px">
-                    </a>
-                </h5>
-
-                <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="accordion" id="accordionMenu">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/#opening') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-en">
-                                CONCETTA TEAM
-                            </a>
-                            <a href="{{ url('/#opening') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-id d-none">
-                                TIM CONCETTA
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-about">
-                            <button class="accordion-button collapsed btn-primary lang-content lang-en" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse-about" aria-expanded="false"
-                                aria-controls="collapse-about">
-                                ABOUT
-                            </button>
-                            <button class="accordion-button collapsed btn-primary lang-content lang-id d-none"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-about"
-                                aria-expanded="false" aria-controls="collapse-about">
-                                TENTANG
-                            </button>
-                        </h2>
-                        <div id="collapse-about" class="accordion-collapse collapse" aria-labelledby="heading-about"
-                            data-bs-parent="#accordionMenu">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a class="nav-link text-start" href="{{ url('/about') }}">CONCETTA PHOTOS</a>
-                                    </li>
-                                    <li><a class="nav-link text-start lang-content lang-en"
-                                            href="{{ url('/about#tac') }}">TERMS AND
-                                            CONDITIONS</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-id d-none"
-                                            href="{{ url('/about#tac') }}">SYARAT DAN KETENTUAN</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-en"
-                                            href="{{ url('/#testimonial') }}">TESTIMONIALS</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-id d-none"
-                                            href="{{ url('/#testimonial') }}">TESTIMONI</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/concettalk') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown">
-                                CONCETTALK
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/pricelist') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-en">
-                                PRICE LIST
-                            </a>
-                            <a href="{{ url('/pricelist') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-id d-none">
-                                DAFTAR HARGA
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-faqs">
-                            <a href="{{ url('/faqs') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown">
-                                FAQs
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-gallery">
-                            <button class="accordion-button collapsed btn-primary lang-content lang-en" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse-gallery" aria-expanded="false"
-                                aria-controls="collapse-gallery">
-                                GALLERY
-                            </button>
-                            <button class="accordion-button collapsed btn-primary lang-content lang-id d-none"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-gallery"
-                                aria-expanded="false" aria-controls="collapse-gallery">
-                                GALERI
-                            </button>
-                        </h2>
-                        <div id="collapse-gallery" class="accordion-collapse collapse" aria-labelledby="heading-gallery"
-                            data-bs-parent="#accordionMenu">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#holiday') }}">HOLIDAY</a>
-                                    </li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#couple') }}">COUPLE</a>
-                                    </li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#family') }}">FAMILY</a>
-                                    </li>
-                                    <li><a class="nav-link text-start"
-                                            href="{{ url('/gallery#prewedding') }}">PREWEDDING</a></li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#wedding') }}">WEDDING</a>
-                                    </li>
-                                    <li><a class="nav-link text-start"
-                                            href="{{ url('/gallery#brandphotoshoot') }}">BRAND
-                                            PHOTOSHOOT</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary w-100 mb-2 lang-content lang-en">COME
-                                IN</a>
-                            <a href="{{ url('/dashboard') }}"
-                                class="btn btn-primary w-100 mb-2 lang-content lang-id d-none">MASUK</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary w-100 mb-2 lang-content lang-en">YOUR
-                                INQUIRIES</a>
-                            <a href="{{ route('login') }}"
-                                class="btn btn-outline-primary w-100 mb-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-en">BE MEMBER</a>
-                                <a href="{{ route('register') }}"
-                                    class="btn btn-primary w-100 lang-content lang-id d-none">GABUNG</a>
-                            @endif
-                        @endauth
-                    @endif
-                </div>
-            </div>
-        </div>
+        @include('partials.navbar')
     </section>
 
     <section id="picture" class="position-relative">
-        <div class="position-relative w-100" style="height: 400px;">
+        <div class="position-relative w-100 d-none d-sm-flex" style="height: 400px;">
             <img src="{{ asset('about.jpg') }}" alt="about picture"
+                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+        </div>
+        <div class="position-relative w-100 d-flex d-sm-none" style="height: 400px;">
+            <img src="{{ asset('about_mobile.jpg') }}" alt="about picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
     </section>
@@ -617,7 +401,7 @@
                         Whether it's weddings, lifestyle sessions, events, or creative shoots, we strive to make every
                         frame meaningful, memorable, and beautifully authentic. <br><br>
 
-                        Let’s make your memories remains forever.
+                        <mark>"Let’s make your memories remains forever."</mark>
                     </span>
 
                     <span class="lang-content lang-id d-none">
@@ -634,7 +418,7 @@
                         Baik itu pernikahan, sesi gaya hidup, acara, maupun pemotretan kreatif, kami berusaha menjadikan
                         setiap bingkai berarti, berkesan, dan autentik dengan indah. <br><br>
 
-                        "Let’s make your memories remains forever."
+                        <mark>"Let’s make your memories remains forever."</mark>
                     </span>
                 </p>
             </div>
@@ -694,7 +478,29 @@
                 <h1 class="display-7 custom-text-3 lang-content lang-en">Terms and Conditions</h1>
                 <h1 class="display-7 custom-text-3 lang-content lang-id d-none">Syarat dan Ketentuan</h1>
                 <div class="col-4 mx-auto mb-3 custom-border-divider mb-5"></div>
+
+                <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
+                <h2 class="display-7 text-center my-4 custom-text">Holiday & Family</h2>
+                <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
+
                 <div class="row g-4">
+
+                    <div class="col-12">
+                        <div class="bg-light p-4 rounded shadow-sm border custom-text-0 text-center">
+                            <h6 class="lang-content lang-en custom-line-height">
+                                Make sure the client read this terms and conditions carefully. By placing an order and
+                                making payment, the client must have agreed to and read all the terms and conditions
+                                provided by Concetta Photos as written below.
+                            </h6>
+                            <h6 class="lang-content lang-id d-none custom-line-height">
+                                Klien diharapkan membaca setiap poin yang terdapat dalam syarat dan ketentuan ini dengan
+                                seksama. Dengan melakukan pemesanan dan pembayaran, maka klien dianggap telah menyetujui
+                                dan membaca semua syarat dan ketentuan yang diberikan oleh Concetta Photos yang tertulis
+                                di bawah ini.
+                            </h6>
+                        </div>
+                    </div>
+
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
@@ -754,11 +560,11 @@
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
-                                6. If shooting sessions are not possible due to <mark>force majeure</mark> (bad weather
+                                5. If shooting sessions are not possible due to <mark>force majeure</mark> (bad weather
                                 and natural disasters), client can look for alternatives to other places or reschedule.
                             </span>
                             <span class="lang-content lang-id d-none">
-                                6. Jika sesi pemotretan tidak memungkinkan karena <mark>force majeure</mark> (cuaca
+                                5. Jika sesi pemotretan tidak memungkinkan karena <mark>force majeure</mark> (cuaca
                                 buruk atau bencana alam), klien dapat mencari alternatif lokasi lain atau menjadwal
                                 ulang.
                             </span>
@@ -768,12 +574,12 @@
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
-                                7. The client will be charged a <mark>rescheduling fee of IDR350.000</mark> for holiday
+                                6. The client will be charged a <mark>rescheduling fee of IDR350.000</mark> for holiday
                                 & family sessions for any schedule changes made on the day of the photo session. These
                                 schedule changes by the client are applicable, excluding force majeure reasons.
                             </span>
                             <span class="lang-content lang-id d-none">
-                                7. Klien akan dikenakan <mark>biaya penjadwalan ulang sebesar IDR350.000</mark> untuk
+                                6. Klien akan dikenakan <mark>biaya penjadwalan ulang sebesar IDR350.000</mark> untuk
                                 sesi liburan & keluarga jika perubahan jadwal dilakukan pada hari pemotretan. Perubahan
                                 jadwal dari pihak klien ini berlaku kecuali karena alasan force majeure.
                             </span>
@@ -783,12 +589,12 @@
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
-                                8. If the client asking <mark>more than one shooting location</mark>, for example, in a
+                                7. If the client asking <mark>more than one shooting location</mark>, for example, in a
                                 2-hour session, then the travel time from location A to location B is also part of the 2
                                 hours session.
                             </span>
                             <span class="lang-content lang-id d-none">
-                                8. Jika klien meminta <mark>lebih dari satu lokasi pemotretan</mark>, misalnya dalam
+                                7. Jika klien meminta <mark>lebih dari satu lokasi pemotretan</mark>, misalnya dalam
                                 sesi 2 jam, maka waktu perjalanan dari lokasi A ke B juga termasuk dalam durasi 2 jam
                                 tersebut.
                             </span>
@@ -798,14 +604,14 @@
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
-                                9. The location fees imposed by the local authorities vary at each place and are
+                                8. The location fees imposed by the local authorities vary at each place and are
                                 entirely borne by the client. Suppose the client chooses a photography location in a
                                 tourist attraction that requires an entrance ticket. In that case, <mark>the client is
                                     responsible for covering the ticket expenses</mark> for the entire Concetta Photos
                                 crew.
                             </span>
                             <span class="lang-content lang-id d-none">
-                                9. Biaya lokasi yang dikenakan oleh pihak setempat berbeda-beda dan sepenuhnya menjadi
+                                8. Biaya lokasi yang dikenakan oleh pihak setempat berbeda-beda dan sepenuhnya menjadi
                                 tanggung jawab klien. Jika klien memilih lokasi pemotretan di tempat wisata yang
                                 membutuhkan tiket masuk, maka <mark>klien bertanggung jawab menanggung biaya
                                     tiket</mark> untuk seluruh kru Concetta Photos.
@@ -816,11 +622,11 @@
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
-                                10. For <mark>additional time, IDR 350,000/hour</mark>. This price is only valid for
+                                9. For <mark>additional time, IDR 350,000/hour</mark>. This price is only valid for
                                 clients who take a 2-hour package.
                             </span>
                             <span class="lang-content lang-id d-none">
-                                10. Untuk <mark>waktu tambahan, IDR 350.000/jam</mark>. Harga ini hanya berlaku bagi
+                                9. Untuk <mark>waktu tambahan, IDR 350.000/jam</mark>. Harga ini hanya berlaku bagi
                                 klien yang mengambil paket 2 jam.
                             </span>
                         </div>
@@ -829,11 +635,11 @@
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
-                                11. The <mark>files we give</mark>, and tone adjustments (exposure, saturation,
+                                10. The <mark>files we give</mark>, and tone adjustments (exposure, saturation,
                                 contrast) have been sorted, so the files you received are the best.
                             </span>
                             <span class="lang-content lang-id d-none">
-                                11. <mark>File yang kami berikan</mark>, dan penyesuaian tone (exposure, saturasi,
+                                10. <mark>File yang kami berikan</mark>, dan penyesuaian tone (exposure, saturasi,
                                 kontras) telah dipilih, sehingga file yang Anda terima adalah yang terbaik.
                             </span>
                         </div>
@@ -842,13 +648,13 @@
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
-                                12. We will deliver photos via Google Drive. After shooting, we will send the links H+1
+                                11. We will deliver photos via Google Drive. After shooting, we will send the links H+1
                                 and a maximum of H+2 with a note that the client has paid off. The link will be active
                                 for <mark>one month</mark>. If, in the future, the client asks for reuploading, an
                                 <mark>additional fee of IDR 200,000</mark> will be charged.
                             </span>
                             <span class="lang-content lang-id d-none">
-                                12. Kami akan mengirimkan foto melalui Google Drive. Setelah pemotretan, kami akan
+                                11. Kami akan mengirimkan foto melalui Google Drive. Setelah pemotretan, kami akan
                                 mengirimkan link H+1 dan maksimal H+2 dengan catatan bahwa klien telah melunasi
                                 pembayaran. Link akan aktif selama <mark>satu bulan</mark>. Jika di kemudian hari klien
                                 meminta untuk unggah ulang, maka akan dikenakan <mark>biaya tambahan sebesar IDR
@@ -860,7 +666,7 @@
                     <div class="col-md-6">
                         <div class="bg-light p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
                             <span class="lang-content lang-en">
-                                13. Concetta Photos holds <mark>full copyright ownership</mark> of all photos taken
+                                12. Concetta Photos holds <mark>full copyright ownership</mark> of all photos taken
                                 during the photography session. As the service provider, we have the right to use the
                                 photos taken during the session for promotional purposes. For clients who wish to
                                 refrain from having their photos published on our social media or other platforms for
@@ -868,7 +674,7 @@
                                 photoshoot.
                             </span>
                             <span class="lang-content lang-id d-none">
-                                13. Concetta Photos memiliki <mark>hak cipta penuh</mark> atas semua foto yang diambil
+                                12. Concetta Photos memiliki <mark>hak cipta penuh</mark> atas semua foto yang diambil
                                 selama sesi pemotretan. Sebagai penyedia jasa, kami berhak menggunakan foto-foto yang
                                 diambil selama sesi untuk keperluan promosi. Bagi klien yang tidak ingin fotonya
                                 dipublikasikan di media sosial atau platform lain untuk promosi oleh Concetta Photos,
@@ -879,22 +685,551 @@
 
                     <div class="col-12">
                         <div class="bg-light p-4 rounded shadow-sm border custom-text-0 text-center">
-                            <span class="lang-content lang-en">
-                                14. By paid deposit, the client is considered to have <mark>agreed</mark> with the T&Cs
+                            <h6 class="lang-content lang-en custom-line-height">
+                                By paid deposit, the client is considered to have agreed with the T&Cs
                                 above.
-                            </span>
-                            <span class="lang-content lang-id d-none">
-                                14. Dengan membayar deposit, klien dianggap telah <mark>menyetujui</mark> syarat dan
+                            </h6>
+                            <h6 class="lang-content lang-id d-none custom-line-height">
+                                Dengan membayar deposit, klien dianggap telah menyetujui syarat dan
                                 ketentuan di atas.
-                            </span>
+                            </h6>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="book">
+    <section id="tac-prewedding">
+        <div class="pb-5 px-5 text-center">
+            <div class="container">
+
+                <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5 mb-3 custom-border"></div>
+                <h2 class="display-7 text-center my-4 custom-text">Preweddding</h2>
+                <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
+
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="p-4 rounded shadow-sm border custom-text-0 text-center">
+                            <h6 class="lang-content lang-en custom-line-height">
+                                Make sure the client read this terms and conditions carefully. By placing an order
+                                and
+                                making payment, the client must have agreed to and read all the terms and conditions
+                                provided by Concetta Photos as written below.
+                            </h6>
+                            <h6 class="lang-content lang-id d-none custom-line-height">
+                                Klien diharapkan membaca setiap poin yang terdapat dalam syarat dan ketentuan ini
+                                dengan
+                                seksama. Dengan melakukan pemesanan dan pembayaran, maka klien dianggap telah
+                                menyetujui
+                                dan membaca semua syarat dan ketentuan yang diberikan oleh Concetta Photos yang
+                                tertulis
+                                di bawah ini.
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-en">
+                            Booking and Payment</h5>
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-id d-none">
+                            Pemesanan dan Pembayaran</h5>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                1. Klien diwajibkan untuk melakukan pembayaran sebesar <mark>50% dari harga
+                                    paket</mark>
+                                yang dipilih
+                                sebagai <mark>deposit pembayaran (DP)</mark> untuk pemesanan jadwal pemotretan.
+                                Deposit
+                                ini bersifat
+                                <mark>tidak dapat dikembalikan</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                1. The client must make a <mark>50% payment</mark> of the selected package price as
+                                a
+                                <mark>non-refundable deposit (DP)</mark> for booking the photography session
+                                schedule.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                2. <mark>Harga yang tertera belum termasuk biaya transportasi dan biaya
+                                    lokasi</mark>
+                                (jika ada).
+                                <mark>Biaya transportasi</mark> yang tercantum di atas hanya untuk fotografer &
+                                videografer,
+                                <mark>belum termasuk biaya transportasi MUA</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                2. <mark>The listed price does not include transportation and location fees</mark>
+                                (if
+                                applicable).
+                                <mark>The transportation fee</mark> mentioned above is for photographers and
+                                videographers and
+                                <mark>does not include the makeup artist’s transportation fee</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-en">
+                            Cancellation</h5>
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-id d-none">
+                            Pembatalan</h5>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                1. <mark>Pembatalan yang dilakukan oleh klien</mark> akan mengakibatkan
+                                <mark>kehilangan
+                                    Deposit Pembayaran (DP)</mark>
+                                yang telah dibayarkan sebelumnya. <mark>Pembatalan atau perubahan jadwal yang
+                                    dilakukan
+                                    oleh Concetta Photos</mark>
+                                akan disampaikan kepada klien sesegera mungkin dan kami akan memberikan <mark>opsi
+                                    lain,
+                                    penjadwalan ulang, atau pengembalian dana</mark> jika diperlukan.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                1. <mark>Cancellation by the client</mark> will result in the <mark>loss of the
+                                    previously paid Deposit Payment (DP)</mark>.
+                                <mark>Cancellations or schedule changes made by Concetta Photos</mark> will be
+                                communicated to the client as soon as possible,
+                                and we will provide <mark>alternative options, rescheduling, or a refund</mark> if
+                                necessary.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-en">
+                            Location</h5>
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-id d-none">
+                            Lokasi</h5>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                1. <mark>Klien berhak memilih lokasi</mark> sesuai dengan preferensinya maupun
+                                berdasarkan rekomendasi dari kami.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                1. <mark>The client can choose a location</mark> based on their preference or our
+                                recommendations.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                2. Lokasi pemotretan yang kami cakup <mark>terbatas hanya di pulau utama
+                                    Bali</mark>.
+                                <mark>Khusus area Nusa Penida</mark>,
+                                untuk sementara wilayah tersebut <mark>diluar cakupan kami</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                2. The photography locations we cover are <mark>limited to the main island of
+                                    Bali</mark>. However, <mark>the Nusa Penida area</mark>
+                                is currently <mark>beyond our coverage</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                3. Untuk pemotretan yang dilakukan <mark>di luar Bali</mark> sesuai dengan keinginan
+                                klien, dapat didiskusikan terlebih dahulu kepada kami
+                                dengan catatan <mark>klien wajib menanggung seluruh biaya akomodasi dan transportasi
+                                    seluruh kru Concetta Photos</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                3. For photography sessions <mark>outside of Bali</mark>, as desired by the client,
+                                it
+                                can be discussed with us,
+                                provided that <mark>the client bears all accommodation and transportation expenses
+                                    for
+                                    the entire Concetta Photos crew</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                4. <mark>Biaya lokasi pemotretan</mark> yang dipungut oleh pihak pengelola setempat
+                                <mark>sepenuhnya ditanggung oleh klien</mark>.
+                                Jika klien memilih lokasi di tempat wisata yang memiliki tiket masuk, maka
+                                <mark>klien
+                                    wajib menanggung biaya tiket untuk seluruh kru Concetta Photos</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                4. <mark>The location fees</mark> imposed by the local authorities <mark>are
+                                    entirely
+                                    borne by the client</mark>.
+                                If the client chooses a location in a tourist attraction that requires an entrance
+                                ticket, then
+                                <mark>the client is responsible for covering the ticket expenses for the entire
+                                    Concetta
+                                    Photos crew</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12">
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-en">
+                            Date & Time</h5>
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-id d-none">
+                            Tanggal dan Waktu</h5>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                1. <mark>Pergantian tanggal dapat dilakukan maksimal 2 minggu sebelum hari H</mark>.
+                                Klien diwajibkan
+                                untuk mencocokkan tanggal baru tersebut dengan jadwal kami. <mark>Jika tanggal baru
+                                    yang
+                                    dipilih tidak tersedia dan tidak menemukan jalan tengah, maka kami tidak
+                                    berkewajiban untuk mengembalikan deposit</mark> yang telah dibayarkan.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                1. <mark>Date changes can be made up to 2 weeks before the scheduled day</mark>. The
+                                client is
+                                required to communicate the new date with our availability. <mark>If the new date
+                                    chosen
+                                    is unavailable and no compromise can be reached, we are not obligated to refund
+                                    the
+                                    deposit payment</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                2. <mark>Pergantian jam pemotretan dapat dilakukan maksimal H-2</mark> selama jadwal
+                                kami masih memungkinkan.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                2. <mark>Changes in the photography session time can be made up to 2 days
+                                    before</mark>
+                                the scheduled time, as long as our schedule allows.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                3. <mark>Perubahan jadwal yang dilakukan oleh klien pada hari H sesi foto akan
+                                    dikenakan
+                                    biaya reschedule sebesar Rp650.000</mark>. Adapun perubahan jadwal yang
+                                dilakukan
+                                klien ini selain dari alasan force majeure.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                3. <mark>The client will be charged a rescheduling fee of IDR650.000</mark> for
+                                prewedding sessions for any schedule changes made on the day of the photo session.
+                                These
+                                schedule changes by the client are applicable, excluding force majeure reasons.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                4. Jika klien memilih paket foto dengan 2-3 lokasi, maka <mark>waktu perjalanan
+                                    antar
+                                    lokasi dihitung sebagai bagian dari sesi pemotretan</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                4. If the client chooses a photo package with 2-3 locations, <mark>the travel time
+                                    between locations will be included in the session time</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                5. <mark>Klien diharapkan datang dan siap pada waktu yang telah disepakati</mark>
+                                karena
+                                keterlambatan klien berpotensi mengakibatkan keterlambatan pada jadwal klien kami
+                                yang
+                                lainnya. <mark>Kami berhak membatalkan kesepakatan dan tidak mengembalikan
+                                    deposit</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                5. <mark>The client is expected to arrive and be ready at the agreed-upon
+                                    time</mark>,
+                                as client delays may cause delays in our schedule with other clients. <mark>We
+                                    reserve
+                                    the right to cancel the agreement and are not obligated to refund the
+                                    deposit</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                6. Jika klien tidak datang sesuai waktu yang telah disepakati maka <mark>waktu
+                                    pemotretan tetap dihitung</mark> sesuai dengan kesepakatan awal, kecuali klien
+                                menyertakan <mark>alasan yang dapat kami terima</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                6. Suppose the client arrives after the agreed-upon time. In that case, <mark>the
+                                    session time will still be counted</mark> according to the initial agreement
+                                unless
+                                the client provides a <mark>valid and acceptable reason</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                7. <mark>Kami memberikan toleransi waktu keterlambatan selama 15 menit</mark> awal
+                                setelah sesi waktu yang disepakati berjalan (dengan alasan yang dapat kami terima).
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                7. <mark>We provide a grace period of up to 15 minutes</mark> after the agreed-upon
+                                session time has started, with a valid reason accepted.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-en">
+                            Editing and Photo Delivery</h5>
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-id d-none">
+                            Pengeditan dan Pengiriman Foto</h5>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                1. Foto yang diberikan oleh Concetta Photos telah melalui <mark>tahap seleksi dan
+                                    penyesuaian tone</mark> meliputi <mark>eksposur, saturasi, kontras</mark> untuk
+                                memberikan <mark>hasil terbaik kepada klien</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                1. The photos provided by Concetta Photos have been through the <mark>selection
+                                    process
+                                    and tone adjustments</mark>, including <mark>exposure, saturation, and
+                                    contrast</mark>, to ensure the <mark>best results for the client</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                2. Jumlah foto yang kami berikan <mark>sesuai dengan yang tercantum pada
+                                    pricelist</mark> saat klien melakukan pemesanan. Bila klien ingin <mark>membeli
+                                    foto
+                                    lebih dari jumlah atau semua foto di luar yang tertera</mark> dalam pricelist,
+                                maka
+                                akan dikenakan <mark>biaya tambahan</mark> sesuai dengan <mark>kesepakatan kedua
+                                    belah
+                                    pihak</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                2. The number of photos we provide corresponds to the <mark>quantity stated in the
+                                    pricelist</mark> at the time of client booking. Suppose the client wishes to
+                                <mark>purchase additional photos beyond the stated quantity or all photos not
+                                    listed</mark> in the pricelist. In that case, an <mark>additional fee</mark>
+                                will be
+                                applied based on the <mark>agreement between both parties</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                3. Adapun <mark>fine edit</mark> yang dilakukan seperti <mark>mengecilkan bagian
+                                    tubuh,
+                                    menghilangkan jerawat, atau memuluskan kulit</mark>, akan dilakukan
+                                <mark>berdasarkan permintaan klien</mark>. <mark>Foto yang akan menjalani fine edit
+                                    akan
+                                    dipilih oleh klien</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                3. Based on client requests, <mark>fine edits</mark> such as <mark>body slimming,
+                                    blemish removal, or skin smoothing</mark> will be done. <mark>The client will
+                                    choose
+                                    the photos that will undergo fine edits</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                4. Foto-foto akan diberikan kepada klien <mark>melalui link Google Drive</mark>
+                                dalam
+                                waktu <mark>paling cepat 2 hari</mark> setelah pemotretan dan <mark>paling lambat 3
+                                    hari</mark> setelah pemotretan, dengan catatan <mark>klien sudah melunasi
+                                    pembayaran</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                4. The photos will be delivered to the client <mark>via Google Drive link</mark>
+                                within
+                                a <mark>minimum of 2 days</mark> and a <mark>maximum of 3 days</mark> after the
+                                photoshoot, provided that the <mark>client has completed the payment</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                5. <mark>Link Google Drive akan aktif selama satu bulan</mark> terhitung sejak
+                                Concetta
+                                Photos mengirimkan link. Jika dikemudian hari klien <mark>meminta pengunggahan foto
+                                    ulang</mark>, maka akan dikenakan <mark>biaya tambahan sebesar Rp100.000</mark>.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                5. <mark>The Google Drive link will be active for one month</mark> from the date
+                                Concetta Photos sends the link. If, in the future, the client <mark>requests a
+                                    re-upload
+                                    of the photos</mark> at a later date, an <mark>additional fee of
+                                    IDR100.000</mark>
+                                will be applied.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-en">
+                            Force Majeure</h5>
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-id d-none">
+                            Force Majeure</h5>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-en">
+                                1. Suppose the photoshoot session <mark>cannot be conducted due to force majeure
+                                    circumstances</mark> such as <mark>bad weather, natural disasters, pandemics,
+                                    and
+                                    other incidents</mark>. In that case, Concetta Photos will <mark>seek
+                                    alternative
+                                    locations or reschedule the session</mark> according to the <mark>agreement
+                                    between
+                                    both parties</mark>.
+                            </span>
+                            <span class="lang-content lang-id d-none">
+                                1. Jika sesi pemotretan <mark>tidak dapat dilakukan karena keadaan yang di luar
+                                    kendali
+                                    manusia</mark> seperti <mark>cuaca buruk, bencana alam, pandemi, dan insiden
+                                    lainnya</mark>, Concetta Photos akan <mark>mencari alternatif tempat lain atau
+                                    menjadwalkan ulang sesi</mark> sesuai <mark>kesepakatan kedua belah
+                                    pihak</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-en">
+                            Privacy</h5>
+                        <h5 class="p-3 rounded shadow-sm border custom-text text-center lang-content lang-id d-none">
+                            Privasi</h5>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                1. Kami <mark>selaku pemegang hak cipta</mark> yang berhak melakukan <mark>promosi
+                                    dengan foto yang telah kami ambil</mark> selama sesi. Bagi klien yang
+                                <mark>tidak
+                                    bersedia fotonya kami publikasikan</mark> di sosial media atau media lainnya
+                                demi
+                                kepentingan promosi dari Concetta Photos, <mark>harap untuk menginformasikan kepada
+                                    kami
+                                    sebelum atau sesudah sesi foto</mark> berlangsung.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                1. As <mark>copyright holders</mark>, we can <mark>promote our services using the
+                                    photos</mark> taken during the session. For clients who <mark>wish to refrain
+                                    from
+                                    having their photos published</mark> on our social media or other platforms for
+                                promotional purposes by Concetta Photos, <mark>please inform us before or after the
+                                    photoshoot</mark>.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                2. Bagi klien yang <mark>tidak menginformasikan kepada kami</mark> mengenai poin 1,
+                                maka
+                                kami <mark>anggap klien bersedia atau setuju foto dipublikasikan</mark> untuk
+                                kepentingan promosi kami dan kami <mark>bebas dari kompensasi, pertanggungjawaban,
+                                    gugatan hukum, dan tuntutan</mark> dalam jenis apapun dari pihak manapun dan
+                                dalam
+                                jumlah berapapun.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                2. For clients who <mark>do not inform us</mark> regarding point 1, we <mark>assume
+                                    that
+                                    the client agrees or consents</mark> to the publication of the photos taken for
+                                our
+                                promotional purposes. We are <mark>released from any compensation, liability, legal
+                                    claims, and demands</mark> of any kind from any party in any amount.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <div class="p-4 rounded shadow-sm h-100 border custom-text-0 text-justify">
+                            <span class="lang-content lang-id">
+                                3. Concetta Photos <mark>memiliki secara penuh hak cipta</mark> atas semua foto yang
+                                diambil selama sesi fotografi. Kami selaku penyedia jasa <mark>berhak menggunakan
+                                    foto-foto untuk keperluan promosi</mark>, <mark>kecuali terjadi
+                                    perjanjian</mark>
+                                antara kedua belah pihak sebelum sesi berlangsung yang menyepakati bahwa <mark>foto
+                                    klien bersifat privasi/tidak boleh dipublikasi</mark> sesuai dengan poin
+                                sebelumnya.
+                            </span>
+                            <span class="lang-content lang-en d-none">
+                                3. Concetta Photos <mark>holds full copyright ownership</mark> of all photos taken
+                                during the photography session. As the service provider, we <mark>have the right to
+                                    use
+                                    the photos</mark> taken during the session for promotional purposes unless there
+                                is
+                                <mark>an agreement between both parties</mark> before the session stating that
+                                <mark>the
+                                    client’s photos are private/not to be published</mark>, as stated in previous
+                                point.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-10 col-md-8 col-lg-6 mx-auto custom-border"></div>
+    </section>
+
+    <section id="book" class="bg-body-custom">
         <main class="container">
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
@@ -918,47 +1253,7 @@
     </section>
 
     <section id="footer">
-        <hr class="featurette-divider mt-0">
-
-        <div class="container-fluid">
-            <footer class="py-4 my-4">
-                <div
-                    class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
-
-                    <div class="order-2 order-md-0 mt-3 mt-md-0 ms-xl-3 ms-md-3">
-                        <span class="text-body-secondary copyright-text">© 2025 Concetta Photos</span>
-                    </div>
-
-                    <ul
-                        class="nav justify-content-center justify-content-md-end list-unstyled d-flex order-1 order-md-1 me-xl-3 me-md-3">
-                        <li>
-                            <a class="text-body-secondary" href="https://www.instagram.com/concettaphotos/"
-                                aria-label="Instagram">
-                                <img src="{{ asset('instagram_logo.png') }}" width="28" height="28" alt="Instagram" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary"
-                                href="https://www.tiktok.com/@concettaphotos?is_from_webapp=1&sender_device=pc"
-                                aria-label="Tiktok">
-                                <img src="{{ asset('tiktok_logo.png') }}" width="28" height="28" alt="Tiktok" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary" href="https://www.threads.com/@concettaphotos"
-                                aria-label="Threads">
-                                <img src="{{ asset('thread_logo.png') }}" width="28" height="28" alt="Threads" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary" href="https://x.com/ConcettaPhotos_" aria-label="Twitter">
-                                <img src="{{ asset('twitter_logo.png') }}" width="28" height="28" alt="Twitter" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
-        </div>
+        @include('partials.footer')
     </section>
 
     <script>
@@ -988,7 +1283,7 @@
                 }
             }
 
-            const savedLang = localStorage.getItem("selectedLang") || "en";
+            const savedLang = localStorage.getItem("selectedLang") || "id";
             updateLanguageUI(savedLang);
 
             switches.forEach(switcher => {
@@ -1007,6 +1302,83 @@
             offcanvasEl.querySelectorAll('a.nav-link, a.accordion-button, a.text-decoration-none').forEach(function (link) {
                 link.addEventListener('click', function () {
                     offcanvas.hide();
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
+            let manuallyOpened = null;
+
+            document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+
+            submenuToggles.forEach(toggle => {
+                const parentLi = toggle.parentElement;
+                const submenu = toggle.nextElementSibling;
+
+                parentLi.addEventListener('mouseenter', () => {
+                    if (manuallyOpened !== submenu) {
+                        submenu.classList.add('show');
+                    }
+                });
+
+                parentLi.addEventListener('mouseleave', () => {
+                    if (manuallyOpened !== submenu) {
+                        submenu.classList.remove('show');
+                    }
+                });
+
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const isOpen = submenu.classList.contains('show');
+
+                    if (manuallyOpened === submenu) {
+                        submenu.classList.remove('show');
+                        manuallyOpened = null;
+                    } else {
+                        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                            menu.classList.remove('show');
+                        });
+
+                        submenu.classList.add('show');
+                        manuallyOpened = submenu;
+                    }
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.dropdown-menu')) {
+                    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                        menu.classList.remove('show');
+                    });
+                    manuallyOpened = null;
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const submenu = this.nextElementSibling;
+
+                    const isShown = submenu.classList.contains('show');
+
+                    document.querySelectorAll('.submenu-list').forEach(list => {
+                        list.classList.remove('show');
+                    });
+
+                    if (!isShown) {
+                        submenu.classList.add('show');
+                    }
                 });
             });
         });

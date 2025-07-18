@@ -285,16 +285,63 @@
             display: none !important;
         }
 
+        .fit-col {
+            height: 320px !important;
+        }
+
+        .fit-col-1 {
+            height: 370px !important;
+        }
+
+        .fit-col-2 {
+            height: 420px !important;
+        }
+
+        .fit-col-3 {
+            height: 395px !important;
+        }
+
+        .fit-col-4 {
+            height: 440px !important;
+        }
+
         @media (max-width: 720px) {
             .copyright-text {
                 font-size: 0.8rem;
             }
         }
 
-        /* #3674B5 = Biru laut */
-        /* #578FCA = Biru tua */
-        /* #A1E3F9 = Biru langit */
-        /* #D1F8EF = Biru muda */
+        @media (max-width: 1200px) {
+            .fit-col {
+                height: fit-content !important;
+                max-width: 500px !important;
+                margin: auto;
+            }
+
+            .fit-col-1 {
+                height: fit-content !important;
+                max-width: 500px !important;
+                margin: auto;
+            }
+
+            .fit-col-2 {
+                height: fit-content !important;
+                max-width: 500px !important;
+                margin: auto;
+            }
+
+            .fit-col-3 {
+                height: fit-content !important;
+                max-width: 500px !important;
+                margin: auto;
+            }
+
+            .fit-col-4 {
+                height: fit-content !important;
+                max-width: 500px !important;
+                margin: auto;
+            }
+        }
 
         .card-custom-color {
             border-color: #3674B5 !important;
@@ -310,6 +357,43 @@
 
         .card-custom-color-1 .card-header {
             background: linear-gradient(to bottom, #3674B5, #578FCA) !important;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 100% !important;
+            margin-top: -0.25rem !important;
+            z-index: 1000 !important;
+        }
+
+        .dropdown-submenu .dropdown-menu.show {
+            display: block !important;
+        }
+
+        .submenu-arrow {
+            font-size: 20px;
+            margin-left: auto;
+            margin-bottom: 2px;
+        }
+
+        .dropdown-submenu>.dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-submenu>.dropdown-toggle::after {
+            display: none !important;
+        }
+
+        .submenu-list {
+            display: none;
+        }
+
+        .submenu-list.show {
+            display: block;
         }
     </style>
 
@@ -327,279 +411,16 @@
 
 <body>
     <section id="header">
-        <header id="mainHeader"
-            class="d-flex align-items-center justify-content-between py-3 position-fixed top-0 start-0 w-100 z-3 transition-header">
-            <div class="d-none d-xl-flex align-items-start px-2" style="width: 306.97px;">
-
-                <div class="lang-toggle mx-auto">
-                    <input type="checkbox" id="langSwitch">
-                    <label for="langSwitch">
-                        <span class="switch-thumb"></span>
-                    </label>
-                </div>
-
-            </div>
-
-            <div class="d-none d-xl-flex align-items-center gap-4 mx-auto">
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/#opening" class="nav-link lang-content lang-en">CONCETTA
-                        TEAM</a>
-                    <a href="/#opening" class="nav-link lang-content lang-id d-none">TIM CONCETTA</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-en"
-                        data-bs-toggle="dropdown">ABOUT</a>
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-id d-none"
-                        data-bs-toggle="dropdown">TENTANG</a>
-                    <ul class="dropdown-menu fs-7 py-2 custom-text-0">
-                        <li><a class="dropdown-item" href="/about">CONCETTA PHOTOS</a></li>
-                        <li><a class="dropdown-item lang-content lang-en" href="/about#tac">TERMS AND CONDITIONS</a>
-                        </li>
-                        <li><a class="dropdown-item lang-content lang-id d-none" href="/about#tac">SYARAT DAN
-                                KETENTUAN</a></li>
-                        <li><a class="dropdown-item lang-content lang-en" href="/#testimonial">TESTIMONIALS</a>
-                        </li>
-                        <li><a class="dropdown-item lang-content lang-id d-none" href="/#testimonial">TESTIMONI</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/concettalk" class="nav-link">CONCETTALK</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="70px">
-                    </a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/pricelist" class="nav-link lang-content lang-en">PRICE LIST</a>
-                    <a href="/pricelist" class="nav-link lang-content lang-id d-none">DAFTAR HARGA</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/faqs" class="nav-link">FAQs</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-en"
-                        data-bs-toggle="dropdown">GALLERY</a>
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-id d-none"
-                        data-bs-toggle="dropdown">GALERI</a>
-                    <ul class="dropdown-menu fs-7 py-2 custom-text-0">
-                        <li><a class="dropdown-item" href="/gallery#holiday">HOLIDAY</a></li>
-                        <li><a class="dropdown-item" href="/gallery#couple">COUPLE</a></li>
-                        <li><a class="dropdown-item" href="/gallery#family">FAMILY</a></li>
-                        <li><a class="dropdown-item" href="/gallery#prewedding">PREWEDDING</a></li>
-                        <li><a class="dropdown-item" href="/gallery#wedding">WEDDING</a></li>
-                        <li><a class="dropdown-item" href="/gallery#brandphotoshoot">BRAND PHOTOSHOOT</a></li>
-                    </ul>
-                </li>
-            </div>
-
-            <div class="d-none d-xl-block text-end">
-                @if (Route::has('login'))
-                    <nav>
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary me-2 lang-content lang-en">COME IN</a>
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary me-2 lang-content lang-id d-none">MASUK</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary mx-2 my-2 lang-content lang-en">YOUR
-                                INQUIRIES</a>
-                            <a href="{{ route('login') }}"
-                                class="btn btn-outline-primary mx-2 my-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary mx-2 my-2 lang-content lang-en">BE
-                                    MEMBER</a>
-                                <a href="{{ route('register') }}"
-                                    class="btn btn-primary mx-2 my-2 lang-content lang-id d-none">GABUNG</a>
-                            @endif
-                        @endauth
-                    </nav>
-                @endif
-            </div>
-
-            <div class="d-flex align-items-center d-xl-none w-100 justify-content-between px-3">
-                <button class="btn p-0 bg-transparent border-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileMenu" aria-controls="mobileMenu" style="width: 32px; height: 32px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#444" class="bi bi-list icon"
-                        viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                    </svg>
-                </button>
-
-                <a href="{{ url('/') }}">
-                    <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="56px">
-                </a>
-
-                <div class="lang-toggle">
-                    <input type="checkbox" id="langSwitch1">
-                    <label for="langSwitch1">
-                        <span class="switch-thumb"></span>
-                    </label>
-                </div>
-            </div>
-
-
-        </header>
-
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-            <div class="offcanvas-header position-relative justify-content-center">
-                <h5 class="offcanvas-title m-0">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="56px">
-                    </a>
-                </h5>
-
-                <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="accordion" id="accordionMenu">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/#opening') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-en">
-                                CONCETTA TEAM
-                            </a>
-                            <a href="{{ url('/#opening') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-id d-none">
-                                TIM CONCETTA
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-about">
-                            <button class="accordion-button collapsed btn-primary lang-content lang-en" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse-about" aria-expanded="false"
-                                aria-controls="collapse-about">
-                                ABOUT
-                            </button>
-                            <button class="accordion-button collapsed btn-primary lang-content lang-id d-none"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-about"
-                                aria-expanded="false" aria-controls="collapse-about">
-                                TENTANG
-                            </button>
-                        </h2>
-                        <div id="collapse-about" class="accordion-collapse collapse" aria-labelledby="heading-about"
-                            data-bs-parent="#accordionMenu">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a class="nav-link text-start" href="{{ url('/about') }}">CONCETTA PHOTOS</a>
-                                    </li>
-                                    <li><a class="nav-link text-start lang-content lang-en"
-                                            href="{{ url('/about#tac') }}">TERMS AND
-                                            CONDITIONS</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-id d-none"
-                                            href="{{ url('/about#tac') }}">SYARAT DAN KETENTUAN</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-en"
-                                            href="{{ url('/#testimonial') }}">TESTIMONIALS</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-id d-none"
-                                            href="{{ url('/#testimonial') }}">TESTIMONI</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/concettalk') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown">
-                                CONCETTALK
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/pricelist') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-en">
-                                PRICE LIST
-                            </a>
-                            <a href="{{ url('/pricelist') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-id d-none">
-                                DAFTAR HARGA
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-faqs">
-                            <a href="{{ url('/faqs') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown">
-                                FAQs
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-gallery">
-                            <button class="accordion-button collapsed btn-primary lang-content lang-en" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse-gallery" aria-expanded="false"
-                                aria-controls="collapse-gallery">
-                                GALLERY
-                            </button>
-                            <button class="accordion-button collapsed btn-primary lang-content lang-id d-none"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-gallery"
-                                aria-expanded="false" aria-controls="collapse-gallery">
-                                GALERI
-                            </button>
-                        </h2>
-                        <div id="collapse-gallery" class="accordion-collapse collapse" aria-labelledby="heading-gallery"
-                            data-bs-parent="#accordionMenu">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#holiday') }}">HOLIDAY</a>
-                                    </li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#couple') }}">COUPLE</a>
-                                    </li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#family') }}">FAMILY</a>
-                                    </li>
-                                    <li><a class="nav-link text-start"
-                                            href="{{ url('/gallery#prewedding') }}">PREWEDDING</a></li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#wedding') }}">WEDDING</a>
-                                    </li>
-                                    <li><a class="nav-link text-start"
-                                            href="{{ url('/gallery#brandphotoshoot') }}">BRAND
-                                            PHOTOSHOOT</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary w-100 mb-2 lang-content lang-en">COME
-                                IN</a>
-                            <a href="{{ url('/dashboard') }}"
-                                class="btn btn-primary w-100 mb-2 lang-content lang-id d-none">MASUK</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary w-100 mb-2 lang-content lang-en">YOUR
-                                INQUIRIES</a>
-                            <a href="{{ route('login') }}"
-                                class="btn btn-outline-primary w-100 mb-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-en">BE MEMBER</a>
-                                <a href="{{ route('register') }}"
-                                    class="btn btn-primary w-100 lang-content lang-id d-none">GABUNG</a>
-                            @endif
-                        @endauth
-                    @endif
-                </div>
-            </div>
-        </div>
+        @include('partials.navbar')
     </section>
 
     <section id="picture" class="position-relative">
-        <div class="position-relative w-100" style="height: 636px;">
-            <img src="{{ asset('price.jpg') }}" alt="about picture"
+        <div class="position-relative w-100 d-none d-lg-flex" style="height: 636px;">
+            <img src="{{ asset('price.jpg') }}" alt="Price picture"
+                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+        </div>
+        <div class="position-relative w-100 d-flex d-lg-none" style="height: 636px;">
+            <img src="{{ asset('price_mobile.jpg') }}" alt="Price picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
     </section>
@@ -636,15 +457,15 @@
                 <h2 class="display-7 text-center custom-text my-4 lang-content lang-en">Photo Only</h2>
                 <h2 class="display-7 text-center custom-text my-4 lang-content lang-id d-none">Hanya Foto</h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
-                <div class="row row-cols-1 row-cols-md-3 mb-4 text-center">
+                <div class="row row-cols-1 row-cols-xl-3 mb-4 text-center">
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 336.98px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
-                            <div class="card-body d-flex justify-content-center align-items-center flex-column text-center"
+                            <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 1,699K
                                 </h1>
@@ -664,14 +485,14 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 336.98px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div
-                                class="card-body d-flex justify-content-center align-items-center flex-column text-center">
+                                class="card-body d-flex justify-content-between align-items-center flex-column text-center">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 3,399K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
@@ -690,14 +511,14 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1" style="height: 336.98px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div
-                                class="card-body d-flex justify-content-center align-items-center flex-column text-center">
+                                class="card-body d-flex justify-content-between align-items-center flex-column text-center">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 5,899K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
@@ -722,23 +543,25 @@
                 <h2 class="display-7 text-center my-4 custom-text lang-content lang-id d-none">Foto & Video</h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
-                <div class="row row-cols-1 row-cols-md-3 mb-4 text-center">
+                <div class="row row-cols-1 row-cols-xl-3 mb-4 text-center">
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 360.97px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-1">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
-                            <div class="card-body d-flex justify-content-center align-items-center flex-column text-center"
+                            <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 2,959K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     2,959K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
-                                    <li class="lang-content lang-en">1 location, 100 edited + 20 fine edited</li>
-                                    <li class="lang-content lang-id d-none">1 lokasi, 100 edited + 20 fine edited</li>
+                                    <li class="lang-content lang-en">1 location</li>
+                                    <li class="lang-content lang-id d-none">1 lokasi</li>
+                                    <li class="lang-content lang-en">100 edited + 20 fine edited</li>
+                                    <li class="lang-content lang-id d-none">100 edited + 20 fine edited</li>
                                     <li class="lang-content lang-en">2-3 minutes cinematic video</li>
                                     <li class="lang-content lang-id d-none">2-3 menit video sinematik</li>
                                     <li>Via Google Drive</li>
@@ -751,27 +574,27 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 360.97px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-1">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
-                            <div class="card-body d-flex justify-content-center align-items-center flex-column text-center"
+                            <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 5,099K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     5,099K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
-                                    <li class="lang-content lang-en">2 locations, 160 edited + 30 fine edited, 2-3
-                                        minutes</li>
-                                    <li class="lang-content lang-id d-none">2 lokasi, 160 edited + 30 fine edited, 2-3
-                                        menit</li>
-                                    <li class="lang-content lang-en">Cinematic video with drone, 1 minute highlight
-                                        video</li>
-                                    <li class="lang-content lang-id d-none">Video sinematik dengan drone, 1 menit video
-                                        sorotan</li>
+                                    <li class="lang-content lang-en">2 locations</li>
+                                    <li class="lang-content lang-id d-none">2 lokasi</li>
+                                    <li class="lang-content lang-en">160 edited + 30 fine edited</li>
+                                    <li class="lang-content lang-id d-none">160 edited + 30 fine edited</li>
+                                    <li class="lang-content lang-en">2-3 minutes Cinematic video with drone</li>
+                                    <li class="lang-content lang-id d-none">2-3 menit Video sinematik dengan drone</li>
+                                    <li class="lang-content lang-en">1 minute highlight video</li>
+                                    <li class="lang-content lang-id d-none">1 menit video sorotan</li>
                                     <li>Via Google Drive</li>
                                 </ul>
                                 <a href="/faqs#inquiry">
@@ -786,25 +609,31 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1" style="height: 360.97px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col-1">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
-                            <div class="card-body d-flex justify-content-center align-items-center flex-column text-center"
+                            <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 8,499K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     8,499K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
-                                    <li class="lang-content lang-en">3 locations, 200 edited + 50 fine edited</li>
-                                    <li class="lang-content lang-id d-none">3 lokasi, 200 edited + 50 fine edited</li>
+                                    <li class="lang-content lang-en">3 locations</li>
+                                    <li class="lang-content lang-id d-none">3 lokasi</li>
+
+                                    <li class="lang-content lang-en">200 edited + 50 fine edited</li>
+                                    <li class="lang-content lang-id d-none">200 edited + 50 fine edited</li>
+
                                     <li class="lang-content lang-en">2-3 minutes cinematic video with drone</li>
                                     <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone</li>
+
                                     <li class="lang-content lang-en">1 minute highlight video</li>
                                     <li class="lang-content lang-id d-none">1 menit video sorotan</li>
+
                                     <li>Via Google Drive</li>
                                 </ul>
                                 <a href="/faqs#inquiry">
@@ -826,29 +655,36 @@
                 </h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
-                <div class="row row-cols-1 row-cols-md-3 mb-4 text-center">
+                <div class="row row-cols-1 row-cols-xl-3 mb-4 text-center">
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 400px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-2">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
-                            <div class="card-body d-flex justify-content-center align-items-center flex-column text-center"
+                            <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 3,549K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     3,549K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
-                                    <li class="lang-content lang-en">1 location, 100 edited + 20 fine edited</li>
-                                    <li class="lang-content lang-id d-none">1 lokasi, 100 edited + 20 fine edited</li>
+                                    <li class="lang-content lang-en">1 location</li>
+                                    <li class="lang-content lang-id d-none">1 lokasi</li>
+
+                                    <li class="lang-content lang-en">100 edited + 20 fine edited</li>
+                                    <li class="lang-content lang-id d-none">100 edited + 20 fine edited</li>
+
                                     <li class="lang-content lang-en">2-3 minutes cinematic video</li>
                                     <li class="lang-content lang-id d-none">2-3 menit video sinematik</li>
+
                                     <li>Via Google Drive</li>
+
                                     <li class="lang-content lang-en">Makeup & hair without following and no retouch</li>
                                     <li class="lang-content lang-id d-none">Makeup & rambut tanpa mengikuti dan tanpa
                                         retouch</li>
+
                                 </ul>
                                 <a href="/faqs#inquiry">
                                     <button type="button"
@@ -862,30 +698,38 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 400px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-2">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div
-                                class="card-body d-flex justify-content-center align-items-center flex-column text-center">
+                                class="card-body d-flex justify-content-between align-items-center flex-column text-center">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 6,199K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     6,199K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
-                                    <li class="lang-content lang-en">2 locations, 160 edited + 30 fine edited</li>
-                                    <li class="lang-content lang-id d-none">2 lokasi, 160 edited + 30 fine edited</li>
-                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone, 1 minute
-                                        highlight video</li>
-                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone, 1
-                                        menit video sorotan</li>
+                                    <li class="lang-content lang-en">2 locations</li>
+                                    <li class="lang-content lang-id d-none">2 lokasi</li>
+
+                                    <li class="lang-content lang-en">160 edited + 30 fine edited</li>
+                                    <li class="lang-content lang-id d-none">160 edited + 30 fine edited</li>
+
+                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone</li>
+                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone</li>
+
+                                    <li class="lang-content lang-en">1 minute highlight video</li>
+                                    <li class="lang-content lang-id d-none">1 menit video sorotan</li>
+
                                     <li>Via Google Drive</li>
+
                                     <li class="lang-content lang-en">Makeup & hair with following, include retouch & 2
                                         hairstyles</li>
                                     <li class="lang-content lang-id d-none">Makeup & rambut dengan mengikuti, termasuk
                                         retouch & 2 gaya rambut</li>
+
                                 </ul>
                                 <a href="/faqs#inquiry">
                                     <button type="button"
@@ -899,14 +743,14 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1" style="height: 400px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col-2">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div
-                                class="card-body d-flex justify-content-center align-items-center flex-column text-center">
+                                class="card-body d-flex justify-content-between align-items-center flex-column text-center">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">
                                     IDR 9,699K
                                 </h1>
@@ -914,17 +758,25 @@
                                     RP 9,699K
                                 </h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
-                                    <li class="lang-content lang-en">3 locations, 200 edited + 50 fine edited</li>
-                                    <li class="lang-content lang-id d-none">3 lokasi, 200 edited + 50 fine edited</li>
-                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone, 1 minute
-                                        highlight video</li>
-                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone, 1
-                                        menit video sorotan</li>
+                                    <li class="lang-content lang-en">3 locations</li>
+                                    <li class="lang-content lang-id d-none">3 lokasi</li>
+
+                                    <li class="lang-content lang-en">200 edited + 50 fine edited</li>
+                                    <li class="lang-content lang-id d-none">200 edited + 50 fine edited</li>
+
+                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone</li>
+                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone</li>
+
+                                    <li class="lang-content lang-en">1 minute highlight video</li>
+                                    <li class="lang-content lang-id d-none">1 menit video sorotan</li>
+
                                     <li>Via Google Drive</li>
-                                    <li class="lang-content lang-en">Makeup & hair with following, include retouch & 3-4
+
+                                    <li class="lang-content lang-en">Makeup & hair with following, include retouch & 3–4
                                         hairstyles</li>
                                     <li class="lang-content lang-id d-none">Makeup & rambut dengan mengikuti, termasuk
-                                        retouch & 3-4 gaya rambut</li>
+                                        retouch & 3–4 gaya rambut</li>
+
                                 </ul>
                                 <a href="/faqs#inquiry">
                                     <button type="button"
@@ -945,30 +797,38 @@
                 </h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
-                <div class="row row-cols-1 row-cols-md-3 mb-4 text-center">
+                <div class="row row-cols-1 row-cols-xl-3 mb-4 text-center">
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 400px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-3">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
-                            <div class="card-body d-flex justify-content-center align-items-center flex-column text-center"
+                            <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 3,499K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     3,499K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
-                                    <li class="lang-content lang-en">1 location, 100 edited + 20 fine edited</li>
-                                    <li class="lang-content lang-id d-none">1 lokasi, 100 edited + 20 fine edited</li>
-                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone, 1 minute
-                                        highlight video</li>
-                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone, 1
-                                        menit video sorotan</li>
+                                    <li class="lang-content lang-en">1 location</li>
+                                    <li class="lang-content lang-id d-none">1 lokasi</li>
+
+                                    <li class="lang-content lang-en">100 edited + 20 fine edited</li>
+                                    <li class="lang-content lang-id d-none">100 edited + 20 fine edited</li>
+
+                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone</li>
+                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone</li>
+
+                                    <li class="lang-content lang-en">1 minute highlight video</li>
+                                    <li class="lang-content lang-id d-none">1 menit video sorotan</li>
+
                                     <li>Via Google Drive</li>
+
                                     <li class="lang-content lang-en">1 gown</li>
                                     <li class="lang-content lang-id d-none">1 gaun</li>
+
                                 </ul>
                                 <a href="/faqs#inquiry">
                                     <button type="button"
@@ -982,27 +842,33 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 400px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-3">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div
-                                class="card-body d-flex justify-content-center align-items-center flex-column text-center">
+                                class="card-body d-flex justify-content-between align-items-center flex-column text-center">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 6,149K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     6,149K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
-                                    <li class="lang-content lang-en">2 locations, 160 edited + 30 fine edited</li>
-                                    <li class="lang-content lang-id d-none">2 lokasi, 160 foto diedit + 30 editing halus
-                                    </li>
-                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone, 1 highlight
-                                        video</li>
-                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone, 1
-                                        video sorotan</li>
+                                    <li class="lang-content lang-en">2 locations</li>
+                                    <li class="lang-content lang-id d-none">2 lokasi</li>
+
+                                    <li class="lang-content lang-en">160 edited + 30 fine edited</li>
+                                    <li class="lang-content lang-id d-none">160 edited + 30 fine edited</li>
+
+                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone</li>
+                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone</li>
+
+                                    <li class="lang-content lang-en">1 highlight video</li>
+                                    <li class="lang-content lang-id d-none">1 video sorotan</li>
+
                                     <li>Via Google Drive</li>
+
                                     <li class="lang-content lang-en">1 gown</li>
                                     <li class="lang-content lang-id d-none">1 gaun</li>
                                 </ul>
@@ -1018,27 +884,33 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1" style="height: 400px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col-3">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div
-                                class="card-body d-flex justify-content-center align-items-center flex-column text-center">
+                                class="card-body d-flex justify-content-between align-items-center flex-column text-center">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 9,699K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     9,699K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
-                                    <li class="lang-content lang-en">3 locations, 200 edited + 50 fine edited</li>
-                                    <li class="lang-content lang-id d-none">3 lokasi, 200 foto diedit + 50 editing halus
-                                    </li>
-                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone, 1 highlight
-                                        video</li>
-                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone, 1
-                                        video sorotan</li>
+                                    <li class="lang-content lang-en">3 locations</li>
+                                    <li class="lang-content lang-id d-none">3 lokasi</li>
+
+                                    <li class="lang-content lang-en">200 edited + 50 fine edited</li>
+                                    <li class="lang-content lang-id d-none">200 edited + 50 fine edited</li>
+
+                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone</li>
+                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone</li>
+
+                                    <li class="lang-content lang-en">1 highlight video</li>
+                                    <li class="lang-content lang-id d-none">1 video sorotan</li>
+
                                     <li>Via Google Drive</li>
+
                                     <li class="lang-content lang-en">2 gowns</li>
                                     <li class="lang-content lang-id d-none">2 gaun</li>
                                 </ul>
@@ -1061,32 +933,39 @@
                     Lengkap</h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
-                <div class="row row-cols-1 row-cols-md-3 mb-4 text-center">
+                <div class="row row-cols-1 row-cols-xl-3 mb-4 text-center">
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 420px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-4">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
-                            <div class="card-body d-flex justify-content-center align-items-center flex-column text-center"
+                            <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 4,199K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     4,199K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
-                                    <li class="lang-content lang-en">1 location, 100 edited + 20 fine edited</li>
-                                    <li class="lang-content lang-id d-none">1 lokasi, 100 foto diedit + 20 editing halus
-                                    </li>
+                                    <li class="lang-content lang-en">1 location</li>
+                                    <li class="lang-content lang-id d-none">1 lokasi</li>
+
+                                    <li class="lang-content lang-en">100 edited + 20 fine edited</li>
+                                    <li class="lang-content lang-id d-none">100 edited + 20 fine edited</li>
+
                                     <li class="lang-content lang-en">2-3 minutes cinematic video</li>
                                     <li class="lang-content lang-id d-none">2-3 menit video sinematik</li>
+
                                     <li>Via Google Drive</li>
+
                                     <li class="lang-content lang-en">Makeup & hair without following and no retouch</li>
                                     <li class="lang-content lang-id d-none">Rias & rambut tanpa pendampingan dan tanpa
                                         retouch</li>
+
                                     <li class="lang-content lang-en">1 Gown</li>
                                     <li class="lang-content lang-id d-none">1 Gaun</li>
+
                                 </ul>
                                 <a href="/faqs#inquiry">
                                     <button type="button"
@@ -1098,33 +977,42 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color" style="height: 420px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-4">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div
-                                class="card-body d-flex justify-content-center align-items-center flex-column text-center">
+                                class="card-body d-flex justify-content-between align-items-center flex-column text-center">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 7,559K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     7,559K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
-                                    <li class="lang-content lang-en">2 locations, 160 edited + 30 fine edited</li>
-                                    <li class="lang-content lang-id d-none">2 lokasi, 160 foto diedit + 30 editing halus
-                                    </li>
-                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone, 1 highlight
-                                        video</li>
-                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone, 1
-                                        video sorotan</li>
+                                    <li class="lang-content lang-en">2 locations</li>
+                                    <li class="lang-content lang-id d-none">2 lokasi</li>
+
+                                    <li class="lang-content lang-en">160 edited + 30 fine edited</li>
+                                    <li class="lang-content lang-id d-none">160 edited + 30 fine edited</li>
+
+                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone</li>
+                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone</li>
+
+                                    <li class="lang-content lang-en">1 highlight video</li>
+                                    <li class="lang-content lang-id d-none">1 video sorotan</li>
+
                                     <li>Via Google Drive</li>
-                                    <li class="lang-content lang-en">Makeup & hair with following, include retouch & 2
-                                        hairstyles</li>
-                                    <li class="lang-content lang-id d-none">Rias & rambut dengan pendampingan, termasuk
-                                        retouch & 2 gaya rambut</li>
+
+                                    <li class="lang-content lang-en">Makeup & hair with following</li>
+                                    <li class="lang-content lang-id d-none">Rias & rambut dengan pendampingan</li>
+
+                                    <li class="lang-content lang-en">Include retouch & 2 hairstyles</li>
+                                    <li class="lang-content lang-id d-none">Termasuk retouch & 2 gaya rambut</li>
+
                                     <li class="lang-content lang-en">1 Gown</li>
                                     <li class="lang-content lang-id d-none">1 Gaun</li>
+
                                 </ul>
                                 <a href="/faqs#inquiry">
                                     <button type="button"
@@ -1136,33 +1024,42 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1" style="height: 420px;">
+                        <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col-4">
                             <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div
-                                class="card-body d-flex justify-content-center align-items-center flex-column text-center">
+                                class="card-body d-flex justify-content-between align-items-center flex-column text-center">
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 12,099K
                                 </h1>
                                 <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
                                     12,099K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
-                                    <li class="lang-content lang-en">3 locations, 200 edited + 50 fine edited</li>
-                                    <li class="lang-content lang-id d-none">3 lokasi, 200 foto diedit + 50 editing halus
-                                    </li>
-                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone, 1 highlight
-                                        video</li>
-                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone, 1
-                                        video sorotan</li>
+                                    <li class="lang-content lang-en">3 locations</li>
+                                    <li class="lang-content lang-id d-none">3 lokasi</li>
+
+                                    <li class="lang-content lang-en">200 edited + 50 fine edited</li>
+                                    <li class="lang-content lang-id d-none">200 edited + 50 fine edited</li>
+
+                                    <li class="lang-content lang-en">2-3 minutes cinematic video with drone</li>
+                                    <li class="lang-content lang-id d-none">2-3 menit video sinematik dengan drone</li>
+
+                                    <li class="lang-content lang-en">1 highlight video</li>
+                                    <li class="lang-content lang-id d-none">1 video sorotan</li>
+
                                     <li>Via Google Drive</li>
-                                    <li class="lang-content lang-en">Makeup & hair with following, include retouch & 3-4
-                                        hairstyles</li>
-                                    <li class="lang-content lang-id d-none">Rias & rambut dengan pendampingan, termasuk
-                                        retouch & 3-4 gaya rambut</li>
+
+                                    <li class="lang-content lang-en">Makeup & hair with following</li>
+                                    <li class="lang-content lang-id d-none">Rias & rambut dengan pendampingan</li>
+
+                                    <li class="lang-content lang-en">Include retouch & 3-4 hairstyles</li>
+                                    <li class="lang-content lang-id d-none">Termasuk retouch & 3-4 gaya rambut</li>
+
                                     <li class="lang-content lang-en">3 Gowns</li>
                                     <li class="lang-content lang-id d-none">3 Gaun</li>
+
                                 </ul>
                                 <a href="/faqs#inquiry">
                                     <button type="button"
@@ -1175,7 +1072,24 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
+                <main class="container">
+                    <div
+                        class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
+
+                        <a href="{{ asset('concetta_prewedding_2025.pdf') }}" download
+                            class="btn mb-4 btn-lg btn-primary px-4 me-md-2 lang-content lang-en">
+                            Download Price List PDF
+                        </a>
+
+                        <a href="{{ asset('concetta_prewedding_2025.pdf') }}" download
+                            class="btn mb-4 btn-lg btn-primary px-4 me-md-2 lang-content lang-id d-none">
+                            Unduh PDF Daftar Harga
+                        </a>
+
+                    </div>
+                </main>
+
+                <div class="col-12 col-md-10 mt-2 col-lg-8 mx-auto mb-3 custom-border"></div>
 
                 <h2 class="display-7 text-center my-4 custom-text">
                     <span class="lang-content lang-en">Transportation Fee</span>
@@ -1325,7 +1239,7 @@
         </div>
     </section>
 
-    <section id="hooking">
+    <section id="hook">
         <main class="container">
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
@@ -1349,47 +1263,7 @@
     </section>
 
     <section id="footer">
-        <hr class="featurette-divider mt-0">
-
-        <div class="container-fluid">
-            <footer class="py-4 my-4">
-                <div
-                    class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
-
-                    <div class="order-2 order-md-0 mt-3 mt-md-0 ms-xl-3 ms-md-3">
-                        <span class="text-body-secondary copyright-text">© 2025 Concetta Photos</span>
-                    </div>
-
-                    <ul
-                        class="nav justify-content-center justify-content-md-end list-unstyled d-flex order-1 order-md-1 me-xl-3 me-md-3">
-                        <li>
-                            <a class="text-body-secondary" href="https://www.instagram.com/concettaphotos/"
-                                aria-label="Instagram">
-                                <img src="{{ asset('instagram_logo.png') }}" width="28" height="28" alt="Instagram" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary"
-                                href="https://www.tiktok.com/@concettaphotos?is_from_webapp=1&sender_device=pc"
-                                aria-label="Tiktok">
-                                <img src="{{ asset('tiktok_logo.png') }}" width="28" height="28" alt="Tiktok" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary" href="https://www.threads.com/@concettaphotos"
-                                aria-label="Threads">
-                                <img src="{{ asset('thread_logo.png') }}" width="28" height="28" alt="Threads" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary" href="https://x.com/ConcettaPhotos_" aria-label="Twitter">
-                                <img src="{{ asset('twitter_logo.png') }}" width="28" height="28" alt="Twitter" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
-        </div>
+        @include('partials.footer')
     </section>
 
     <script>
@@ -1419,7 +1293,7 @@
                 }
             }
 
-            const savedLang = localStorage.getItem("selectedLang") || "en";
+            const savedLang = localStorage.getItem("selectedLang") || "id";
             updateLanguageUI(savedLang);
 
             switches.forEach(switcher => {
@@ -1438,6 +1312,83 @@
             offcanvasEl.querySelectorAll('a.nav-link, a.accordion-button, a.text-decoration-none').forEach(function (link) {
                 link.addEventListener('click', function () {
                     offcanvas.hide();
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
+            let manuallyOpened = null;
+
+            document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+
+            submenuToggles.forEach(toggle => {
+                const parentLi = toggle.parentElement;
+                const submenu = toggle.nextElementSibling;
+
+                parentLi.addEventListener('mouseenter', () => {
+                    if (manuallyOpened !== submenu) {
+                        submenu.classList.add('show');
+                    }
+                });
+
+                parentLi.addEventListener('mouseleave', () => {
+                    if (manuallyOpened !== submenu) {
+                        submenu.classList.remove('show');
+                    }
+                });
+
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const isOpen = submenu.classList.contains('show');
+
+                    if (manuallyOpened === submenu) {
+                        submenu.classList.remove('show');
+                        manuallyOpened = null;
+                    } else {
+                        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                            menu.classList.remove('show');
+                        });
+
+                        submenu.classList.add('show');
+                        manuallyOpened = submenu;
+                    }
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.dropdown-menu')) {
+                    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                        menu.classList.remove('show');
+                    });
+                    manuallyOpened = null;
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const submenu = this.nextElementSibling;
+
+                    const isShown = submenu.classList.contains('show');
+
+                    document.querySelectorAll('.submenu-list').forEach(list => {
+                        list.classList.remove('show');
+                    });
+
+                    if (!isShown) {
+                        submenu.classList.add('show');
+                    }
                 });
             });
         });

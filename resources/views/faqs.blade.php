@@ -168,7 +168,7 @@
             color: #f7f7f7 !important;
             font-family: "Jost", sans-serif !important;
             font-optical-sizing: auto !important;
-            font-weight: 400 !important;
+            font-weight: 400;
             font-style: normal !important;
         }
 
@@ -194,6 +194,14 @@
             font-optical-sizing: auto !important;
             font-weight: 700 !important;
             font-style: normal !important;
+        }
+
+        .responsive-text {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            text-align: center;
         }
 
         .custom-border {
@@ -379,6 +387,43 @@
         .custom-dropdown .dropdown-toggle:not(.collapsed)::after {
             transform: rotate(180deg) !important;
         }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 100% !important;
+            margin-top: -0.25rem !important;
+            z-index: 1000 !important;
+        }
+
+        .dropdown-submenu .dropdown-menu.show {
+            display: block !important;
+        }
+
+        .submenu-arrow {
+            font-size: 20px;
+            margin-left: auto;
+            margin-bottom: 2px;
+        }
+
+        .dropdown-submenu>.dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-submenu>.dropdown-toggle::after {
+            display: none !important;
+        }
+
+        .submenu-list {
+            display: none;
+        }
+
+        .submenu-list.show {
+            display: block;
+        }
     </style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -395,279 +440,16 @@
 
 <body>
     <section id="header">
-        <header id="mainHeader"
-            class="d-flex align-items-center justify-content-between py-3 position-fixed top-0 start-0 w-100 z-3 transition-header">
-            <div class="d-none d-xl-flex align-items-start px-2" style="width: 306.97px;">
-
-                <div class="lang-toggle mx-auto">
-                    <input type="checkbox" id="langSwitch">
-                    <label for="langSwitch">
-                        <span class="switch-thumb"></span>
-                    </label>
-                </div>
-
-            </div>
-
-            <div class="d-none d-xl-flex align-items-center gap-4 mx-auto">
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/#opening" class="nav-link lang-content lang-en">CONCETTA
-                        TEAM</a>
-                    <a href="/#opening" class="nav-link lang-content lang-id d-none">TIM CONCETTA</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-en"
-                        data-bs-toggle="dropdown">ABOUT</a>
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-id d-none"
-                        data-bs-toggle="dropdown">TENTANG</a>
-                    <ul class="dropdown-menu fs-7 py-2 custom-text-0">
-                        <li><a class="dropdown-item" href="/about">CONCETTA PHOTOS</a></li>
-                        <li><a class="dropdown-item lang-content lang-en" href="/about#tac">TERMS AND CONDITIONS</a>
-                        </li>
-                        <li><a class="dropdown-item lang-content lang-id d-none" href="/about#tac">SYARAT DAN
-                                KETENTUAN</a></li>
-                        <li><a class="dropdown-item lang-content lang-en" href="/#testimonial">TESTIMONIALS</a>
-                        </li>
-                        <li><a class="dropdown-item lang-content lang-id d-none" href="/#testimonial">TESTIMONI</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/concettalk" class="nav-link">CONCETTALK</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="70px">
-                    </a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/pricelist" class="nav-link lang-content lang-en">PRICE LIST</a>
-                    <a href="/pricelist" class="nav-link lang-content lang-id d-none">DAFTAR HARGA</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/faqs" class="nav-link">FAQs</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-en"
-                        data-bs-toggle="dropdown">GALLERY</a>
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-id d-none"
-                        data-bs-toggle="dropdown">GALERI</a>
-                    <ul class="dropdown-menu fs-7 py-2 custom-text-0">
-                        <li><a class="dropdown-item" href="/gallery#holiday">HOLIDAY</a></li>
-                        <li><a class="dropdown-item" href="/gallery#couple">COUPLE</a></li>
-                        <li><a class="dropdown-item" href="/gallery#family">FAMILY</a></li>
-                        <li><a class="dropdown-item" href="/gallery#prewedding">PREWEDDING</a></li>
-                        <li><a class="dropdown-item" href="/gallery#wedding">WEDDING</a></li>
-                        <li><a class="dropdown-item" href="/gallery#brandphotoshoot">BRAND PHOTOSHOOT</a></li>
-                    </ul>
-                </li>
-            </div>
-
-            <div class="d-none d-xl-block text-end">
-                @if (Route::has('login'))
-                    <nav>
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary me-2 lang-content lang-en">COME IN</a>
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary me-2 lang-content lang-id d-none">MASUK</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary mx-2 my-2 lang-content lang-en">YOUR
-                                INQUIRIES</a>
-                            <a href="{{ route('login') }}"
-                                class="btn btn-outline-primary mx-2 my-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary mx-2 my-2 lang-content lang-en">BE
-                                    MEMBER</a>
-                                <a href="{{ route('register') }}"
-                                    class="btn btn-primary mx-2 my-2 lang-content lang-id d-none">GABUNG</a>
-                            @endif
-                        @endauth
-                    </nav>
-                @endif
-            </div>
-
-            <div class="d-flex align-items-center d-xl-none w-100 justify-content-between px-3">
-                <button class="btn p-0 bg-transparent border-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileMenu" aria-controls="mobileMenu" style="width: 32px; height: 32px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#444" class="bi bi-list icon"
-                        viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                    </svg>
-                </button>
-
-                <a href="{{ url('/') }}">
-                    <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="56px">
-                </a>
-
-                <div class="lang-toggle">
-                    <input type="checkbox" id="langSwitch1">
-                    <label for="langSwitch1">
-                        <span class="switch-thumb"></span>
-                    </label>
-                </div>
-            </div>
-
-
-        </header>
-
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-            <div class="offcanvas-header position-relative justify-content-center">
-                <h5 class="offcanvas-title m-0">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="56px">
-                    </a>
-                </h5>
-
-                <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="accordion" id="accordionMenu">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/#opening') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-en">
-                                CONCETTA TEAM
-                            </a>
-                            <a href="{{ url('/#opening') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-id d-none">
-                                TIM CONCETTA
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-about">
-                            <button class="accordion-button collapsed btn-primary lang-content lang-en" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse-about" aria-expanded="false"
-                                aria-controls="collapse-about">
-                                ABOUT
-                            </button>
-                            <button class="accordion-button collapsed btn-primary lang-content lang-id d-none"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-about"
-                                aria-expanded="false" aria-controls="collapse-about">
-                                TENTANG
-                            </button>
-                        </h2>
-                        <div id="collapse-about" class="accordion-collapse collapse" aria-labelledby="heading-about"
-                            data-bs-parent="#accordionMenu">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a class="nav-link text-start" href="{{ url('/about') }}">CONCETTA PHOTOS</a>
-                                    </li>
-                                    <li><a class="nav-link text-start lang-content lang-en"
-                                            href="{{ url('/about#tac') }}">TERMS AND
-                                            CONDITIONS</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-id d-none"
-                                            href="{{ url('/about#tac') }}">SYARAT DAN KETENTUAN</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-en"
-                                            href="{{ url('/#testimonial') }}">TESTIMONIALS</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-id d-none"
-                                            href="{{ url('/#testimonial') }}">TESTIMONI</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/concettalk') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown">
-                                CONCETTALK
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/pricelist') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-en">
-                                PRICE LIST
-                            </a>
-                            <a href="{{ url('/pricelist') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-id d-none">
-                                DAFTAR HARGA
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-faqs">
-                            <a href="{{ url('/faqs') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown">
-                                FAQs
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-gallery">
-                            <button class="accordion-button collapsed btn-primary lang-content lang-en" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse-gallery" aria-expanded="false"
-                                aria-controls="collapse-gallery">
-                                GALLERY
-                            </button>
-                            <button class="accordion-button collapsed btn-primary lang-content lang-id d-none"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-gallery"
-                                aria-expanded="false" aria-controls="collapse-gallery">
-                                GALERI
-                            </button>
-                        </h2>
-                        <div id="collapse-gallery" class="accordion-collapse collapse" aria-labelledby="heading-gallery"
-                            data-bs-parent="#accordionMenu">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#holiday') }}">HOLIDAY</a>
-                                    </li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#couple') }}">COUPLE</a>
-                                    </li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#family') }}">FAMILY</a>
-                                    </li>
-                                    <li><a class="nav-link text-start"
-                                            href="{{ url('/gallery#prewedding') }}">PREWEDDING</a></li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#wedding') }}">WEDDING</a>
-                                    </li>
-                                    <li><a class="nav-link text-start"
-                                            href="{{ url('/gallery#brandphotoshoot') }}">BRAND
-                                            PHOTOSHOOT</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary w-100 mb-2 lang-content lang-en">COME
-                                IN</a>
-                            <a href="{{ url('/dashboard') }}"
-                                class="btn btn-primary w-100 mb-2 lang-content lang-id d-none">MASUK</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary w-100 mb-2 lang-content lang-en">YOUR
-                                INQUIRIES</a>
-                            <a href="{{ route('login') }}"
-                                class="btn btn-outline-primary w-100 mb-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-en">BE MEMBER</a>
-                                <a href="{{ route('register') }}"
-                                    class="btn btn-primary w-100 lang-content lang-id d-none">GABUNG</a>
-                            @endif
-                        @endauth
-                    @endif
-                </div>
-            </div>
-        </div>
+        @include('partials.navbar')
     </section>
 
     <section id="picture" class="position-relative">
-        <div class="position-relative w-100" style="height: 636px;">
+        <div class="position-relative w-100 d-none d-lg-flex" style="height: 636px;">
             <img src="{{ asset('faqs.jpg') }}" alt="about picture"
+                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+        </div>
+        <div class="position-relative w-100 d-flex d-lg-none" style="height: 636px;">
+            <img src="{{ asset('faqs_mobile.jpg') }}" alt="about picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
     </section>
@@ -684,33 +466,19 @@
                 <div class="dropdown custom-dropdown w-100 mb-3">
                     <button
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
-                        type="button" data-bs-toggle="collapse" data-bs-target="#generalContent" aria-expanded="false"
-                        aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        type="button" data-bs-toggle="collapse" data-bs-target="#photoSessionBooking"
+                        aria-expanded="false" aria-controls="preweddingContent">
                         <span>
-                            <h2 class="fw-bold custom-text-0 lang-content lang-en mb-0">General Question</h2>
-                            <h2 class="fw-bold custom-text-0 lang-content lang-id d-none mb-0">Pertanyaan Umum</h2>
+                            <h2 class="custom-text-0 responsive-text lang-content lang-en mb-0">
+                                Photo
+                                Session Booking</h2>
+                            <h2 class="custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Booking Sesi Foto</h2>
                         </span>
                     </button>
 
-                    <div class="collapse mt-3" id="generalContent">
+                    <div class="collapse mt-3 px-4" id="photoSessionBooking">
                         <div class="row g-4">
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">Hi
-                                    there!
-                                    How can we help you
-                                    today?</div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Hai
-                                    ada yang bisa dibantu?</div>
-                            </div>
-
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
@@ -822,6 +590,27 @@
                                     Maksimal booking sesi foto H-1 dari tanggal yang diinginkan klien. Kami sangat tidak
                                     menyarankan dan tidak akan memproses booking dadakan pada hari H sesi foto.</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#discountContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Photo Packages
+                                Promotion/Discount</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Promosi/Diskon
+                                Paket Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="discountContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -863,6 +652,28 @@
                                     tiktok)
                                     untuk mengetahui info promo terbaru.</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#feesContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Location Fees &
+                                Transportation
+                                Fees</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Retribusi
+                                Lokasi & Biaya
+                                Transportasi</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="feesContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -900,6 +711,29 @@
                                     sepenuhnya oleh klien dan klien yang
                                     akan membayarnya langsung di lokasi kepada petugas.</div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#bestTimeContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Best Time of Day
+                                for a Photo
+                                Session</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Waktu/Jam
+                                yang Tepat
+                                untuk Sesi Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="bestTimeContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -945,6 +779,27 @@
                                     silau.</div>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#videoContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Video Package
+                                Without Photos</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Paket
+                                Video Tanpa Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="videoContent">
+                        <div class="row g-4">
+
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
@@ -981,6 +836,27 @@
                                     dengan
                                     menambah add-on pada sesi foto.</div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#durationContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Change Plan
+                                After Down Payment</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Perubahan
+                                Rencana Setelah DP</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="durationContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1023,6 +899,27 @@
                                     ataupun atas saran tim fotografer kami.</div>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#rainingContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Raining when
+                                Photo Session</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Hujan
+                                saat Sesi Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="rainingContent">
+                        <div class="row g-4">
+
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
@@ -1062,6 +959,26 @@
                                     harinya
                                     atau sesuai kesepakatan.</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#lateContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Arrives Late for
+                                the Photo Session</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Datang
+                                Terlambat saat Sesi Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="lateContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1099,6 +1016,26 @@
                                     dihitung
                                     sesuai jadwal baik klien sudah datang atau belum.</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#portfolioContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Photo Portfolio
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Portofolio Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="portfolioContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1132,6 +1069,26 @@
                                     bisa langsung cek di
                                     Instagram atau tiktok kami @concettaphotos</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#propertyContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Photo Property
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Properti Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="propertyContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1166,6 +1123,27 @@
                                     Bisa
                                     langsung didiskusikan dengan tim fotografer kami.</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#chooseContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Choosing Photos
+                                after Photo Session
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Memilih Foto setelah Sesi Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="chooseContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1203,6 +1181,28 @@
                                     terbaik.
                                     Klien hanya perlu duduk manis dan menunggu foto selesai :)</div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#whenContent" aria-expanded="false"
+                        aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Time to Receive
+                                the Final Photos
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Waktu untuk Menerima Foto Final</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="whenContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1244,6 +1244,28 @@
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#receiveAllContent"
+                        aria-expanded="false" aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Acceptable Photo
+                                Limits
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Batasan Foto yang Diterima</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="receiveAllContent">
+                        <div class="row g-4">
+
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
@@ -1280,6 +1302,28 @@
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#activeLinkContent"
+                        aria-expanded="false" aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Google Drive
+                                Link Active Duration
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Lama Aktif Link Google Drive</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="activeLinkContent">
+                        <div class="row g-4">
+
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
@@ -1310,6 +1354,28 @@
                                     Bulan
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#unactiveLinkContent"
+                        aria-expanded="false" aria-controls="preweddingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">If Google Drive
+                                Link Unactive
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Jika Link Google Drive Mati</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="unactiveLinkContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1350,6 +1416,28 @@
                                     kembali.
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#rescheduleLinkContent"
+                        aria-expanded="false" aria-controls="rescheduleContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Reschedule Photo
+                                Session Date
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Reschedule Tanggal Sesi Foto</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="rescheduleLinkContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1394,7 +1482,8 @@
                                     <path
                                         d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
                                 </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en mb-0">
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en mb-0">
                                     Rescheduling
                                     a photo session on
                                     the day of the shoot is not allowed. If you still wish to reschedule, clients are
@@ -1413,6 +1502,7 @@
                                     pricelist.
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -1420,17 +1510,36 @@
                 <div class="dropdown custom-dropdown w-100 mb-3">
                     <button
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
-                        type="button" data-bs-toggle="collapse" data-bs-target="#holidayContent" aria-expanded="false"
-                        aria-controls="preweddingContent">
+                        type="button" data-bs-toggle="collapse" data-bs-target="#photoVideoBookingContent"
+                        aria-expanded="false" aria-controls="photoVideoBookingContent">
                         <div style="height: fit-content"></div>
                         <span>
-                            <h2 class="fw-bold custom-text-0 lang-content lang-en mb-0">Holiday & Family Session</h2>
-                            <h2 class="fw-bold custom-text-0 lang-content lang-id d-none mb-0">Sesi Holiday & Family</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Book Photo &
+                                Video Session</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Booking
+                                Sesi Foto & Video</h2>
                         </span>
                     </button>
 
-                    <div class="collapse mt-3" id="holidayContent">
+                    <div class="collapse mt-3 px-4" id="photoVideoBookingContent">
                         <div class="row g-4">
+
+                            <div class="chat-entry client">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    Does the holiday & family photo package include video?
+                                </div>
+                                <div
+                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
+                                    Apakah paket foto holiday & family sudah termasuk video?
+                                </div>
+                            </div>
+
                             <div class="chat-entry admin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
@@ -1438,206 +1547,11 @@
                                         d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
                                 </svg>
                                 <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
-                                    Anything
-                                    else?</div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Ada
-                                    lagi?</div>
-                            </div>
-
-                            <div class="chat-entry client">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
-                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    <path fill-rule="evenodd"
-                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
-                                    Does the
-                                    holiday & family photo
-                                    package
-                                    include video?
-                                </div>
-                                <div
-                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Apakah paket foto holiday &
-                                    family sudah termasuk video?
-                                </div>
-                            </div>
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">Not
-                                    including video</div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Tidak
-                                    termasuk video</div>
-                            </div>
-
-                            <div class="chat-entry client">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
-                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    <path fill-rule="evenodd"
-                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">Is
-                                    it
-                                    possible to book a photo
-                                    session
-                                    along with video coverage?
-                                </div>
-                                <div
-                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Apakah bisa booking sesi foto
-                                    sekaligus video?
-                                </div>
-                            </div>
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">Yes,
-                                    it’s
-                                    possible. Please chat
-                                    with our
-                                    admin to get the add-on price list for video coverage.</div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Bisa.
-                                    Silahkan chat admin kami
-                                    untuk mendapatkan pricelist add-on untuk harga video</div>
-                            </div>
-
-                            <div class="chat-entry client">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
-                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    <path fill-rule="evenodd"
-                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">For
-                                    a
-                                    family session, do the
-                                    photos need to
-                                    be taken together, or can individuals also have their own photos?
-                                </div>
-                                <div
-                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Kalau booking family session
-                                    apakah fotonya harus bareng-bareng terus atau bisa foto sendiri-sendiri juga?
-                                </div>
-                            </div>
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">You
-                                    have the
-                                    flexibility to
-                                    choose. As long
-                                    as it is within the booked session time, clients can opt for group photos or
-                                    individual
-                                    portraits, without any restrictions.</div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Bebas. Selama masih dalam waktu
-                                    sesi foto yang telah dibooking, klien dibebaskan jika ingin foto bersama atau foto
-                                    portrait
-                                    sendiri tanpa terkecuali.</div>
-                            </div>
-
-                            <div class="chat-entry client">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
-                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    <path fill-rule="evenodd"
-                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">Can
-                                    the
-                                    2-hour Holiday & Family
-                                    package be
-                                    split into different times (morning and afternoon) or different days (today and
-                                    tomorrow)?
-                                </div>
-                                <div
-                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Apakah paket holiday & family 2
-                                    jam bisa dibagi beda waktu (pagi dan sore) atau beda hari (hari ini dan besok)?
-                                </div>
-                            </div>
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">No,
-                                    the
-                                    package is only valid for
-                                    the same
-                                    day and time.</div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Tidak
-                                    bisa. Paket hanya berlaku
-                                    di hari dan waktu yang sama.</div>
-                            </div>
-
-                            <div class="chat-entry client">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
-                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    <path fill-rule="evenodd"
-                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">If
-                                    there
-                                    are multiple photo
-                                    spots within
-                                    one location (such as a beach, garden, etc.), is it still considered as one
-                                    location?
-                                </div>
-                                <div
-                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Jika
-                                    dalam 1 lokasi terdapat
-                                    beberapa spot foto
-                                    (misalnya pantai, taman,
-                                    dll), apakah itu tetap
-                                    dianggap sebagai 1 lokasi?
-                                </div>
-                            </div>
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">Yes,
-                                    as long
-                                    as the photo spots
-                                    (such as a
-                                    beach, garden, etc.) are within the same area, it will still be considered as one
-                                    location.
+                                    Not including video
                                 </div>
                                 <div
                                     class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Iya,
-                                    selama spot foto tersebut
-                                    (misalnya pantai, taman, dll) berada dalam 1 area yang sama, maka itu tetap dianggap
-                                    sebagai
-                                    1 lokasi.
+                                    Tidak termasuk video
                                 </div>
                             </div>
 
@@ -1649,34 +1563,239 @@
                                         d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
                                 </svg>
                                 <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
-                                    Will I
-                                    receive all the photo
-                                    files?
+                                    Is it possible to book a photo session along with video coverage?
+                                </div>
+                                <div
+                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
+                                    Apakah bisa booking sesi foto sekaligus video?
+                                </div>
+                            </div>
+
+                            <div class="chat-entry admin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                                </svg>
+                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
+                                    Yes, it’s possible. Please chat with our admin to get the add-on price list for
+                                    video coverage.
+                                </div>
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
+                                    Bisa. Silahkan chat admin kami untuk mendapatkan pricelist add-on untuk harga video
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#familySessionContent"
+                        aria-expanded="false" aria-controls="familySessionContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Family Session
+                                Photo Options</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Pilihan Foto Sesi Keluarga</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="familySessionContent">
+                        <div class="row g-4">
+
+                            <div class="chat-entry client">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    For a family session, do the photos need to be taken together, or can individuals
+                                    also have their own photos?
+                                </div>
+                                <div
+                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
+                                    Kalau booking family session apakah fotonya harus bareng-bareng terus atau bisa foto
+                                    sendiri-sendiri juga?
+                                </div>
+                            </div>
+
+                            <div class="chat-entry admin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                                </svg>
+                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
+                                    You have the flexibility to choose. As long as it is within the booked session time,
+                                    clients can opt for group photos or individual portraits, without any restrictions.
+                                </div>
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
+                                    Bebas. Selama masih dalam waktu sesi foto yang telah dibooking, klien dibebaskan
+                                    jika ingin foto bersama atau foto portrait sendiri tanpa terkecuali.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#splitPackageContent"
+                        aria-expanded="false" aria-controls="splitPackageContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                                Splitting Time from Package
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Pembagian Waktu dari Paket
+                            </h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="splitPackageContent">
+                        <div class="row g-4">
+
+                            <div class="chat-entry client">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    Can the 2-hour Holiday & Family package be split into different times (morning and
+                                    afternoon) or different days (today and tomorrow)?
+                                </div>
+                                <div
+                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
+                                    Apakah paket Holiday & Family 2 jam bisa dibagi beda waktu (pagi dan sore) atau beda
+                                    hari (hari ini dan besok)?
+                                </div>
+                            </div>
+
+                            <div class="chat-entry admin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                                </svg>
+                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
+                                    No, the package is only valid for the same day and time.
+                                </div>
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
+                                    Tidak bisa. Paket hanya berlaku di hari dan waktu yang sama.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#multipleSpotContent"
+                        aria-expanded="false" aria-controls="multipleSpotContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                                Multiple Photo Spots in One Location
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Beberapa Spot Foto dalam Satu Lokasi
+                            </h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="multipleSpotContent">
+                        <div class="row g-4">
+
+                            <div class="chat-entry client">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    If there are multiple photo spots within one location (such as a beach, garden,
+                                    etc.), is it still considered as one location?
+                                </div>
+                                <div
+                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
+                                    Jika dalam 1 lokasi terdapat beberapa spot foto (misalnya pantai, taman, dll),
+                                    apakah itu tetap dianggap sebagai 1 lokasi?
+                                </div>
+                            </div>
+
+                            <div class="chat-entry admin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                                </svg>
+                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
+                                    Yes, as long as the photo spots (such as a beach, garden, etc.) are within the same
+                                    area, it will still be considered as one location.
+                                </div>
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
+                                    Iya, selama spot foto tersebut (misalnya pantai, taman, dll) berada dalam 1 area
+                                    yang sama, maka itu tetap dianggap sebagai 1 lokasi.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#photoFilesContent"
+                        aria-expanded="false" aria-controls="photoFilesContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                                Getting All Photo Files
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Mendapatkan Semua File Foto
+                            </h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="photoFilesContent">
+                        <div class="row g-4">
+
+                            <div class="chat-entry client">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    Will I receive all the photo files?
                                 </div>
                                 <div
                                     class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
                                     Apakah dapat semua file foto?
                                 </div>
                             </div>
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">No,
-                                    the
-                                    number of photo files
-                                    clients will
-                                    receive is stated in the pricelist and varies depending on the selected session
-                                    duration.
-                                </div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Tidak. Jumlah file foto yang akan
-                                    klien dapatkan tertera pada pricelist (berbeda setiap durasi foto yang dipilih).
-                                </div>
-                            </div>
+
                             <div class="chat-entry admin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
@@ -1684,135 +1803,55 @@
                                         d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
                                 </svg>
                                 <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
-                                    However, if
-                                    clients wish to
-                                    receive all
-                                    photo files, please contact our admin to get the add-on pricelist for all files.
+                                    No, the number of photo files clients will receive is stated in the pricelist and
+                                    varies depending on the selected session duration.
                                 </div>
                                 <div
                                     class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Namun, jika klien ingin
-                                    mendapatkan semua file foto maka mendapatkan pricelist add-on
-                                    silahkan chat admin untuk
-                                    untuk all files
+                                    Tidak. Jumlah file foto yang akan klien dapatkan tertera pada pricelist (berbeda
+                                    setiap durasi foto yang dipilih).
                                 </div>
                             </div>
 
-                            <div class="chat-entry client">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
-                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    <path fill-rule="evenodd"
-                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">Can
-                                    I
-                                    request edits such as
-                                    slimming arms, contouring the face, removing scars, etc.?
-                                </div>
-                                <div
-                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Apakah bisa request edit
-                                    mengecilkan
-                                    lengan/meniruskan
-                                    muka/menghilangkan bekas
-                                    luka/dll?
-                                </div>
-                            </div>
                             <div class="chat-entry admin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
                                     <path
                                         d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
                                 </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en mb-0">Yes,
-                                    it's
-                                    possible, but
-                                    additional charges will apply. Please contact our admin to receive the add-on
-                                    pricelist for
-                                    fine editing.
+                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
+                                    However, if clients wish to receive all photo files, please contact our admin to get
+                                    the add-on pricelist for all files.
                                 </div>
                                 <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none mb-0">
-                                    Bisa,
-                                    namun klien akan dikenakan
-                                    biaya tambahan lagi. Silahkan chat admin kami untuk mendapatkan pricelist add-on
-                                    fine
-                                    editing
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
+                                    Namun, jika klien ingin mendapatkan semua file foto maka silakan hubungi admin untuk
+                                    mendapatkan pricelist add-on untuk all files.
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
 
-
-
-                <div class="dropdown custom-dropdown w-100">
+                <div class="dropdown custom-dropdown w-100 mb-3">
                     <button
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
-                        type="button" data-bs-toggle="collapse" data-bs-target="#preweddingContent"
-                        aria-expanded="false" aria-controls="preweddingContent">
+                        type="button" data-bs-toggle="collapse" data-bs-target="#fineEditContent" aria-expanded="false"
+                        aria-controls="fineEditContent">
                         <div style="height: fit-content"></div>
                         <span>
-                            <h2 class="fw-bold custom-text-0 lang-content lang-en mb-0">Prewedding Session</h2>
-                            <h2 class="fw-bold custom-text-0 lang-content lang-id d-none mb-0">Sesi Prewedding</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                                Requesting Fine Editing
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Request Fine Editing
+                            </h2>
                         </span>
                     </button>
 
-                    <div class="collapse mt-3" id="preweddingContent">
+                    <div class="collapse mt-3 px-4" id="fineEditContent">
                         <div class="row g-4">
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">Is
-                                    there
-                                    anything else?</div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Ada
-                                    pertanyaan lagi?</div>
-                            </div>
-                            <div class="chat-entry client">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
-                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    <path fill-rule="evenodd"
-                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
-                                    What
-                                    editing processes are
-                                    involved?
-                                </div>
-                                <div
-                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Apa
-                                    saja proses editing yang
-                                    dilakukan?
-                                </div>
-                            </div>
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">The
-                                    editing
-                                    processes include
-                                    tone editing and fine editing. Tone editing involves adjustments to exposure,
-                                    contrast, and
-                                    similar aspects. Fine editing involves more detailed retouching and adjustments.
-                                </div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Editing tone dan fine editing.
-                                    Editing hanya editing tone seperti exposure, contrast, dll.
-                                </div>
-                            </div>
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1822,37 +1861,54 @@
                                         d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
                                 </svg>
                                 <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
-                                    What are
-                                    cinematic and highlight
-                                    videos?
+                                    Can I request edits such as slimming arms, contouring the face, removing scars,
+                                    etc.?
                                 </div>
                                 <div
                                     class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Apa
-                                    itu cinematic dan highlight
-                                    video?
+                                    Apakah bisa request edit mengecilkan lengan, meniruskan muka, menghilangkan bekas
+                                    luka, dan lain-lain?
                                 </div>
                             </div>
+
                             <div class="chat-entry admin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
                                     <path
                                         d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
                                 </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">A
-                                    cinematic
-                                    video is a
-                                    full-length video capturing the event in a comprehensive and artistic manner. A
-                                    highlight
-                                    video is a shorter summary or teaser of the main video, showcasing key moments.
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en mb-0">
+                                    Yes, it's possible, but additional charges will apply. Please contact our admin to
+                                    receive the add-on pricelist for fine editing.
                                 </div>
                                 <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Cinematic video adalah video
-                                    secara keseluruhan. Highlight video adalah video ringkasan atau teaser dari video
-                                    utama.
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none mb-0">
+                                    Bisa, namun klien akan dikenakan biaya tambahan lagi. Silakan chat admin kami untuk
+                                    mendapatkan pricelist add-on fine editing.
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#editingProcessContent"
+                        aria-expanded="false" aria-controls="editingProcessContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Editing Process
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Proses
+                                Editing</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="editingProcessContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1861,17 +1917,15 @@
                                     <path fill-rule="evenodd"
                                         d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
                                 </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">Who
-                                    are the
-                                    vendors for makeup
-                                    artists (MUA) and dresses?
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    What editing processes are involved?
                                 </div>
                                 <div
                                     class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Siapa saja vendor untuk MUA dan
-                                    gaunnya?
+                                    Apa saja proses editing yang dilakukan?
                                 </div>
                             </div>
+
                             <div class="chat-entry admin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
@@ -1879,16 +1933,37 @@
                                         d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
                                 </svg>
                                 <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
-                                    Currently,
-                                    we partner with Mutha
-                                    Wicaksana for makeup and hairdo, and with Carli Gown for dresses.
+                                    The editing processes include tone editing and fine editing. Tone editing involves
+                                    adjustments to exposure, contrast, and similar aspects. Fine editing involves more
+                                    detailed retouching and adjustments.
                                 </div>
                                 <div
                                     class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Sementara ini kami bekerjasama
-                                    untuk MUA dan hairdo dengan Mutha Wicaksana dan gaun dengan Carli Gown
+                                    Editing tone dan fine editing. Editing hanya editing tone seperti exposure,
+                                    contrast, dll.
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#cinematicHighlightContent"
+                        aria-expanded="false" aria-controls="cinematicHighlightContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Cinematic vs
+                                Highlight Video</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Cinematic
+                                vs Highlight Video</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="cinematicHighlightContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1898,58 +1973,14 @@
                                         d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
                                 </svg>
                                 <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
-                                    What does
-                                    "makeup & hairdo
-                                    with/out following" mean?
+                                    What are cinematic and highlight videos?
                                 </div>
                                 <div
                                     class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Apa
-                                    itu make up & hairdo
-                                    with/out following?
-                                </div>
-                            </div>
-                            <div class="chat-entry admin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
-                                </svg>
-                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">If
-                                    "with
-                                    following," the MUA and
-                                    hairdo team will stay at the location until the photo session is complete. If
-                                    "without
-                                    following," the MUA and hairdo team will only work before the photo session starts.
-                                </div>
-                                <div
-                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Kalau
-                                    with following maka tim MUA
-                                    dan hairdo akan ikut ke lokasi foto sampai selesai. Kalau without following maka tim
-                                    MUA dan
-                                    hairdo hanya bekerja sebelum sesi foto dimulai
+                                    Apa itu cinematic dan highlight video?
                                 </div>
                             </div>
 
-                            <div class="chat-entry client">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
-                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                    <path fill-rule="evenodd"
-                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">How
-                                    is the
-                                    process for selecting
-                                    photos for fine editing?
-                                </div>
-                                <div
-                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
-                                    Bagaimana mekanisme pemilihan
-                                    foto untuk fine editing?
-                                </div>
-                            </div>
                             <div class="chat-entry admin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
@@ -1957,20 +1988,42 @@
                                         d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
                                 </svg>
                                 <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
-                                    Photos
-                                    selected for fine editing
-                                    are chosen directly by the client, along with details or requests for specific
-                                    edits.
+                                    A cinematic video is a full-length video capturing the event in a comprehensive and
+                                    artistic manner.
+                                    A highlight video is a shorter summary or teaser of the main video, showcasing key
+                                    moments.
                                 </div>
                                 <div
                                     class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
-                                    Foto
-                                    yang dipilih untuk tahap
-                                    fine editing dipilih langsung oleh klien beserta keterangan/request bagian apa saja
-                                    yang
-                                    harus diedit
+                                    Cinematic video adalah video berdurasi penuh yang merekam acara secara menyeluruh
+                                    dan artistik.
+                                    Highlight video adalah versi singkat atau teaser dari video utama, menampilkan
+                                    momen-momen penting.
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#vendorMuaDressContent"
+                        aria-expanded="false" aria-controls="vendorMuaDressContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                                Vendor for MUA & Dress
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Vendor untuk MUA & Gaun
+                            </h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="vendorMuaDressContent">
+                        <div class="row g-4">
 
                             <div class="chat-entry client">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -1979,16 +2032,187 @@
                                     <path fill-rule="evenodd"
                                         d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
                                 </svg>
-                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">How
-                                    long
-                                    does the fine editing
-                                    process take?
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    Who are the vendors for makeup artists (MUA) and dresses?
+                                </div>
+                                <div
+                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
+                                    Siapa saja vendor untuk MUA dan gaunnya?
+                                </div>
+                            </div>
+
+                            <div class="chat-entry admin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                                </svg>
+                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
+                                    Currently, we partner with Mutha Wicaksana for makeup and hairdo, and with Carli
+                                    Gown for dresses.
+                                </div>
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
+                                    Sementara ini kami bekerjasama untuk MUA dan hairdo dengan Mutha Wicaksana dan gaun
+                                    dengan Carli Gown.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#makeupHairdoContent"
+                        aria-expanded="false" aria-controls="makeupHairdoContent">
+                        <div style="height: fit-content"></div>
+
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                                Makeup & Hairdo with/out Following
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Makeup & Hairdo with/out Following
+                            </h2>
+                        </span>
+
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="makeupHairdoContent">
+                        <div class="row g-4">
+
+                            <div class="chat-entry client">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    What does "makeup & hairdo with/out following" mean?
+                                </div>
+                                <div
+                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
+                                    Apa itu makeup & hairdo with/out following?
+                                </div>
+                            </div>
+
+                            <div class="chat-entry admin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                                </svg>
+                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
+                                    If "with following," the MUA and hairdo team will stay at the location until the
+                                    photo session is complete.
+                                    If "without following," the MUA and hairdo team will only work before the photo
+                                    session starts.
+                                </div>
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
+                                    Kalau "with following", maka tim MUA dan hairdo akan ikut ke lokasi foto sampai
+                                    selesai.
+                                    Kalau "without following", maka tim MUA dan hairdo hanya bekerja sebelum sesi foto
+                                    dimulai.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#photoSelectionContent"
+                        aria-expanded="false" aria-controls="photoSelectionContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                                Photo Selection for Fine Editing
+                            </h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                                Pemilihan Foto untuk Fine Editing
+                            </h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="photoSelectionContent">
+                        <div class="row g-4">
+
+                            <div class="chat-entry client">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    How is the process for selecting photos for fine editing?
+                                </div>
+                                <div
+                                    class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
+                                    Bagaimana mekanisme pemilihan foto untuk fine editing?
+                                </div>
+                            </div>
+
+                            <div class="chat-entry admin">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                                </svg>
+                                <div class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-en">
+                                    Photos selected for fine editing are chosen directly by the client, along with
+                                    details or requests for specific edits.
+                                </div>
+                                <div
+                                    class="chat-bubble admin-bubble text-start custom-text-0 lang-content lang-id d-none">
+                                    Foto yang dipilih untuk tahap fine editing dipilih langsung oleh klien beserta
+                                    keterangan/request bagian apa saja yang harus diedit.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown custom-dropdown w-100 mb-3">
+                    <button
+                        class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#fineEditingContent"
+                        aria-expanded="false" aria-controls="fineEditingContent">
+                        <div style="height: fit-content"></div>
+                        <span>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Fine Editing
+                                Duration</h2>
+                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Durasi
+                                Fine Editing</h2>
+                        </span>
+                    </button>
+
+                    <div class="collapse mt-3 px-4" id="fineEditingContent">
+                        <div class="row g-4">
+
+                            <div class="chat-entry client">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-person-plus-fill icon" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                                <div class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-en">
+                                    How long does the fine editing process take?
                                 </div>
                                 <div
                                     class="chat-bubble client-bubble text-start custom-text-2 lang-content lang-id d-none">
                                     Berapa lama proses pengerjaan fine editing?
                                 </div>
                             </div>
+
                             <div class="chat-entry admin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-person-fill-lock icon" viewBox="0 0 16 16">
@@ -2003,9 +2227,11 @@
                                     Kurang lebih 7 hari.
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -2023,7 +2249,7 @@
             <h1 class="display-5 custom-text-3 mb-3">Inquiry</h1>
 
             <div class="form-center-wrapper d-flex justify-content-center align-items-center">
-                <div class="col-md-7 col-lg-8 p-5 px-5 pb-0">
+                <div class="col-md-7 col-lg-8 pb-0">
                     <form class="needs-validation" novalidate="">
                         <div class="row g-3 d-flex justify-content-center align-items-center">
                             <div class="col-6">
@@ -2215,11 +2441,12 @@
                             type="submit">Kirim</button>
                         <h2 class="display-10 custom-text lang-content lang-en">Or</h2>
                         <h2 class="display-10 custom-text lang-content lang-id d-none">Atau</h2>
-                        <a href="http://wa.me/6287762982309" class="btn btn-lg btn-primary my-3 lang-content lang-en"
-                            type="submit">Contact
+                        <a href="http://wa.me/6287762982309" class="btn btn-lg btn-primary mt-3 lang-content lang-en"
+                            type="submit" target="_blank" rel="noopener noreferrer">Contact
                             Us</a>
                         <a href="http://wa.me/6287762982309"
-                            class="btn btn-lg btn-primary my-3 lang-content lang-id d-none" type="submit">Hubungi
+                            class="btn btn-lg btn-primary mt-3 lang-content lang-id d-none" type="submit"
+                            target="_blank" rel="noopener noreferrer">Hubungi
                             Kami</a>
                     </form>
                 </div>
@@ -2228,47 +2455,7 @@
     </section>
 
     <section id="footer">
-        <hr class="featurette-divider mt-0">
-
-        <div class="container-fluid">
-            <footer class="py-4 my-4">
-                <div
-                    class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
-
-                    <div class="order-2 order-md-0 mt-3 mt-md-0 ms-xl-3 ms-md-3">
-                        <span class="text-body-secondary copyright-text">© 2025 Concetta Photos</span>
-                    </div>
-
-                    <ul
-                        class="nav justify-content-center justify-content-md-end list-unstyled d-flex order-1 order-md-1 me-xl-3 me-md-3">
-                        <li>
-                            <a class="text-body-secondary" href="https://www.instagram.com/concettaphotos/"
-                                aria-label="Instagram">
-                                <img src="{{ asset('instagram_logo.png') }}" width="28" height="28" alt="Instagram" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary"
-                                href="https://www.tiktok.com/@concettaphotos?is_from_webapp=1&sender_device=pc"
-                                aria-label="Tiktok">
-                                <img src="{{ asset('tiktok_logo.png') }}" width="28" height="28" alt="Tiktok" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary" href="https://www.threads.com/@concettaphotos"
-                                aria-label="Threads">
-                                <img src="{{ asset('thread_logo.png') }}" width="28" height="28" alt="Threads" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary" href="https://x.com/ConcettaPhotos_" aria-label="Twitter">
-                                <img src="{{ asset('twitter_logo.png') }}" width="28" height="28" alt="Twitter" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
-        </div>
+        @include('partials.footer')
     </section>
 
     <script>
@@ -2298,7 +2485,7 @@
                 }
             }
 
-            const savedLang = localStorage.getItem("selectedLang") || "en";
+            const savedLang = localStorage.getItem("selectedLang") || "id";
             updateLanguageUI(savedLang);
 
             switches.forEach(switcher => {
@@ -2317,6 +2504,83 @@
             offcanvasEl.querySelectorAll('a.nav-link, a.accordion-button, a.text-decoration-none').forEach(function (link) {
                 link.addEventListener('click', function () {
                     offcanvas.hide();
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
+            let manuallyOpened = null;
+
+            document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+
+            submenuToggles.forEach(toggle => {
+                const parentLi = toggle.parentElement;
+                const submenu = toggle.nextElementSibling;
+
+                parentLi.addEventListener('mouseenter', () => {
+                    if (manuallyOpened !== submenu) {
+                        submenu.classList.add('show');
+                    }
+                });
+
+                parentLi.addEventListener('mouseleave', () => {
+                    if (manuallyOpened !== submenu) {
+                        submenu.classList.remove('show');
+                    }
+                });
+
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const isOpen = submenu.classList.contains('show');
+
+                    if (manuallyOpened === submenu) {
+                        submenu.classList.remove('show');
+                        manuallyOpened = null;
+                    } else {
+                        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                            menu.classList.remove('show');
+                        });
+
+                        submenu.classList.add('show');
+                        manuallyOpened = submenu;
+                    }
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.dropdown-menu')) {
+                    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                        menu.classList.remove('show');
+                    });
+                    manuallyOpened = null;
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const submenu = this.nextElementSibling;
+
+                    const isShown = submenu.classList.contains('show');
+
+                    document.querySelectorAll('.submenu-list').forEach(list => {
+                        list.classList.remove('show');
+                    });
+
+                    if (!isShown) {
+                        submenu.classList.add('show');
+                    }
                 });
             });
         });

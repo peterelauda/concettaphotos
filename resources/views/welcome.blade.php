@@ -29,6 +29,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
 
     <!-- Styles / Scripts -->
     <style>
@@ -165,6 +167,56 @@
             font-style: normal !important;
         }
 
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
         .custom-text {
             color: #393e46 !important;
             font-family: "Jost", sans-serif !important;
@@ -223,7 +275,8 @@
         }
 
         mark {
-            background-color: #d1f8ef !important;
+            background-color: transparent !important;
+            font-weight: 600 !important;
             padding: 0 0.2rem !important;
             border-radius: 4px !important;
         }
@@ -244,21 +297,17 @@
             transform: scale(1.14);
         }
 
-        .card-body {
-            height: 250px !important;
-        }
-
         .image-hover-wrapper {
             display: block;
             position: relative;
-            border-radius: 7px 7px 0 0;
+            border-radius: 15px 15px 0 0;
             width: 100%;
         }
 
         .image-hover-container {
             position: relative;
             overflow: hidden;
-            border-radius: 7px 7px 0 0;
+            border-radius: 15px 15px 0 0;
             height: 280px;
         }
 
@@ -266,7 +315,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 7px 7px 0 0;
+            border-radius: 15px 15px 0 0;
             transition: transform 0.7s ease;
         }
 
@@ -276,7 +325,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 7px 7px 0 0;
+            border-radius: 15px 15px 0 0;
             background-color: rgba(0, 123, 255, 0);
             display: flex;
             flex-direction: column;
@@ -295,12 +344,12 @@
         .image-hover-container:hover .image-hover-img {
             transform: scale(1.14);
             transition: transform 0.7s ease;
-            border-radius: 7px 7px 0 0;
+            border-radius: 15px 15px 0 0;
         }
 
         .image-hover-container:hover .image-hover-overlay {
             background-color: #578fca;
-            border-radius: 7px 7px 0 0;
+            border-radius: 15px 15px 0 0;
             opacity: 0.77;
         }
 
@@ -351,6 +400,10 @@
             scroll-margin-top: 120.55px;
         }
 
+        #service {
+            scroll-margin-top: 120.55px;
+        }
+
         .transition-header {
             background-color: transparent;
             transition: background-color 0.7s ease, box-shadow 0.7s ease;
@@ -380,6 +433,7 @@
 
         #carouselExampleCaptions1 .carousel-item .carousel-caption {
             height: 850px !important;
+            top: 5% !important;
         }
 
         .carousel-item img {
@@ -521,6 +575,10 @@
             right: 15px;
         }
 
+        .card {
+            height: 450px !important;
+        }
+
         @media (max-width: 720px) {
             .carousel-chevron-down {
                 bottom: 140px;
@@ -528,6 +586,10 @@
 
             .copyright-text {
                 font-size: 0.8rem;
+            }
+
+            .card {
+                height: fit-content !important;
             }
         }
 
@@ -564,6 +626,43 @@
             border-radius: 50%;
             margin: 0 5px;
         }
+
+        .dropdown-submenu .dropdown-menu {
+            display: none !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 100% !important;
+            margin-top: -0.25rem !important;
+            z-index: 1000 !important;
+        }
+
+        .dropdown-submenu .dropdown-menu.show {
+            display: block !important;
+        }
+
+        .submenu-arrow {
+            font-size: 20px;
+            margin-left: auto;
+            margin-bottom: 2px;
+        }
+
+        .dropdown-submenu>.dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-submenu>.dropdown-toggle::after {
+            display: none !important;
+        }
+
+        .submenu-list {
+            display: none;
+        }
+
+        .submenu-list.show {
+            display: block;
+        }
     </style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -580,304 +679,64 @@
 
 <body>
     <section id="header">
-        <header id="mainHeader"
-            class="d-flex align-items-center justify-content-between py-3 position-fixed top-0 start-0 w-100 z-3 transition-header">
-            <div class="d-none d-xl-flex align-items-start px-2" style="width: 306.97px;">
-
-                <div class="lang-toggle mx-auto">
-                    <input type="checkbox" id="langSwitch">
-                    <label for="langSwitch">
-                        <span class="switch-thumb"></span>
-                    </label>
-                </div>
-
-            </div>
-
-            <div class="d-none d-xl-flex align-items-center gap-4 mx-auto">
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/#opening" class="nav-link lang-content lang-en">CONCETTA
-                        TEAM</a>
-                    <a href="/#opening" class="nav-link lang-content lang-id d-none">TIM CONCETTA</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-en"
-                        data-bs-toggle="dropdown">ABOUT</a>
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-id d-none"
-                        data-bs-toggle="dropdown">TENTANG</a>
-                    <ul class="dropdown-menu fs-7 py-2 custom-text-0">
-                        <li><a class="dropdown-item" href="/about">CONCETTA PHOTOS</a></li>
-                        <li><a class="dropdown-item lang-content lang-en" href="/about#tac">TERMS AND CONDITIONS</a>
-                        </li>
-                        <li><a class="dropdown-item lang-content lang-id d-none" href="/about#tac">SYARAT DAN
-                                KETENTUAN</a></li>
-                        <li><a class="dropdown-item lang-content lang-en" href="/#testimonial">TESTIMONIALS</a>
-                        </li>
-                        <li><a class="dropdown-item lang-content lang-id d-none" href="/#testimonial">TESTIMONI</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/concettalk" class="nav-link">CONCETTALK</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="70px">
-                    </a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/pricelist" class="nav-link lang-content lang-en">PRICE LIST</a>
-                    <a href="/pricelist" class="nav-link lang-content lang-id d-none">DAFTAR HARGA</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="/faqs" class="nav-link">FAQs</a>
-                </li>
-
-                <li class="nav-item dropdown list-unstyled mx-3">
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-en"
-                        data-bs-toggle="dropdown">GALLERY</a>
-                    <a href="#" class="nav-link dropdown-toggle lang-content lang-id d-none"
-                        data-bs-toggle="dropdown">GALERI</a>
-                    <ul class="dropdown-menu fs-7 py-2 custom-text-0">
-                        <li><a class="dropdown-item" href="/gallery#holiday">HOLIDAY</a></li>
-                        <li><a class="dropdown-item" href="/gallery#couple">COUPLE</a></li>
-                        <li><a class="dropdown-item" href="/gallery#family">FAMILY</a></li>
-                        <li><a class="dropdown-item" href="/gallery#prewedding">PREWEDDING</a></li>
-                        <li><a class="dropdown-item" href="/gallery#wedding">WEDDING</a></li>
-                        <li><a class="dropdown-item" href="/gallery#brandphotoshoot">BRAND PHOTOSHOOT</a></li>
-                    </ul>
-                </li>
-            </div>
-
-            <div class="d-none d-xl-block text-end">
-                @if (Route::has('login'))
-                    <nav>
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary me-2 lang-content lang-en">COME IN</a>
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary me-2 lang-content lang-id d-none">MASUK</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary mx-2 my-2 lang-content lang-en">YOUR
-                                INQUIRIES</a>
-                            <a href="{{ route('login') }}"
-                                class="btn btn-outline-primary mx-2 my-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary mx-2 my-2 lang-content lang-en">BE
-                                    MEMBER</a>
-                                <a href="{{ route('register') }}"
-                                    class="btn btn-primary mx-2 my-2 lang-content lang-id d-none">GABUNG</a>
-                            @endif
-                        @endauth
-                    </nav>
-                @endif
-            </div>
-
-            <div class="d-flex align-items-center d-xl-none w-100 justify-content-between px-3">
-                <button class="btn p-0 bg-transparent border-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileMenu" aria-controls="mobileMenu" style="width: 32px; height: 32px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#444" class="bi bi-list icon"
-                        viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                    </svg>
-                </button>
-
-                <a href="{{ url('/') }}">
-                    <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="56px">
-                </a>
-
-                <div class="lang-toggle">
-                    <input type="checkbox" id="langSwitch1">
-                    <label for="langSwitch1">
-                        <span class="switch-thumb"></span>
-                    </label>
-                </div>
-            </div>
-
-
-        </header>
-
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-            <div class="offcanvas-header position-relative justify-content-center">
-                <h5 class="offcanvas-title m-0">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('logo_cp1.png') }}" alt="Logo Concetta Photos" width="56px">
-                    </a>
-                </h5>
-
-                <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="accordion" id="accordionMenu">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/#opening') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-en">
-                                CONCETTA TEAM
-                            </a>
-                            <a href="{{ url('/#opening') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-id d-none">
-                                TIM CONCETTA
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-about">
-                            <button class="accordion-button collapsed btn-primary lang-content lang-en" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse-about" aria-expanded="false"
-                                aria-controls="collapse-about">
-                                ABOUT
-                            </button>
-                            <button class="accordion-button collapsed btn-primary lang-content lang-id d-none"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-about"
-                                aria-expanded="false" aria-controls="collapse-about">
-                                TENTANG
-                            </button>
-                        </h2>
-                        <div id="collapse-about" class="accordion-collapse collapse" aria-labelledby="heading-about"
-                            data-bs-parent="#accordionMenu">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a class="nav-link text-start" href="{{ url('/about') }}">CONCETTA PHOTOS</a>
-                                    </li>
-                                    <li><a class="nav-link text-start lang-content lang-en"
-                                            href="{{ url('/about#tac') }}">TERMS AND
-                                            CONDITIONS</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-id d-none"
-                                            href="{{ url('/about#tac') }}">SYARAT DAN KETENTUAN</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-en"
-                                            href="{{ url('/#testimonial') }}">TESTIMONIALS</a></li>
-                                    <li><a class="nav-link text-start lang-content lang-id d-none"
-                                            href="{{ url('/#testimonial') }}">TESTIMONI</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/concettalk') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown">
-                                CONCETTALK
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-testimonials">
-                            <a href="{{ url('/pricelist') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-en">
-                                PRICE LIST
-                            </a>
-                            <a href="{{ url('/pricelist') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown lang-content lang-id d-none">
-                                DAFTAR HARGA
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-faqs">
-                            <a href="{{ url('/faqs') }}"
-                                class="accordion-button collapsed btn-primary text-decoration-none no-dropdown">
-                                FAQs
-                            </a>
-                        </h2>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading-gallery">
-                            <button class="accordion-button collapsed btn-primary lang-content lang-en" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapse-gallery" aria-expanded="false"
-                                aria-controls="collapse-gallery">
-                                GALLERY
-                            </button>
-                            <button class="accordion-button collapsed btn-primary lang-content lang-id d-none"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapse-gallery"
-                                aria-expanded="false" aria-controls="collapse-gallery">
-                                GALERI
-                            </button>
-                        </h2>
-                        <div id="collapse-gallery" class="accordion-collapse collapse" aria-labelledby="heading-gallery"
-                            data-bs-parent="#accordionMenu">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#holiday') }}">HOLIDAY</a>
-                                    </li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#couple') }}">COUPLE</a>
-                                    </li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#family') }}">FAMILY</a>
-                                    </li>
-                                    <li><a class="nav-link text-start"
-                                            href="{{ url('/gallery#prewedding') }}">PREWEDDING</a></li>
-                                    <li><a class="nav-link text-start" href="{{ url('/gallery#wedding') }}">WEDDING</a>
-                                    </li>
-                                    <li><a class="nav-link text-start"
-                                            href="{{ url('/gallery#brandphotoshoot') }}">BRAND
-                                            PHOTOSHOOT</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="btn btn-primary w-100 mb-2 lang-content lang-en">COME
-                                IN</a>
-                            <a href="{{ url('/dashboard') }}"
-                                class="btn btn-primary w-100 mb-2 lang-content lang-id d-none">MASUK</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary w-100 mb-2 lang-content lang-en">YOUR
-                                INQUIRIES</a>
-                            <a href="{{ route('login') }}"
-                                class="btn btn-outline-primary w-100 mb-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-en">BE MEMBER</a>
-                                <a href="{{ route('register') }}"
-                                    class="btn btn-primary w-100 lang-content lang-id d-none">GABUNG</a>
-                            @endif
-                        @endauth
-                    @endif
-                </div>
-            </div>
-        </div>
+        @include('partials.navbar')
     </section>
 
     <section id="slide">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
-            data-bs-interval="5000">
+            data-bs-interval="4000">
+
             <div class="carousel-inner">
+
                 <div class="carousel-item active">
-                    <img src="{{ asset('picture1.jpg') }}" class="d-block w-100" alt="picture1">
+                    <img src="{{ asset('picture1.jpg') }}" class="d-block w-100" alt="picture 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('picture2.jpg') }}" class="d-block w-100" alt="picture2">
+                    <img src="{{ asset('picture2.jpg') }}" class="d-block w-100" alt="picture 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('picture3.jpg') }}" class="d-block w-100" alt="picture3">
+                    <img src="{{ asset('picture3.jpg') }}" class="d-block w-100" alt="picture 3">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('picture4.jpg') }}" class="d-block w-100" alt="picture4">
+                    <img src="{{ asset('picture4.jpg') }}" class="d-block w-100" alt="picture 4">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('picture5.jpg') }}" class="d-block w-100" alt="picture5">
+                    <img src="{{ asset('picture5.jpg') }}" class="d-block w-100" alt="picture 5">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('picture6.jpg') }}" class="d-block w-100" alt="picture6">
+                    <img src="{{ asset('picture6.jpg') }}" class="d-block w-100" alt="picture 6">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('picture7.jpg') }}" class="d-block w-100" alt="picture7">
+                    <img src="{{ asset('picture7.jpg') }}" class="d-block w-100" alt="picture 7">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('picture8.jpg') }}" class="d-block w-100" alt="picture8">
+                    <img src="{{ asset('picture8.jpg') }}" class="d-block w-100" alt="picture 8">
                 </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('picture9.jpg') }}" class="d-block w-100" alt="picture 9">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('picture10.jpg') }}" class="d-block w-100" alt="picture 10">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('picture11.jpg') }}" class="d-block w-100" alt="picture 11">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('picture12.jpg') }}" class="d-block w-100" alt="picture 12">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('picture13.jpg') }}" class="d-block w-100" alt="picture 13">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('picture14.jpg') }}" class="d-block w-100" alt="picture 14">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('picture15.jpg') }}" class="d-block w-100" alt="picture 15">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('picture16.jpg') }}" class="d-block w-100" alt="picture 16">
+                </div>
+
                 <a href="#opening" class="carousel-chevron-down">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white"
                         class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -899,6 +758,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+
         </div>
     </section>
 
@@ -918,302 +778,55 @@
         <div class="col-10 col-md-8 col-lg-6 mx-auto pt-5 custom-border"></div>
     </section>
 
-    <section id="profile">
-        <div class="container col-xxl-8 px-4 pt-xl-5 pt-sm-0">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
-                    <img src="photo_profile.jpg" class="d-block mx-auto img-fluid zoom-on-scroll rounded"
-                        alt="Photographer Profile Photo" width="1000" height="1000" loading="lazy">
-                </div>
-
-                <div class="col-lg-6">
-                    <h1 class="display-7 lh-1 mb-3 text-end custom-text">Michael</h1>
-                    <h1 class="display-3 mb-2 text-end custom-text lang-content lang-en">Photographer</h1>
-                    <h1 class="display-3 mb-2 text-end custom-text lang-content lang-id d-none">Fotografer</h1>
-                    <h1 class="display-5 mb-2 text-end custom-text lang-content lang-en">Concetta Founder</h1>
-                    <h1 class="display-5 mb-2 text-end custom-text lang-content lang-id d-none">Pendiri Concetta</h1>
-                    <p class="lead custom-text-0 text-end lang-content lang-en">
-                        Passionate and perceptive, Michael Enriko Lauda is the creative mind
-                        behind Concetta Photos, a Bali-based photography brand known for capturing timeless, emotionally
-                        rich moments.
-                        Blending natural light, candid storytelling, and cinematic elegance, Michael creates stunning
-                        visual narratives that go beyond traditional photography. From intimate couple portraits to
-                        destination weddings and personal branding sessions, his relaxed yet refined approach ensures
-                        every shoot feels personal, effortless, and unforgettable — perfect for clients who seek
-                        authenticity, beauty, and lasting memories.
-                    </p>
-                    <p class="lead custom-text-0 text-end lang-content lang-id d-none">
-                        Dengan penuh semangat dan kepekaan, Michael Enriko Lauda adalah sosok kreatif di balik Concetta
-                        Photos, sebuah brand fotografi yang berbasis di Bali dan dikenal karena kemampuannya menangkap
-                        momen abadi yang kaya akan emosi. Menggabungkan cahaya alami, pendekatan candid dalam bercerita,
-                        serta sentuhan sinematik yang elegan, Michael menciptakan narasi visual menakjubkan yang
-                        melampaui batasan fotografi
-                        tradisional. Dari potret pasangan yang intim hingga pernikahan destinasi dan sesi personal
-                        branding, pendekatannya yang santai namun tetap berkelas memastikan setiap pemotretan terasa
-                        personal, mengalir alami, dan tak terlupakan — sempurna bagi klien yang mencari keaslian,
-                        keindahan, dan kenangan yang abadi.
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="container py-5">
-                <div class="row align-items-center g-5">
-
-                    <div class="col-12 col-sm-10 col-md-8 col-lg-6 mt-0 mx-auto">
-                        <img src="photo_profile1.jpg" class="d-block mx-auto img-fluid zoom-on-scroll rounded"
-                            alt="Concetta Co-founder Profile" width="1000" height="1000" loading="lazy">
-                    </div>
-
-                    <div class="col-lg-6">
-                        <h1 class="display-7 lh-1 mb-3 custom-text">Atika</h1>
-                        <h1 class="display-3 mb-2 custom-text lang-content lang-en">Concetta Co-founder</h1>
-                        <h1 class="display-3 mb-2 custom-text lang-content lang-id d-none">Rekan Pendiri</h1>
-                        <h1 class="display-5 mb-2 custom-text">& Admin</h1>
-                        <p class="lead custom-text-0 lang-content lang-en">
-                            Atika is the Co-Founder and dedicated Admin of Concetta Photos, playing a vital role in
-                            ensuring every client experience is smooth, organized, and personal. With her warm and
-                            thoughtful approach, she handles all communications, scheduling, and logistics behind the
-                            scenes, allowing the creative team to focus on delivering stunning, timeless photography.
-                            Atika’s attention to detail, reliability, and care for each client make her an essential
-                            part of Concetta’s heart and soul.
-                        </p>
-                        <p class="lead custom-text-0 lang-content lang-id d-none">
-                            Atika adalah Rekan Pendiri sekaligus Admin yang berdedikasi di Concetta Photos, memegang
-                            peran penting dalam memastikan setiap pengalaman klien berjalan dengan lancar, terorganisir,
-                            dan terasa personal. Dengan pendekatannya yang hangat dan penuh perhatian, ia menangani
-                            seluruh komunikasi, penjadwalan, serta logistik di balik layar, memungkinkan tim kreatif
-                            untuk fokus menciptakan hasil fotografi yang memukau dan abadi. Perhatian Atika terhadap
-                            detail, keandalan, dan kepeduliannya terhadap setiap klien menjadikannya bagian yang tak
-                            terpisahkan dari hati dan jiwa Concetta.
-                        </p>
-
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <a href="http://wa.me/6287762982309"
-                                class="btn btn-primary btn-lg px-4 me-md-2 w-100 w-md-auto w-lg-auto w-xl-auto lang-content lang-en">Contact
-                                Us</a>
-                            <a href="http://wa.me/6287762982309"
-                                class="btn btn-primary btn-lg px-4 me-md-2 w-100 w-md-auto w-lg-auto w-xl-auto lang-content lang-id d-none">Hubungi
-                                Kami</a>
-
-                            <div class="dropdown w-100 w-md-auto">
-                                <button
-                                    class="btn btn-outline-primary btn-lg px-4 dropdown-toggle custom-dropdown w-100 w-md-auto lang-content lang-en"
-                                    type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    More About Concetta
-                                </button>
-                                <button
-                                    class="btn btn-outline-primary btn-lg px-4 dropdown-toggle custom-dropdown w-100 w-md-auto lang-content lang-id d-none"
-                                    type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Selengkapnya Mengenai Concetta
-                                </button>
-                                <ul class="dropdown-menu fs-5 py-2 custom-text-0 w-100 w-md-auto"
-                                    aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item py-2" href="/about">Concetta Photos</a></li>
-                                    <li><a class="dropdown-item py-2 lang-content lang-en" href="/about#tac">Terms and
-                                            Conditions</a></li>
-                                    <li><a class="dropdown-item py-2 lang-content lang-id d-none"
-                                            href="/about#tac">Syarat dan Ketentuan</a></li>
-                                    <li><a class="dropdown-item py-2 lang-content lang-en"
-                                            href="/#testimonial">Testimonials</a></li>
-                                    <li><a class="dropdown-item py-2 lang-content lang-id d-none"
-                                            href="/#testimonial">Testimoni</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-10 col-md-8 col-lg-6 mx-auto pt-xl-5 pt-sm-4 custom-border"></div>
-    </section>
-
-    <section id="recent" class="bg-body-custom">
+    <section id="service" class="bg-body-custom">
         <main class="container px-4">
             <div
-                class="p-4 p-md-5 mb-4 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
+                class="p-4 p-md-5 mb-4 text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text lang-content lang-en">Our Clients</h2>
-                    <h2 class="display-7 custom-text lang-content lang-id d-none">Klien Kami</h2>
-                    <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-6">
-                    @php
-                        $firstCarouselCaptionText = "Your shared first caption here";
-                    @endphp
-
-                    <div id="carouselExampleIndicators" class="carousel slide rounded overflow-hidden shadow-sm mb-4"
-                        data-bs-ride="carousel" style="height: 350px;">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
-                        </div>
-                        <div class="carousel-inner h-100">
-                            <div class="carousel-item carousel-zoom active h-100">
-                                <img src="{{ asset('picture1.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="Picture 1">
-                                <div class="carousel-caption d-md-block d-sm-block">
-                                    <h5 class="custom-text-1">{{ $firstCarouselCaptionText }}</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-zoom h-100">
-                                <img src="{{ asset('picture2.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="Picture 2">
-                                <div class="carousel-caption d-md-block d-sm-block">
-                                    <h5 class="custom-text-1">{{ $firstCarouselCaptionText }}</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-zoom h-100">
-                                <img src="{{ asset('picture3.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="Picture 3">
-                                <div class="carousel-caption d-md-block d-sm-block">
-                                    <h5 class="custom-text-1">{{ $firstCarouselCaptionText }}</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-zoom h-100">
-                                <img src="{{ asset('picture4.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="Picture 4">
-                                <div class="carousel-caption d-md-block d-sm-block">
-                                    <h5 class="custom-text-1">{{ $firstCarouselCaptionText }}</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    @php
-                        $secondCarouselCaptionText = "Your shared second caption here";
-                    @endphp
-
-                    <div id="carouselExampleIndicators1" class="carousel slide rounded overflow-hidden shadow-sm mb-4"
-                        data-bs-ride="carousel" style="height: 350px;">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
-                        </div>
-                        <div class="carousel-inner h-100">
-                            <div class="carousel-item carousel-zoom active h-100">
-                                <img src="{{ asset('picture5.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="Picture 5">
-                                <div class="carousel-caption d-md-block d-sm-block">
-                                    <h5 class="custom-text-1">{{ $secondCarouselCaptionText }}</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-zoom h-100">
-                                <img src="{{ asset('picture6.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="Picture 6">
-                                <div class="carousel-caption d-md-block d-sm-block">
-                                    <h5 class="custom-text-1">{{ $secondCarouselCaptionText }}</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-zoom h-100">
-                                <img src="{{ asset('picture7.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="Picture 7">
-                                <div class="carousel-caption d-md-block d-sm-block">
-                                    <h5 class="custom-text-1">{{ $secondCarouselCaptionText }}</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item carousel-zoom h-100">
-                                <img src="{{ asset('picture8.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="Picture 8">
-                                <div class="carousel-caption d-md-block d-sm-block">
-                                    <h5 class="custom-text-1">{{ $secondCarouselCaptionText }}</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </main>
-        </div>
-
-        <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
-    </section>
-
-    <section id="service">
-        <main class="container px-4">
-            <div
-                class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body d-flex justify-content-center align-items-center text-center">
-                <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text lang-content lang-en">Our Services</h2>
-                    <h2 class="display-7 custom-text lang-content lang-id d-none">Layanan Kami</h2>
+                    <h2 class="display-7 lang-content lang-en aesthetic-text-1">Our Services</h2>
+                    <h2 class="display-7 lang-content lang-id d-none aesthetic-text-1">Layanan Kami</h2>
                     <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
                 </div>
             </div>
 
-            <div class="album bg-body">
+            <div class="album">
                 <div class="container pb-5 px-0">
-                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 g-4">
+                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-4">
+
                         <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <a href="/gallery#holiday" class="image-hover-wrapper text-decoration-none">
+                            <div class="card rounded-4 h-100 shadow-sm">
+                                <a href="/holidayfamily" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture8.jpg') }}" alt="Holiday Picture"
+                                        <img src="{{ asset('family_card.jpg') }}" alt="Holiday & Family Picture"
                                             class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2">Holiday</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more holiday albums</h5>
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5">Holiday & Family</h2>
+                                            <h5 class="custom-text-2 lang-content lang-en">See more holiday & Family
+                                                albums</h5>
                                             <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                album holiday
+                                                album holiday & Family
                                             </h5>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0">Holiday</h3>
+                                    <h3 class="card-text aesthetic-text-2">Holiday & Family</h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
                                         Capture meaningful moments while traveling—whether you're relaxing on the beach,
-                                        hiking the mountains, or exploring a new city.
+                                        hiking the mountains, or exploring a new city with family.
                                     </p>
                                     <p class="card-text custom-text-0 lang-content lang-id d-none">
                                         Abadikan momen berharga saat berlibur—baik saat bersantai di pantai, mendaki
-                                        gunung, atau menjelajahi kota baru.
+                                        gunung, atau menjelajahi kota baru bersama keluarga.
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="/gallery#holiday"
-                                                class="btn btn-sm btn-primary lang-content lang-en">View More</a>
-                                            <a href="/gallery#holiday"
-                                                class="btn btn-sm btn-primary lang-content lang-id d-none">Lihat Lebih
-                                                Banyak</a>
+                                            <a href="/holidayfamily"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
+                                                Albums</a>
+                                            <a href="/holidayfamily"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
+                                                Album</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1221,13 +834,13 @@
                         </div>
 
                         <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <a href="/gallery#couple" class="image-hover-wrapper text-decoration-none">
+                            <div class="card rounded-4 h-100 shadow-sm">
+                                <a href="/couple" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture1.jpg') }}" alt="Couple Picture"
+                                        <img src="{{ asset('couple_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2">Couple</h2>
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5">Couple</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more couple albums</h5>
                                             <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
                                                 album couple
@@ -1236,7 +849,7 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0">Couple
+                                    <h3 class="card-text aesthetic-text-2">Couple
                                     </h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
                                         Celebrate love through intimate and timeless photographs. Perfect for
@@ -1247,11 +860,12 @@
                                         kencan spesial, atau sekadar momen berharga bersama.
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/gallery#couple"
-                                                class="btn btn-sm btn-primary lang-content lang-en">View More</a>
-                                            <a href="/gallery#couple"
-                                                class="btn btn-sm btn-primary lang-content lang-id d-none">Lihat Lebih
-                                                Banyak</a>
+                                        <div class="btn-group"> <a href="/couple"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
+                                                Albums</a>
+                                            <a href="/couple"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
+                                                Album</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1259,51 +873,13 @@
                         </div>
 
                         <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <a href="/gallery#family" class="image-hover-wrapper text-decoration-none">
+                            <div class="card rounded-4 h-100 shadow-sm">
+                                <a href="/prewedding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture2.jpg') }}" alt="Family Picture"
+                                        <img src="{{ asset('prewedding_card.jpg') }}" alt="Prewedding Picture"
                                             class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2">Family</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more family albums</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                album family
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0">Family
-                                    </h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Cherish your family's unique bond with warm, candid, and heartwarming portraits.
-                                        Great for yearly keepsakes or special occasions.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Hargai ikatan unik keluargamu dengan potret hangat, jujur, dan menyentuh hati.
-                                        Cocok untuk kenang-kenangan tahunan atau acara spesial.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/gallery#family"
-                                                class="btn btn-sm btn-primary lang-content lang-en">View More</a>
-                                            <a href="/gallery#family"
-                                                class="btn btn-sm btn-primary lang-content lang-id d-none">Lihat Lebih
-                                                Banyak</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <a href="/gallery#prewedding" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('picture4.jpg') }}" alt="Prewedding Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2">Prewedding</h2>
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5">Prewedding</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more prewedding albums
                                             </h5>
                                             <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
@@ -1313,7 +889,7 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0">Prewedding
+                                    <h3 class="card-text aesthetic-text-2">Prewedding
                                     </h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
                                         Tell your love story before the big day. Artistic and personalized sessions that
@@ -1324,30 +900,26 @@
                                         yang mencerminkan chemistry dan kebahagiaan kalian.
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/gallery#prewedding"
-                                                class="btn btn-sm btn-primary lang-content lang-en">View More</a>
-                                            <a href="/gallery#prewedding"
-                                                class="btn btn-sm btn-primary lang-content lang-id d-none">Lihat Lebih
-                                                Banyak</a>
+                                        <div class="btn-group"> <a href="/prewedding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
+                                                Albums</a>
+                                            <a href="/prewedding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
+                                                Album</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
-
-                    <div
-                        class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 mt-4 g-4 d-flex justify-content-center align-items-center">
-
                         <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <a href="/gallery#wedding" class="image-hover-wrapper text-decoration-none">
+                            <div class="card rounded-4 h-100 shadow-sm">
+                                <a href="/wedding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture5.jpg') }}" alt="Wedding Picture"
+                                        <img src="{{ asset('wedding_card.jpg') }}" alt="Wedding Picture"
                                             class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2">Wedding</h2>
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5">Wedding</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more wedding albums</h5>
                                             <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
                                                 album wedding
@@ -1356,7 +928,7 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0">Wedding
+                                    <h3 class="card-text aesthetic-text-2">Wedding
                                     </h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
                                         Capture the joy, emotion, and unforgettable details of your wedding day. From
@@ -1367,11 +939,12 @@
                                         momen intim hingga pesta meriah, setiap foto punya cerita.
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/gallery#wedding"
-                                                class="btn btn-sm btn-primary lang-content lang-en">View More</a>
-                                            <a href="/gallery#wedding"
-                                                class="btn btn-sm btn-primary lang-content lang-id d-none">Lihat Lebih
-                                                Banyak</a>
+                                        <div class="btn-group"> <a href="/wedding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
+                                                Albums</a>
+                                            <a href="/wedding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
+                                                Album</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1379,22 +952,22 @@
                         </div>
 
                         <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <a href="/gallery#brandphotoshoot" class="image-hover-wrapper text-decoration-none">
+                            <div class="card rounded-4 h-100 shadow-sm">
+                                <a href="/branding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture6.jpg') }}" alt="Brand Photoshoot Picture"
+                                        <img src="{{ asset('branding_card.jpg') }}" alt="Branding Picture"
                                             class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2">Brand Photoshoot</h2>
-                                            <h6 class="custom-text-2 lang-content lang-en">See more brand photoshoot
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5">Branding</h2>
+                                            <h6 class="custom-text-2 lang-content lang-en">See more Branding
                                                 albums</h6>
                                             <h6 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                album brand photoshoot</h6>
+                                                album Branding</h6>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0">Brand Photoshoot
+                                    <h3 class="card-text aesthetic-text-2">Branding
                                     </h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
                                         Professional images that bring your brand to life. Ideal for entrepreneurs,
@@ -1405,11 +978,12 @@
                                         dan kreator yang ingin menonjol secara visual.
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/gallery#brandphotoshoot"
-                                                class="btn btn-sm btn-primary lang-content lang-en">View More</a>
-                                            <a href="/gallery#brandphotoshoot"
-                                                class="btn btn-sm btn-primary lang-content lang-id d-none">Lihat Lebih
-                                                Banyak</a>
+                                        <div class="btn-group"> <a href="/branding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
+                                                Albums</a>
+                                            <a href="/branding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
+                                                Album</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1417,89 +991,153 @@
                         </div>
 
                     </div>
-
                 </div>
             </div>
+
+            <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
+
         </main>
+    </section>
+
+    <section id="hook">
+        <main class="container">
+            <div
+                class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
+                <div class="col-lg-6 px-0">
+                    <h2 class="display-7 aesthetic-text-1 mb-3">
+                        <span class="lang-content lang-en">Let's book your session now!</span>
+                        <span class="lang-content lang-id d-none">Yuk, jadwalkan sesi kamu sekarang!</span>
+                    </h2>
+
+                    <h5 class="display-10 custom-text-0">
+                        <span class="lang-content lang-en">Are those photos aligned with your style?</span>
+                        <span class="lang-content lang-id d-none">Apakah foto-foto tersebut sesuai dengan gaya
+                            kamu?</span>
+                    </h5>
+
+                    <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg mt-3">
+                        <span class="lang-content lang-en">Book Now!</span>
+                        <span class="lang-content lang-id d-none">Booking Sekarang!</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-10 col-md-8 col-lg-6 mx-auto custom-border"></div>
+        </main>
+    </section>
+
+    <section id="testimonial" class="bg-body-custom">
+        <main class="container px-4">
+            <div
+                class="p-4 p-md-5 mb-3 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
+                <div class="col-lg-6 px-0">
+                    <h2 class="display-7 aesthetic-text-1 lang-content lang-en">Testimonials</h2>
+                    <h2 class="display-7 aesthetic-text-1 lang-content lang-id d-none">Testimoni</h2>
+                    <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
+                </div>
+            </div>
+
+            <div class="padlet-embed mb-5 rounded-4"
+                style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+                <p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/8eenhn71li4mvssp" frameborder="0"
+                        allow="camera;microphone;geolocation;display-capture;clipboard-write"
+                        style="width:100%;height:630px;display:block;padding:0;margin:0"></iframe></p>
+                <div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a
+                        href="https://padlet.com?ref=embed"
+                        style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none"
+                        target="_blank">
+                        <div style="display:flex;align-items:center;"><img
+                                src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28"
+                                style="padding:0;margin:0;background:0 0;border:none;box-shadow:none"
+                                alt="Made with Padlet"></div>
+                    </a></div>
+            </div>
+        </main>
+
         <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
     </section>
 
-    <section id="visit" class="bg-body-custom">
+    <section id="concettalk">
+
         <main class="container px-4">
             <div
                 class="p-4 p-md-5 mb-4 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text lang-content lang-en">Vlogs & Locations</h2>
-                    <h2 class="display-7 custom-text lang-content lang-id d-none">Lokasi yang Dikunjungi</h2>
+                    <h2 class="display-7 aesthetic-text-1">Concettalk</h2>
                     <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
                 </div>
             </div>
 
             <div class="container-fluid px-0">
                 <div id="carouselExampleCaptions1" class="carousel slide custom-carousel-nav">
-                    <div class="carousel-inner rounded overflow-hidden shadow-sm mb-4 w-100" style="height: 630px;">
+                    <div class="carousel-inner rounded-4 overflow-hidden shadow-sm mb-4 w-100" style="height: 630px;">
                         <div class="carousel-item active carousel-zoom position-relative">
                             <a href="/concettalk">
-                                <img src="{{ asset('picture5.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="1st Location Photo">
+                                <img src="{{ asset('concettalk_1.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
+                                    alt="1st Concettalk Photo">
                                 <div
-                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-                                    <h1 class="display-3 custom-text-1 text-white text-center lang-content lang-en">
-                                        First location label</h1>
-                                    <h1
-                                        class="display-3 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Label lokasi pertama</h1>
-                                    <p class="display-8 custom-text-1 text-white text-center lang-content lang-en">Some
-                                        representative placeholder content for the first slide.</p>
+                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-5">
+                                    <h3 class="display-5 aesthetic-text-4 text-white text-center lang-content lang-en">
+                                        Exercise while taking a photoshoot? Absolutely possible!</h3>
+                                    <h3
+                                        class="display-5 aesthetic-text-4 text-white text-center lang-content lang-id d-none">
+                                        Olahraga sambil photoshoot? Bisa banget!</h3>
+                                    <p class="display-9 custom-text-1 text-white text-center lang-content lang-en">
+                                        Who says you can't break a sweat and strike a pose at the same time? Let’s make
+                                        fitness fun and photogenic!</p>
                                     <p
-                                        class="display-8 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Konten placeholder sebagai perwakilan untuk slide pertama.</p>
+                                        class="display-9 custom-text-1 text-white text-center lang-content lang-id d-none">
+                                        Siapa bilang nggak bisa olahraga sambil bergaya? Yuk, bikin aktivitas sehat jadi
+                                        momen yang Instagramable!</p>
                                 </div>
                             </a>
                         </div>
 
                         <div class="carousel-item carousel-zoom position-relative">
                             <a href="/concettalk">
-                                <img src="{{ asset('picture6.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="2nd Location Photo">
+                                <img src="{{ asset('concettalk_2.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
+                                    alt="2nd Concettalk Photo">
                                 <div
-                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-                                    <h1 class="display-3 custom-text-1 text-white text-center lang-content lang-en">
-                                        Second location label</h1>
-                                    <h1
-                                        class="display-3 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Label lokasi kedua</h1>
-                                    <p class="display-8 custom-text-1 text-white text-center lang-content lang-en">Some
-                                        representative placeholder content for the second slide.</p>
+                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-5">
+                                    <h3 class="display-5 aesthetic-text-4 text-white text-center lang-content lang-en">
+                                        Escape to Bali: Where Every Moment Feels Like Paradise!</h3>
+                                    <h3
+                                        class="display-5 aesthetic-text-4 text-white text-center lang-content lang-id d-none">
+                                        Liburan ke Bali: Setiap Detik Serasa di Surga!</h3>
+                                    <p class="display-9 custom-text-1 text-white text-center lang-content lang-en">
+                                        From golden beaches to lush rice fields, Bali is the getaway your soul has been
+                                        craving!</p>
                                     <p
-                                        class="display-8 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Konten placeholder sebagai perwakilan untuk slide kedua.</p>
+                                        class="display-9 custom-text-1 text-white text-center lang-content lang-id d-none">
+                                        Dari pantai berpasir emas hingga sawah hijau yang menenangkan, Bali adalah
+                                        tempat liburan yang bikin hati tenang!</p>
                                 </div>
                             </a>
                         </div>
 
                         <div class="carousel-item carousel-zoom position-relative">
                             <a href="/concettalk">
-                                <img src="{{ asset('picture7.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="3rd Location Photo">
+                                <img src="{{ asset('concettalk_3.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
+                                    alt="3rd Concettalk Photo">
                                 <div
-                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-                                    <h1 class="display-3 custom-text-1 text-white text-center lang-content lang-en">
-                                        Third location label</h1>
-                                    <h1
-                                        class="display-3 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Label lokasi ketiga</h1>
-                                    <p class="display-8 custom-text-1 text-white text-center lang-content lang-en">Some
-                                        representative placeholder content for the third slide.</p>
+                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-5">
+                                    <h3 class="display-5 aesthetic-text-4 text-white text-center lang-content lang-en">
+                                        Family, Sun, and Snapshots: A Beach Day to Remember!</h3>
+                                    <h3
+                                        class="display-5 aesthetic-text-4 text-white text-center lang-content lang-id d-none">
+                                        Keluarga, Pantai, dan Momen Indah yang Diabadikan!</h3>
+                                    <p class="display-9 custom-text-1 text-white text-center lang-content lang-en">
+                                        Capture laughter, sunshine, and sandy toes—because beach days with family are
+                                        made for memories!</p>
                                     <p
-                                        class="display-8 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Konten placeholder sebagai perwakilan untuk slide ketiga.</p>
+                                        class="display-9 custom-text-1 text-white text-center lang-content lang-id d-none">
+                                        Abadikan tawa, sinar matahari, dan jejak kaki di pasir—karena liburan di pantai
+                                        bersama keluarga selalu penuh kenangan!</p>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <div class="carousel-indicators">
+                    <div class="carousel-indicators mb-5">
                         <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0"
                             class="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1"
@@ -1528,108 +1166,12 @@
                 </div>
             </div>
 
-            <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
         </main>
-    </section>
 
-    <section id="testimonial">
-        <main class="container px-4">
-            <div
-                class="p-4 p-md-5 mb-3 rounded text-body-emphasis bg-body d-flex justify-content-center align-items-center text-center">
-                <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text lang-content lang-en">Testimonials</h2>
-                    <h2 class="display-7 custom-text lang-content lang-id d-none">Testimoni</h2>
-                    <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
-                </div>
-            </div>
-
-            <div class="padlet-embed mb-5 rounded"
-                style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
-                <p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/8eenhn71li4mvssp" frameborder="0"
-                        allow="camera;microphone;geolocation;display-capture;clipboard-write"
-                        style="width:100%;height:630px;display:block;padding:0;margin:0"></iframe></p>
-                <div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a
-                        href="https://padlet.com?ref=embed"
-                        style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none"
-                        target="_blank">
-                        <div style="display:flex;align-items:center;"><img
-                                src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28"
-                                style="padding:0;margin:0;background:0 0;border:none;box-shadow:none"
-                                alt="Made with Padlet"></div>
-                    </a></div>
-            </div>
-
-            <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
-        </main>
-    </section>
-
-    <section id="book" class="bg-body-custom">
-        <main class="container">
-            <div
-                class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
-                <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3">
-                        <span class="lang-content lang-en">Let's book your session now!</span>
-                        <span class="lang-content lang-id d-none">Yuk, jadwalkan sesi kamu sekarang!</span>
-                    </h2>
-
-                    <h5 class="display-10 custom-text">
-                        <span class="lang-content lang-en">Are those photos aligned with your style?</span>
-                        <span class="lang-content lang-id d-none">Apakah foto-foto tersebut sesuai dengan gaya
-                            kamu?</span>
-                    </h5>
-
-                    <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3">
-                        <span class="lang-content lang-en">Book Now!</span>
-                        <span class="lang-content lang-id d-none">Booking Sekarang!</span>
-                    </a>
-                </div>
-            </div>
-        </main>
     </section>
 
     <section id="footer">
-        <hr class="featurette-divider mt-0">
-
-        <div class="container-fluid">
-            <footer class="py-4 my-4">
-                <div
-                    class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
-
-                    <div class="order-2 order-md-0 mt-3 mt-md-0 ms-xl-3 ms-md-3">
-                        <span class="text-body-secondary copyright-text">© 2025 Concetta Photos</span>
-                    </div>
-
-                    <ul
-                        class="nav justify-content-center justify-content-md-end list-unstyled d-flex order-1 order-md-1 me-xl-3 me-md-3">
-                        <li>
-                            <a class="text-body-secondary" href="https://www.instagram.com/concettaphotos/"
-                                aria-label="Instagram">
-                                <img src="{{ asset('instagram_logo.png') }}" width="28" height="28" alt="Instagram" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary"
-                                href="https://www.tiktok.com/@concettaphotos?is_from_webapp=1&sender_device=pc"
-                                aria-label="Tiktok">
-                                <img src="{{ asset('tiktok_logo.png') }}" width="28" height="28" alt="Tiktok" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary" href="https://www.threads.com/@concettaphotos"
-                                aria-label="Threads">
-                                <img src="{{ asset('thread_logo.png') }}" width="28" height="28" alt="Threads" />
-                            </a>
-                        </li>
-                        <li class="ms-3">
-                            <a class="text-body-secondary" href="https://x.com/ConcettaPhotos_" aria-label="Twitter">
-                                <img src="{{ asset('twitter_logo.png') }}" width="28" height="28" alt="Twitter" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
-        </div>
+        @include('partials.footer')
     </section>
 
     <script>
@@ -1677,7 +1219,7 @@
                 }
             }
 
-            const savedLang = localStorage.getItem("selectedLang") || "en";
+            const savedLang = localStorage.getItem("selectedLang") || "id";
             updateLanguageUI(savedLang);
 
             switches.forEach(switcher => {
@@ -1701,21 +1243,80 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            const carousel1 = new bootstrap.Carousel('#carouselExampleIndicators', {
-                interval: 3000,
-                ride: 'carousel',
-                pause: false
+            const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
+            let manuallyOpened = null;
+
+            document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
             });
 
-            const carousel2 = new bootstrap.Carousel('#carouselExampleIndicators1', {
-                interval: 6000,
-                ride: 'carousel',
-                pause: false
+            submenuToggles.forEach(toggle => {
+                const parentLi = toggle.parentElement;
+                const submenu = toggle.nextElementSibling;
+
+                parentLi.addEventListener('mouseenter', () => {
+                    if (manuallyOpened !== submenu) {
+                        submenu.classList.add('show');
+                    }
+                });
+
+                parentLi.addEventListener('mouseleave', () => {
+                    if (manuallyOpened !== submenu) {
+                        submenu.classList.remove('show');
+                    }
+                });
+
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const isOpen = submenu.classList.contains('show');
+
+                    if (manuallyOpened === submenu) {
+                        submenu.classList.remove('show');
+                        manuallyOpened = null;
+                    } else {
+                        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                            menu.classList.remove('show');
+                        });
+
+                        submenu.classList.add('show');
+                        manuallyOpened = submenu;
+                    }
+                });
             });
 
-            setTimeout(() => {
-                carousel2.next();
-            }, 1500);
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.dropdown-menu')) {
+                    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
+                        menu.classList.remove('show');
+                    });
+                    manuallyOpened = null;
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const submenu = this.nextElementSibling;
+
+                    const isShown = submenu.classList.contains('show');
+
+                    document.querySelectorAll('.submenu-list').forEach(list => {
+                        list.classList.remove('show');
+                    });
+
+                    if (!isShown) {
+                        submenu.classList.add('show');
+                    }
+                });
+            });
         });
     </script>
 
