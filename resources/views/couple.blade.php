@@ -231,6 +231,56 @@
             font-style: normal !important;
         }
 
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
         .custom-border {
             border-bottom: 1px solid #578fca;
         }
@@ -530,12 +580,12 @@
     </section>
 
     <section id="picture" class="position-relative">
-        <div class="position-relative w-100 d-none d-xl-flex" style="height: 636px;">
-            <img src="{{ asset('holidayfamily.jpg') }}" alt="Holiday and Family Picture"
+        <div class="position-relative w-100 d-none d-lg-flex" style="height: 636px;">
+            <img src="{{ asset('couple.jpg') }}" alt="Holiday and Family Picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
-        <div class="position-relative w-100 d-flex d-xl-none" style="height: 636px;">
-            <img src="{{ asset('holidayfamily_mobile.jpg') }}" alt="Holiday and Family Picture"
+        <div class="position-relative w-100 d-flex d-lg-none" style="height: 636px;">
+            <img src="{{ asset('couple_mobile.jpg') }}" alt="Holiday and Family Picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
     </section>
@@ -545,7 +595,7 @@
             <div
                 class="p-4 p-md-5 mb-4 text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-5 custom-text mt-3">Couple</h2>
+                    <h2 class="display-5 aesthetic-text-1 mt-3">Couple</h2>
                     <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
                 </div>
             </div>
@@ -555,223 +605,38 @@
                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-4">
                         <div class="col">
                             <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/novitafamily" class="image-hover-wrapper text-decoration-none">
+                                <a href="/emiemieha" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture_7.jpg') }}" alt="Couple Picture"
+                                        <img src="{{ asset('emiemieha_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2 lang-content lang-en">Novita's Family Holiday at
-                                                Bali Farm House
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Emie & Mieha
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
-                                                Novita di Bali Farm House</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Novita's Family
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Emie & Mieha</h2>
+                                            <h5 class="custom-text-2 lang-content lang-en">See more Emie & Mieha
                                                 Photos</h5>
                                             <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Keluarga Novita
+                                                foto-foto Emie & Mieha
                                             </h5>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Novita's Family Holiday at
-                                        Bali Farm House</h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Liburan Keluarga
-                                        Novita di Bali Farm House</h3>
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Emie & Mieha</h3>
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Emie & Mieha</h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
-                                        A beautiful day with Novita’s family at the peaceful Bali Farm House.
+                                        "Emie & Mieha — two souls, one journey, bound by love and guided by destiny."
                                     </p>
                                     <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Hari yang indah bersama keluarga Novita di Bali Farm House yang damai.
+                                        "Emie & Mieha, dua hati yang dipertemukan takdir, berjalan bersama menuju cinta
+                                        tanpa akhir."
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="/novitafamily"
+                                            <a href="/emiemieha"
                                                 class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
                                                 More</a>
-                                            <a href="/novitafamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Lebih
-                                                Banyak</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/adityafamily" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('picture_29.jpg') }}" alt="Couple Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2 lang-content lang-en">Aditya's Family Holiday at
-                                                Lake Garden
-                                            </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
-                                                Aditya di Lake Garden</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Aditya's Family
-                                                Photos</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Keluarga Aditya
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Aditya's Family Holiday at
-                                        Lake Garden</h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Liburan Keluarga
-                                        Aditya di Lake Garden</h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Aditya’s family getaway filled with joy and nature at the tranquil Lake Garden.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Liburan keluarga Aditya yang penuh keceriaan dan keindahan alam di Lake Garden.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/adityafamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                More</a>
-                                            <a href="/adityafamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Lebih
-                                                Banyak</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/amelitafamily" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('picture_44.jpg') }}" alt="Couple Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2 lang-content lang-en">Amelita's Family Holiday at
-                                                Apurva Kempinski
-                                            </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
-                                                Amelita di Apurva Kempinski</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Amelita's Family
-                                                Photos</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Keluarga Amelita
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Amelita's Family Holiday at
-                                        Apurva Kempinski</h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Liburan Keluarga
-                                        Amelita di Apurva Kempinski</h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Amelita’s unforgettable family getaway at the luxurious Apurva Kempinski.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Liburan keluarga Amelita yang tak terlupakan di Apurva Kempinski yang mewah.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/amelitafamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                More</a>
-                                            <a href="/amelitafamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Lebih
-                                                Banyak</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/lindafamily" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('picture_61.jpg') }}" alt="Couple Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2 lang-content lang-en">Linda's Family Holiday at
-                                                Petitenget Beach
-                                            </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
-                                                Linda di Pantai Petitenget</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Linda's Family
-                                                Photos</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Keluarga Linda
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Linda's Family Holiday at
-                                        Petitenget Beach</h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Liburan Keluarga
-                                        Linda di Pantai Petitenget</h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Linda’s joyful family escape to the beautiful Petitenget Beach.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Liburan keluarga Linda yang penuh keceriaan di indahnya Pantai Petitenget.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/lindafamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                More</a>
-                                            <a href="/lindafamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Lebih
-                                                Banyak</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/sekarfamily" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('picture_84.jpg') }}" alt="Couple Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2 lang-content lang-en">Sekar's Family Holiday at
-                                                Padma Legian
-                                            </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
-                                                Sekar di Padma Legian</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Sekar's Family
-                                                Photos</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Keluarga Sekar
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Sekar's Family Holiday at
-                                        Padma Legian</h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Liburan Keluarga
-                                        Sekar di Padma Legian</h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Wrapped in sea breeze and sunset hues, Sekar’s family found serenity at Padma
-                                        Legian.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Dibalut semilir angin laut dan cahaya senja, keluarga Sekar temukan damai di
-                                        Padma Legian.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/sekarfamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                More</a>
-                                            <a href="/sekarfamily"
+                                            <a href="/emiemieha"
                                                 class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
                                                 Lebih
                                                 Banyak</a>
@@ -789,17 +654,17 @@
         <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
     </section>
 
-    <section id="hook">
+    <section id="hook" class="bg-body-custom">
         <main class="container">
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-en">Let's book your session now!</h2>
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
                         sekarang!</h2>
-                    <h5 class="display-10 custom-text lang-content lang-en">Are those photos aligned with your taste?
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those photos aligned with your taste?
                     </h5>
-                    <h5 class="display-10 custom-text lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
                         dengan seleramu?</h5>
                     <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
                         Now!</a>

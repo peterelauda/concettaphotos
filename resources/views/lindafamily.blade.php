@@ -207,6 +207,56 @@
             font-style: normal !important;
         }
 
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
         .custom-border {
             border-bottom: 1px solid #578fca;
         }
@@ -459,9 +509,11 @@
     <section id="lindafamily">
         <div class="container-fluid py-5">
             <div class="px-4 py-3 text-center">
-                <h1 class="display-5 custom-text-3 mb-2 lang-content lang-en">Linda's Family Album</h1>
-                <h1 class="display-5 custom-text-3 mb-2 lang-content lang-id d-none">Album Keluarga Linda</h1>
-                <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-3 mx-auto custom-border-divider mb-5"></div>
+                <h1 class="display-5 aesthetic-text-1 mb-2 lang-content lang-en">Linda's Family Album</h1>
+                <h1 class="display-5 aesthetic-text-1 mb-2 lang-content lang-id d-none">Album Keluarga Linda</h1>
+                <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-3 mx-auto custom-border-divider mb-2"></div>
+                <h1 class="display-7 aesthetic-text-3 mb-5 lang-content lang-en">At Petitenget Beach</h1>
+                <h1 class="display-7 aesthetic-text-3 mb-5 lang-content lang-id d-none">di Pantai Petitenget</h1>
 
                 <div>
 
@@ -479,8 +531,6 @@
                                 id="picture_63">
                             <img src="{{ asset('picture_64.jpg') }}" alt="picture 64" class="w-100 mb-1 preview-image"
                                 id="picture_64">
-                            <img src="{{ asset('picture_80.jpg') }}" alt="picture 80" class="w-100 mb-1 preview-image"
-                                id="picture_80">
                         </div>
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
@@ -488,8 +538,6 @@
                                 id="picture_65">
                             <img src="{{ asset('picture_66.jpg') }}" alt="picture 66" class="w-100 mb-1 preview-image"
                                 id="picture_66">
-                            <img src="{{ asset('picture_76.jpg') }}" alt="picture 76" class="w-100 mb-1 preview-image"
-                                id="picture_76">
                         </div>
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
@@ -526,7 +574,8 @@
                             style="flex-basis: 180px;">
                             <img src="{{ asset('picture_75.jpg') }}" alt="picture 75" class="w-100 mb-1 preview-image"
                                 id="picture_75">
-
+                            <img src="{{ asset('picture_76.jpg') }}" alt="picture 76" class="w-100 mb-1 preview-image"
+                                id="picture_76">
                         </div>
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
@@ -539,7 +588,8 @@
                             style="flex-basis: 180px;">
                             <img src="{{ asset('picture_79.jpg') }}" alt="picture 79" class="w-100 mb-1 preview-image"
                                 id="picture_79">
-
+                            <img src="{{ asset('picture_80.jpg') }}" alt="picture 80" class="w-100 mb-1 preview-image"
+                                id="picture_80">
                         </div>
                     </div>
 
@@ -563,12 +613,12 @@
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-en">Let's book your session now!</h2>
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
                         sekarang!</h2>
-                    <h5 class="display-10 custom-text lang-content lang-en">Are those photos aligned with your taste?
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those photos aligned with your taste?
                     </h5>
-                    <h5 class="display-10 custom-text lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
                         dengan seleramu?</h5>
                     <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
                         Now!</a>

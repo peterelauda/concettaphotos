@@ -207,6 +207,56 @@
             font-style: normal !important;
         }
 
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
         .custom-border {
             border-bottom: 1px solid #578fca;
         }
@@ -446,11 +496,11 @@
     </section>
 
     <section id="picture" class="position-relative">
-        <div class="position-relative w-100 d-none d-lg-flex" style="height: 636px;">
+        <div class="position-relative w-100 d-none d-xl-flex" style="height: 636px;">
             <img src="{{ asset('novitafamily.jpg') }}" alt="Novita Family picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
-        <div class="position-relative w-100 d-flex d-lg-none" style="height: 636px;">
+        <div class="position-relative w-100 d-flex d-xl-none" style="height: 636px;">
             <img src="{{ asset('novitafamily_mobile.jpg') }}" alt="Novita Family picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
@@ -459,45 +509,63 @@
     <section id="novitafamily">
         <div class="container-fluid py-5">
             <div class="px-4 py-3 text-center">
-                <h1 class="display-5 custom-text-3 mb-2 lang-content lang-en">Novita's Family Album</h1>
-                <h1 class="display-5 custom-text-3 mb-2 lang-content lang-id d-none">Album Keluarga Novita</h1>
-                <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-3 mx-auto custom-border-divider mb-5"></div>
+                <h1 class="display-5 aesthetic-text-1 mb-2 lang-content lang-en">Novita's Family Album</h1>
+                <h1 class="display-5 aesthetic-text-1 mb-2 lang-content lang-id d-none">Album Keluarga Novita</h1>
+                <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-3 mx-auto custom-border-divider mb-2"></div>
+                <h1 class="display-7 aesthetic-text-3 mb-5 lang-content lang-en">At Bali Farm House</h1>
+                <h1 class="display-7 aesthetic-text-3 mb-5 lang-content lang-id d-none">di Bali Farm House</h1>
 
                 <div>
 
                     <div class="d-flex flex-wrap justify-content-center gap-1 px-3">
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
-                            <img src="{{ asset('picture_1.jpg') }}" alt="picture 1" class="w-100 mb-1 preview-image"
-                                id="picture_1">
-                            <img src="{{ asset('picture_2.jpg') }}" alt="picture 2" class="w-100 mb-1 preview-image"
-                                id="picture_2">
+                            <img src="{{ asset('picture_10.jpg') }}" alt="picture 10" class="w-100 mb-1 preview-image"
+                                id="picture_10">
+
+
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
                             <img src="{{ asset('picture_3.jpg') }}" alt="picture 3" class="w-100 mb-1 preview-image"
                                 id="picture_3">
+                            <img src="{{ asset('picture_4.jpg') }}" alt="picture 4" class="w-100 mb-1 preview-image"
+                                id="picture_4">
+                            <img src="{{ asset('picture_1.jpg') }}" alt="picture 1" class="w-100 mb-1 preview-image"
+                                id="picture_1">
                         </div>
-
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
                             <img src="{{ asset('picture_5.jpg') }}" alt="picture 5" class="w-100 mb-1 preview-image"
                                 id="picture_5">
                             <img src="{{ asset('picture_6.jpg') }}" alt="picture 6" class="w-100 mb-1 preview-image"
                                 id="picture_6">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
                             <img src="{{ asset('picture_7.jpg') }}" alt="picture 7" class="w-100 mb-1 preview-image"
                                 id="picture_7">
-                            <img src="{{ asset('picture_12.jpg') }}" alt="picture 12" class="w-100 mb-1 preview-image"
-                                id="picture_12">
+                            <img src="{{ asset('picture_8.jpg') }}" alt="picture 8" class="w-100 mb-1 preview-image"
+                                id="picture_8">
+                            <img src="{{ asset('picture_2.jpg') }}" alt="picture 2" class="w-100 mb-1 preview-image"
+                                id="picture_2">
                         </div>
-
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
                             <img src="{{ asset('picture_9.jpg') }}" alt="picture 9" class="w-100 mb-1 preview-image"
                                 id="picture_9">
-                            <img src="{{ asset('picture_10.jpg') }}" alt="picture 10" class="w-100 mb-1 preview-image"
-                                id="picture_10">
-                            <img src="{{ asset('picture_20.jpg') }}" alt="picture 20" class="w-100 mb-1 preview-image"
-                                id="picture_20">
-                        </div>
 
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-1 px-3 hidden-gallery d-none">
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_11.jpg') }}" alt="picture 11" class="w-100 mb-1 preview-image"
+                                id="picture_11">
+                            <img src="{{ asset('picture_12.jpg') }}" alt="picture 12" class="w-100 mb-1 preview-image"
+                                id="picture_12">
+                        </div>
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
                             <img src="{{ asset('picture_13.jpg') }}" alt="picture 13" class="w-100 mb-1 preview-image"
@@ -505,59 +573,27 @@
                             <img src="{{ asset('picture_14.jpg') }}" alt="picture 14" class="w-100 mb-1 preview-image"
                                 id="picture_14">
                         </div>
-
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_15.jpg') }}" alt="picture 15" class="w-100 mb-1 preview-image"
+                                id="picture_15">
+                            <img src="{{ asset('picture_16.jpg') }}" alt="picture 16" class="w-100 mb-1 preview-image"
+                                id="picture_16">
+                        </div>
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
                             <img src="{{ asset('picture_17.jpg') }}" alt="picture 17" class="w-100 mb-1 preview-image"
                                 id="picture_17">
                             <img src="{{ asset('picture_18.jpg') }}" alt="picture 18" class="w-100 mb-1 preview-image"
                                 id="picture_18">
-                            <img src="{{ asset('picture_16.jpg') }}" alt="picture 16" class="w-100 mb-1 preview-image"
-                                id="picture_16">
                         </div>
-
-                    </div>
-
-                    <div class="d-flex flex-wrap justify-content-center gap-1 px-3 hidden-gallery d-none">
                         <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
                             style="flex-basis: 180px;">
-
-                            <img src="{{ asset('picture_4.jpg') }}" alt="picture 4" class="w-100 mb-1 preview-image"
-                                id="picture_4">
-
-                        </div>
-
-                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
-                            style="flex-basis: 180px;">
-
-                            <img src="{{ asset('picture_8.jpg') }}" alt="picture 8" class="w-100 mb-1 preview-image"
-                                id="picture_8">
-
-                        </div>
-
-                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
-                            style="flex-basis: 180px;">
-
-                            <img src="{{ asset('picture_11.jpg') }}" alt="picture 11" class="w-100 mb-1 preview-image"
-                                id="picture_11">
-
-                        </div>
-
-                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
-                            style="flex-basis: 180px;">
-
-                            <img src="{{ asset('picture_15.jpg') }}" alt="picture 15" class="w-100 mb-1 preview-image"
-                                id="picture_15">
-
-                        </div>
-
-                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
-                            style="flex-basis: 180px;">
-
                             <img src="{{ asset('picture_19.jpg') }}" alt="picture 19" class="w-100 mb-1 preview-image"
                                 id="picture_19">
+                            <img src="{{ asset('picture_20.jpg') }}" alt="picture 20" class="w-100 mb-1 preview-image"
+                                id="picture_20">
                         </div>
-
                     </div>
 
                 </div>
@@ -580,12 +616,12 @@
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-en">Let's book your session now!</h2>
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
                         sekarang!</h2>
-                    <h5 class="display-10 custom-text lang-content lang-en">Are those photos aligned with your taste?
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those photos aligned with your taste?
                     </h5>
-                    <h5 class="display-10 custom-text lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
                         dengan seleramu?</h5>
                     <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
                         Now!</a>

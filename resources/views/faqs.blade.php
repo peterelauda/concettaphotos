@@ -196,6 +196,56 @@
             font-style: normal !important;
         }
 
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
         .responsive-text {
             font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             word-break: break-word;
@@ -457,8 +507,8 @@
     <section id="faqs">
         <div class="p-5 text-center">
             <div class="container">
-                <h1 class="display-7 custom-text-3 mb-3 lang-content lang-en">FAQs (Frequently Asked Questions)</h1>
-                <h1 class="display-7 custom-text-3 mb-3 lang-content lang-id d-none">FAQs (Pertanyaan yang Sering
+                <h1 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">FAQs (Frequently Asked Questions)</h1>
+                <h1 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">FAQs (Pertanyaan yang Sering
                     Ditanyakan)</h1>
                 <div class="col-7 mx-auto custom-border-divider mb-5 lang-content lang-en"></div>
                 <div class="col-9 mx-auto custom-border-divider mb-5 lang-content lang-id d-none"></div>
@@ -469,10 +519,10 @@
                         type="button" data-bs-toggle="collapse" data-bs-target="#photoSessionBooking"
                         aria-expanded="false" aria-controls="preweddingContent">
                         <span>
-                            <h2 class="custom-text-0 responsive-text lang-content lang-en mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Photo
                                 Session Booking</h2>
-                            <h2 class="custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Booking Sesi Foto</h2>
                         </span>
                     </button>
@@ -599,11 +649,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#discountContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Photo Packages
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Photo Packages
                                 Promotion/Discount</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Promosi/Diskon
                                 Paket Foto</h2>
                         </span>
@@ -661,12 +711,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#feesContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Location Fees &
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Location Fees &
                                 Transportation
                                 Fees</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Retribusi
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Retribusi
                                 Lokasi & Biaya
                                 Transportasi</h2>
                         </span>
@@ -721,12 +771,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#bestTimeContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Best Time of Day
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Best Time of Day
                                 for a Photo
                                 Session</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Waktu/Jam
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Waktu/Jam
                                 yang Tepat
                                 untuk Sesi Foto</h2>
                         </span>
@@ -788,11 +838,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#videoContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Video Package
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Video Package
                                 Without Photos</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Paket
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Paket
                                 Video Tanpa Foto</h2>
                         </span>
                     </button>
@@ -846,11 +896,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#durationContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Change Plan
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Change Plan
                                 After Down Payment</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Perubahan
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Perubahan
                                 Rencana Setelah DP</h2>
                         </span>
                     </button>
@@ -908,11 +958,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#rainingContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Raining when
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Raining when
                                 Photo Session</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Hujan
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Hujan
                                 saat Sesi Foto</h2>
                         </span>
                     </button>
@@ -968,11 +1018,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#lateContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Arrives Late for
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Arrives Late for
                                 the Photo Session</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Datang
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Datang
                                 Terlambat saat Sesi Foto</h2>
                         </span>
                     </button>
@@ -1025,11 +1075,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#portfolioContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Photo Portfolio
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Photo Portfolio
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Portofolio Foto</h2>
                         </span>
                     </button>
@@ -1078,11 +1128,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#propertyContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Photo Property
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Photo Property
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Properti Foto</h2>
                         </span>
                     </button>
@@ -1132,12 +1182,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#chooseContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Choosing Photos
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Choosing Photos
                                 after Photo Session
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Memilih Foto setelah Sesi Foto</h2>
                         </span>
                     </button>
@@ -1191,12 +1241,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#whenContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Time to Receive
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Time to Receive
                                 the Final Photos
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Waktu untuk Menerima Foto Final</h2>
                         </span>
                     </button>
@@ -1253,12 +1303,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#receiveAllContent"
                         aria-expanded="false" aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Acceptable Photo
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Acceptable Photo
                                 Limits
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Batasan Foto yang Diterima</h2>
                         </span>
                     </button>
@@ -1311,12 +1361,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#activeLinkContent"
                         aria-expanded="false" aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Google Drive
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Google Drive
                                 Link Active Duration
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Lama Aktif Link Google Drive</h2>
                         </span>
                     </button>
@@ -1364,12 +1414,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#unactiveLinkContent"
                         aria-expanded="false" aria-controls="preweddingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">If Google Drive
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">If Google Drive
                                 Link Unactive
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Jika Link Google Drive Mati</h2>
                         </span>
                     </button>
@@ -1426,12 +1476,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#rescheduleLinkContent"
                         aria-expanded="false" aria-controls="rescheduleContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Reschedule Photo
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Reschedule Photo
                                 Session Date
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Reschedule Tanggal Sesi Foto</h2>
                         </span>
                     </button>
@@ -1512,11 +1562,11 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#photoVideoBookingContent"
                         aria-expanded="false" aria-controls="photoVideoBookingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Book Photo &
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Book Photo &
                                 Video Session</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Booking
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Booking
                                 Sesi Foto & Video</h2>
                         </span>
                     </button>
@@ -1596,11 +1646,11 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#familySessionContent"
                         aria-expanded="false" aria-controls="familySessionContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Family Session
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Family Session
                                 Photo Options</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Pilihan Foto Sesi Keluarga</h2>
                         </span>
                     </button>
@@ -1652,12 +1702,12 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#splitPackageContent"
                         aria-expanded="false" aria-controls="splitPackageContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Splitting Time from Package
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Pembagian Waktu dari Paket
                             </h2>
                         </span>
@@ -1708,12 +1758,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#multipleSpotContent"
                         aria-expanded="false" aria-controls="multipleSpotContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Multiple Photo Spots in One Location
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Beberapa Spot Foto dalam Satu Lokasi
                             </h2>
                         </span>
@@ -1766,12 +1816,12 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#photoFilesContent"
                         aria-expanded="false" aria-controls="photoFilesContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Getting All Photo Files
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Mendapatkan Semua File Foto
                             </h2>
                         </span>
@@ -1839,12 +1889,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#fineEditContent" aria-expanded="false"
                         aria-controls="fineEditContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Requesting Fine Editing
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Request Fine Editing
                             </h2>
                         </span>
@@ -1898,11 +1948,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#editingProcessContent"
                         aria-expanded="false" aria-controls="editingProcessContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Editing Process
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Editing Process
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Proses
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Proses
                                 Editing</h2>
                         </span>
                     </button>
@@ -1953,11 +2003,11 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#cinematicHighlightContent"
                         aria-expanded="false" aria-controls="cinematicHighlightContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Cinematic vs
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Cinematic vs
                                 Highlight Video</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Cinematic
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Cinematic
                                 vs Highlight Video</h2>
                         </span>
                     </button>
@@ -2011,12 +2061,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#vendorMuaDressContent"
                         aria-expanded="false" aria-controls="vendorMuaDressContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Vendor for MUA & Dress
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Vendor untuk MUA & Gaun
                             </h2>
                         </span>
@@ -2067,13 +2117,13 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#makeupHairdoContent"
                         aria-expanded="false" aria-controls="makeupHairdoContent">
-                        <div style="height: fit-content"></div>
+                        
 
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Makeup & Hairdo with/out Following
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Makeup & Hairdo with/out Following
                             </h2>
                         </span>
@@ -2129,12 +2179,12 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#photoSelectionContent"
                         aria-expanded="false" aria-controls="photoSelectionContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Photo Selection for Fine Editing
                             </h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">
                                 Pemilihan Foto untuk Fine Editing
                             </h2>
                         </span>
@@ -2185,11 +2235,11 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#fineEditingContent"
                         aria-expanded="false" aria-controls="fineEditingContent">
-                        <div style="height: fit-content"></div>
+                        
                         <span>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-en mb-0">Fine Editing
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Fine Editing
                                 Duration</h2>
-                            <h2 class="fw-bold custom-text-0 responsive-text lang-content lang-id d-none mb-0">Durasi
+                            <h2 class="aesthetic-text-3 responsive-text lang-content lang-id d-none mb-0">Durasi
                                 Fine Editing</h2>
                         </span>
                     </button>
@@ -2246,7 +2296,7 @@
                 <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0" />
             </svg>
 
-            <h1 class="display-5 custom-text-3 mb-3">Inquiry</h1>
+            <h1 class="display-5 aesthetic-text-1 mb-3">Inquiry</h1>
 
             <div class="form-center-wrapper d-flex justify-content-center align-items-center">
                 <div class="col-md-7 col-lg-8 pb-0">
@@ -2439,8 +2489,8 @@
                         <button class="btn btn-lg btn-primary my-3 lang-content lang-en" type="submit">Submit</button>
                         <button class="btn btn-lg btn-primary my-3 lang-content lang-id d-none"
                             type="submit">Kirim</button>
-                        <h2 class="display-10 custom-text lang-content lang-en">Or</h2>
-                        <h2 class="display-10 custom-text lang-content lang-id d-none">Atau</h2>
+                        <h2 class="display-10 aesthetic-text-1 lang-content lang-en">Or</h2>
+                        <h2 class="display-10 aesthetic-text-1 lang-content lang-id d-none">Atau</h2>
                         <a href="http://wa.me/6287762982309" class="btn btn-lg btn-primary mt-3 lang-content lang-en"
                             type="submit" target="_blank" rel="noopener noreferrer">Contact
                             Us</a>

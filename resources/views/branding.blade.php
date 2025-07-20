@@ -555,43 +555,43 @@
                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-4">
                         <div class="col">
                             <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/corenationpasutbranding" class="image-hover-wrapper text-decoration-none">
+                                <a href="/corenationsportwearbranding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
                                         <img src="{{ asset('picture_263.jpg') }}" alt="Prewedding Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en">Corenation Pasut Branding
+                                            <h2 class="custom-text-2 lang-content lang-en">Corenation Sportwear Branding
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Branding Pasut
+                                            <h2 class="custom-text-2 lang-content lang-id d-none">Branding Sportwear
                                                 Corenation</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Corenation Pasut
+                                            <h5 class="custom-text-2 lang-content lang-en">See more Corenation Sportwear
                                                 branding
                                                 Photos</h5>
                                             <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Branding Pasut Corenation
+                                                foto-foto Branding Sportwear Corenation
                                             </h5>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Corenation Pasut Branding
+                                    <h3 class="card-text custom-text-0 lang-content lang-en">Corenation Sportwear Branding
                                     </h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Branding Pasut
+                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Branding Sportwear
                                         Corenation</h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
-                                        Pasut’s brand transformation with Corenation — shaping a powerful identity with
+                                        Sportwear’s brand transformation with Corenation — shaping a powerful identity with
                                         purposeful meaning.
                                     </p>
                                     <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Transformasi identitas Pasut bersama Corenation, merangkai kekuatan brand dengan
+                                        Transformasi identitas Sportwear bersama Corenation, merangkai kekuatan brand dengan
                                         makna yang mendalam.
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="/corenationpasutbranding"
+                                            <a href="/corenationsportwearbranding"
                                                 class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
                                                 More</a>
-                                            <a href="/corenationpasutbranding"
+                                            <a href="/corenationsportwearbranding"
                                                 class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
                                                 Lebih
                                                 Banyak</a>

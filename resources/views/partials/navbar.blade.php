@@ -112,10 +112,9 @@
                         style="width: 154px">PERTANYAANMU</a>
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}" class="btn btn-primary me-3 my-2 lang-content lang-en"
-                            style="width: 154px">BE
-                            MEMBER</a>
+                            style="width: 154px">JOIN</a>
                         <a href="{{ route('register') }}" class="btn btn-primary me-3 my-2 lang-content lang-id d-none"
-                            style="width: 154px">JADI MEMBER</a>
+                            style="width: 154px">GABUNG</a>
                     @endif
                 @endauth
             </nav>
@@ -316,7 +315,7 @@
                     <a href="{{ route('login') }}"
                         class="btn btn-outline-primary w-100 mb-2 lang-content lang-id d-none">PERTANYAANMU</a>
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-en">BE MEMBER</a>
+                        <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-en">JOIN</a>
                         <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-id d-none">GABUNG</a>
                     @endif
                 @endauth

@@ -79,6 +79,10 @@ Route::get('/sekarfamily', function () {
     return view('sekarfamily');
 });
 
+Route::get('/emiemieha', function () {
+    return view('emiemieha');
+});
+
 Route::get('/andiangginiprewedding', function () {
     return view('andiangginiprewedding');
 });
@@ -99,8 +103,8 @@ Route::get('/mettaiskandarwedding', function () {
     return view('mettaiskandarwedding');
 });
 
-Route::get('/corenationpasutbranding', function () {
-    return view('corenationpasutbranding');
+Route::get('/corenationsportwearbranding', function () {
+    return view('corenationsportwearbranding');
 });
 
 Route::get('/corenationswimwearbranding', function () {

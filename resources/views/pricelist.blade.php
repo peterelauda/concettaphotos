@@ -196,6 +196,56 @@
             font-style: normal !important;
         }
 
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
         .custom-border {
             border-bottom: 1px solid #578fca;
         }
@@ -428,7 +478,7 @@
     <section id="disclaimer">
         <div class="container py-3">
             <div class="pricing-header p-5 mx-auto text-center">
-                <h1 class="display-5 custom-text mb-3">Disclaimer</h1>
+                <h1 class="display-5 aesthetic-text-1 mb-3">Disclaimer</h1>
                 <p class="fs-5 custom-text-0 mb-3 lang-content lang-en">We are committed to engaging with serious
                     potential clients and
                     welcome all inquiries and discussions. However, if a potential client demonstrates a lack of genuine
@@ -451,25 +501,27 @@
     <section id="pricelist" class="bg-body-custom">
         <div class="container py-5 px-5">
             <main>
-                <h1 class="display-5 text-center custom-text-3 mt-3">Prewedding 2025</h1>
+                <h1 class="display-5 text-center aesthetic-text-1 mt-3">Prewedding 2025</h1>
                 <div class="col-10 col-sm-9 col-md-8 col-lg-6 col-xl-5 mx-auto custom-border-divider mb-5"></div>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5 custom-border"></div>
-                <h2 class="display-7 text-center custom-text my-4 lang-content lang-en">Photo Only</h2>
-                <h2 class="display-7 text-center custom-text my-4 lang-content lang-id d-none">Hanya Foto</h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo Only</h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Hanya Foto</h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
                 <div class="row row-cols-1 row-cols-xl-3 mb-4 text-center">
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Express</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 1,699K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    1,699K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     1,699K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -487,15 +539,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 3,399K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 3,399K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     3,399K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -513,15 +565,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 5,899K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 5,899K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     5,899K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">up to 3 locations</li>
@@ -539,23 +591,23 @@
                 </div>
 
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
-                <h2 class="display-7 text-center my-4 custom-text lang-content lang-en">Photo & Video</h2>
-                <h2 class="display-7 text-center my-4 custom-text lang-content lang-id d-none">Foto & Video</h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video</h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video</h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
                 <div class="row row-cols-1 row-cols-xl-3 mb-4 text-center">
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-1">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Express</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 2,959K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 2,959K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     2,959K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -576,15 +628,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-1">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 5,099K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 5,099K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     5,099K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -611,15 +663,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col-1">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 8,499K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 8,499K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     8,499K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">3 locations</li>
@@ -650,8 +702,8 @@
                 </div>
 
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
-                <h2 class="display-7 text-center my-4 custom-text lang-content lang-en">Photo & Video with MUA</h2>
-                <h2 class="display-7 text-center my-4 custom-text lang-content lang-id d-none">Foto & Video dengan MUA
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video with MUA</h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video dengan MUA
                 </h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
@@ -659,15 +711,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-2">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Express</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 3,549K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 3,549K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     3,549K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -700,15 +752,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-2">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 6,199K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 6,199K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     6,199K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -745,16 +797,16 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col-2">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">
                                     IDR 9,699K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
                                     RP 9,699K
                                 </h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
@@ -792,8 +844,8 @@
                 </div>
 
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
-                <h2 class="display-7 text-center my-4 custom-text lang-content lang-en">Photo & Video with Gown</h2>
-                <h2 class="display-7 text-center my-4 custom-text lang-content lang-id d-none">Foto & Video dengan Gaun
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video with Gown</h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video dengan Gaun
                 </h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
@@ -801,15 +853,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-3">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Express</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 3,499K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 3,499K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     3,499K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -844,15 +896,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-3">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 6,149K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 6,149K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     6,149K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -886,15 +938,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col-3">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 9,699K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 9,699K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     9,699K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">3 locations</li>
@@ -928,8 +980,8 @@
                 </div>
 
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
-                <h2 class="display-7 text-center my-4 custom-text lang-content lang-en">Photo & Video All Include</h2>
-                <h2 class="display-7 text-center my-4 custom-text lang-content lang-id d-none">Foto & Video Paket
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video All Include</h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video Paket
                     Lengkap</h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
@@ -937,15 +989,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-4">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Express</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Express</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">2 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">2 Jam</h6>
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 4,199K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 4,199K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     4,199K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -979,15 +1031,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color fit-col-4">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Half Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Half Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">6 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">6 Jam</h6>
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 7,559K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 7,559K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     7,559K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -1026,15 +1078,15 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm card-custom-color-1 fit-col-4">
                             <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal custom-text-4">Full Day</h4>
+                                <h4 class="my-0 fw-normal aesthetic-text-5">Full Day</h4>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-en">12 Hours</h6>
                                 <h6 class="my-0 fw-normal custom-text-4 lang-content lang-id d-none">12 Jam</h6>
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-en">IDR 12,099K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 12,099K
                                 </h1>
-                                <h1 class="card-title pricing-card-title custom-text-0 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
                                     12,099K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">3 locations</li>
@@ -1091,7 +1143,7 @@
 
                 <div class="col-12 col-md-10 mt-2 col-lg-8 mx-auto mb-3 custom-border"></div>
 
-                <h2 class="display-7 text-center my-4 custom-text">
+                <h2 class="display-7 text-center aesthetic-text-1 my-4">
                     <span class="lang-content lang-en">Transportation Fee</span>
                     <span class="lang-content lang-id d-none">Biaya Transportasi</span>
                 </h2>
@@ -1170,7 +1222,7 @@
 
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
 
-                <h2 class="display-7 text-center my-4 custom-text">
+                <h2 class="display-7 text-center aesthetic-text-1 my-4">
                     <span class="lang-content lang-en">Add-ons</span>
                     <span class="lang-content lang-id d-none">Tambahan</span>
                 </h2>
@@ -1244,12 +1296,12 @@
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-en">Let's book your session now!</h2>
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
                         sekarang!</h2>
-                    <h5 class="display-10 custom-text lang-content lang-en">Are those rate aligned with your budget?
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those rate aligned with your budget?
                     </h5>
-                    <h5 class="display-10 custom-textlang-content lang-id d-none">Apakah daftar harga tersebut sesuai
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah daftar harga tersebut sesuai
                         dengan budgetmu?</h5>
                     <a href="/faqs#inquiry"><button type="button"
                             class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
