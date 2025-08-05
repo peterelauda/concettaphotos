@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - FAQs</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Concetta Photos - FAQs" />
+    <meta property="og:description" content="Our Frequently Asked Questions" />
+    <meta property="og:image" content="{{ url('faqs_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/faqs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concetta Photos - FAQs" />
+    <meta name="twitter:description" content="Our Frequently Asked Questions" />
+    <meta name="twitter:image" content="{{ url('faqs_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -251,7 +265,7 @@
             word-break: break-word;
             overflow-wrap: break-word;
             white-space: normal;
-            text-align: center;
+            text-align: left;
         }
 
         .custom-border {
@@ -490,7 +504,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
@@ -649,7 +663,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#discountContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Photo Packages
                                 Promotion/Discount</h2>
@@ -711,7 +725,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#feesContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Location Fees &
                                 Transportation
@@ -771,7 +785,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#bestTimeContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Best Time of Day
                                 for a Photo
@@ -838,7 +852,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#videoContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Video Package
                                 Without Photos</h2>
@@ -896,7 +910,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#durationContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Change Plan
                                 After Down Payment</h2>
@@ -958,7 +972,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#rainingContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Raining when
                                 Photo Session</h2>
@@ -1018,7 +1032,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#lateContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Arrives Late for
                                 the Photo Session</h2>
@@ -1075,7 +1089,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#portfolioContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Photo Portfolio
                             </h2>
@@ -1128,7 +1142,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#propertyContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Photo Property
                             </h2>
@@ -1182,7 +1196,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#chooseContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Choosing Photos
                                 after Photo Session
@@ -1241,7 +1255,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#whenContent" aria-expanded="false"
                         aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Time to Receive
                                 the Final Photos
@@ -1303,7 +1317,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#receiveAllContent"
                         aria-expanded="false" aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Acceptable Photo
                                 Limits
@@ -1361,7 +1375,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#activeLinkContent"
                         aria-expanded="false" aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Google Drive
                                 Link Active Duration
@@ -1414,7 +1428,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#unactiveLinkContent"
                         aria-expanded="false" aria-controls="preweddingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">If Google Drive
                                 Link Unactive
@@ -1476,7 +1490,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#rescheduleLinkContent"
                         aria-expanded="false" aria-controls="rescheduleContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Reschedule Photo
                                 Session Date
@@ -1562,7 +1576,7 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#photoVideoBookingContent"
                         aria-expanded="false" aria-controls="photoVideoBookingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Book Photo &
                                 Video Session</h2>
@@ -1646,7 +1660,7 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#familySessionContent"
                         aria-expanded="false" aria-controls="familySessionContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Family Session
                                 Photo Options</h2>
@@ -1702,7 +1716,7 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#splitPackageContent"
                         aria-expanded="false" aria-controls="splitPackageContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Splitting Time from Package
@@ -1758,7 +1772,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#multipleSpotContent"
                         aria-expanded="false" aria-controls="multipleSpotContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Multiple Photo Spots in One Location
@@ -1816,7 +1830,7 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#photoFilesContent"
                         aria-expanded="false" aria-controls="photoFilesContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Getting All Photo Files
@@ -1889,7 +1903,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#fineEditContent" aria-expanded="false"
                         aria-controls="fineEditContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Requesting Fine Editing
@@ -1948,7 +1962,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#editingProcessContent"
                         aria-expanded="false" aria-controls="editingProcessContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Editing Process
                             </h2>
@@ -2003,7 +2017,7 @@
                         class="btn dropdown-toggle collapsed w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#cinematicHighlightContent"
                         aria-expanded="false" aria-controls="cinematicHighlightContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Cinematic vs
                                 Highlight Video</h2>
@@ -2061,7 +2075,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#vendorMuaDressContent"
                         aria-expanded="false" aria-controls="vendorMuaDressContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Vendor for MUA & Dress
@@ -2117,7 +2131,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#makeupHairdoContent"
                         aria-expanded="false" aria-controls="makeupHairdoContent">
-                        
+
 
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
@@ -2179,7 +2193,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#photoSelectionContent"
                         aria-expanded="false" aria-controls="photoSelectionContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">
                                 Photo Selection for Fine Editing
@@ -2235,7 +2249,7 @@
                         class="btn dropdown-toggle collapsed  w-100 rounded-0 text-start d-flex justify-content-between align-items-center border-bottom border-dark border-top border-start-0 border-end-0 py-3"
                         type="button" data-bs-toggle="collapse" data-bs-target="#fineEditingContent"
                         aria-expanded="false" aria-controls="fineEditingContent">
-                        
+
                         <span>
                             <h2 class="aesthetic-text-3 responsive-text lang-content lang-en mb-0">Fine Editing
                                 Duration</h2>

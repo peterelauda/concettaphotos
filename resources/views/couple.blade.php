@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Couple Session</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Couple Session" />
+    <meta property="og:description" content="Celebrate love through intimate and timeless photographs. Perfect for anniversaries, special dates, or just a moment to remember together." />
+    <meta property="og:image" content="{{ url('couple_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/couple" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Couple Session" />
+    <meta name="twitter:description" content="Celebrate love through intimate and timeless photographs. Perfect for anniversaries, special dates, or just a moment to remember together." />
+    <meta name="twitter:image" content="{{ url('couple_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -576,7 +590,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">

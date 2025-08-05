@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Holiday and Family Session</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Holiday and Family Session" />
+    <meta property="og:description" content="Capture meaningful moments while traveling—whether you're relaxing on the beach, hiking the mountains, or exploring a new city with family." />
+    <meta property="og:image" content="{{ url('holidayfamily_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/holidayfamily" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Holiday and Family Session" />
+    <meta name="twitter:description" content="Capture meaningful moments while traveling—whether you're relaxing on the beach, hiking the mountains, or exploring a new city with family." />
+    <meta name="twitter:image" content="{{ url('holidayfamily_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -576,7 +590,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
@@ -610,10 +624,10 @@
                                         <img src="{{ asset('novita_card.jpg') }}" alt="Holiday & Family Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en">Novita's Family Holiday at
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Novita's Family Holiday at
                                                 Bali Farm House
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Liburan Keluarga
                                                 Novita di Bali Farm House</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Novita's Family
                                                 Photos</h5>
@@ -656,10 +670,10 @@
                                         <img src="{{ asset('aditya_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en">Aditya's Family Holiday at
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Aditya's Family Holiday at
                                                 Lake Garden
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Liburan Keluarga
                                                 Aditya di Lake Garden</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Aditya's Family
                                                 Photos</h5>
@@ -701,10 +715,10 @@
                                         <img src="{{ asset('amelita_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en">Amelita's Family Holiday at
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Amelita's Family Holiday at
                                                 Apurva Kempinski
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Liburan Keluarga
                                                 Amelita di Apurva Kempinski</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Amelita's Family
                                                 Photos</h5>
@@ -745,11 +759,11 @@
                                     <div class="image-hover-container">
                                         <img src="{{ asset('linda_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2 lang-content lang-en">Linda's Family Holiday at
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Linda's Family Holiday at
                                                 Petitenget Beach
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Liburan Keluarga
                                                 Linda di Pantai Petitenget</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Linda's Family
                                                 Photos</h5>
@@ -790,11 +804,11 @@
                                     <div class="image-hover-container">
                                         <img src="{{ asset('sekar_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay">
-                                            <h2 class="custom-text-2 lang-content lang-en">Sekar's Family Holiday at
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Sekar's Family Holiday at
                                                 Padma Legian
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Liburan Keluarga
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Liburan Keluarga
                                                 Sekar di Padma Legian</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Sekar's Family
                                                 Photos</h5>

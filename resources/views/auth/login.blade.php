@@ -12,7 +12,7 @@
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body p-4">
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('your-inquiries') }}">
                         @csrf
 
                         <!-- Session Status -->
@@ -50,7 +50,7 @@
                                 </a>
                             @endif
 
-                            <x-primary-button class="btn btn-primary ms-sm-3 w-100 w-sm-auto">
+                            <x-primary-button class="btn btn-primary ms-sm-3 w-50 w-sm-auto">
                                 {{ __('Log in') }}
                             </x-primary-button>
                         </div>

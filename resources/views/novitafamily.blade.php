@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Novita Family</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Concetta Photos - Client" />
+    <meta property="og:description" content="Our Cient Photos." />
+    <meta property="og:image" content="{{ url('novitafamily_mobile.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concetta Photos - Client" />
+    <meta name="twitter:description" content="Our Cient Photos." />
+    <meta name="twitter:image" content="{{ url('novitafamily_mobile.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -492,7 +506,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">

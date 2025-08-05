@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Emie & Mieha</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Concetta Photos - Client" />
+    <meta property="og:description" content="Our Cient Photos." />
+    <meta property="og:image" content="{{ url('picture_390.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concetta Photos - Client" />
+    <meta name="twitter:description" content="Our Cient Photos." />
+    <meta name="twitter:image" content="{{ url('picture_390.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -497,8 +511,6 @@
             display: block;
         }
 
-        /* Style untuk Video */
-
         .video-section {
             position: relative;
             width: 100%;
@@ -544,7 +556,6 @@
         .video-overlay-text {
             position: absolute;
             bottom: 40px;
-            /* adjust sesuai kebutuhan */
             left: 50%;
             transform: translateX(-50%);
             color: white;
@@ -568,7 +579,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
@@ -578,7 +589,6 @@
                 Your browser does not support HTML5 video.
             </video>
             <button id="muteBtn" class="btn mute-button">
-                <!-- Default muted icon -->
                 <svg id="muteIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
                     class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
                     <path
@@ -586,7 +596,6 @@
                 </svg>
             </button>
 
-            <!-- Bottom Center Text & Icon -->
             <div class="video-overlay-text text-center">
                 <h1 class="display-5 aesthetic-text-5 mb-2 lang-content lang-en">Emie & Mieha Album</h1>
                 <h1 class="display-5 aesthetic-text-5 mb-2 lang-content lang-id d-none">Album Emie & Mieha</h1>
@@ -909,7 +918,6 @@
             });
         });
 
-        // Untuk video
         const video = document.getElementById('bgVideo');
         const muteBtn = document.getElementById('muteBtn');
         const muteIcon = document.getElementById('muteIcon');

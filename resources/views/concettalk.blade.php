@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concettalk</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Concettalk" />
+    <meta property="og:description" content="Let's Talk with Us About Your Session Plan!" />
+    <meta property="og:image" content="{{ url('concettalk_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/concettalk" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concettalk" />
+    <meta name="twitter:description" content="Let's Talk with Us About Your Session Plan!" />
+    <meta name="twitter:image" content="{{ url('concettalk_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -380,7 +394,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">

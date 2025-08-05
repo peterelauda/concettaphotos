@@ -7,6 +7,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware(['auth', 'verified', 'admin'])->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+});
+
+Route::middleware(['auth', 'verified', 'client'])->group(function () {
+    Route::get('/client/dashboard', function () {
+        return view('client.dashboard');
+    })->name('client.dashboard');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -109,4 +121,12 @@ Route::get('/corenationsportwearbranding', function () {
 
 Route::get('/corenationswimwearbranding', function () {
     return view('corenationswimwearbranding');
+});
+
+Route::get('/tamakidsbranding', function () {
+    return view('tamakidsbranding');
+});
+
+Route::get('/test-toast', function () {
+    return redirect('/')->with('success', 'The client has been successfully registered');
 });

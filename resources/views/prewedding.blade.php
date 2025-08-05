@@ -5,8 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Prewedding Session</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Prewedding Session" />
+    <meta property="og:description"
+        content="Tell your love story before the big day. Artistic and personalized sessions that reflect your chemistry and excitement." />
+    <meta property="og:image" content="{{ url('prewedding_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/prewedding" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prewedding Session" />
+    <meta name="twitter:description"
+        content="Tell your love story before the big day. Artistic and personalized sessions that reflect your chemistry and excitement." />
+    <meta name="twitter:image" content="{{ url('prewedding_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -229,6 +245,56 @@
             font-optical-sizing: auto !important;
             font-weight: 700 !important;
             font-style: normal !important;
+        }
+
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
         }
 
         .custom-border {
@@ -526,7 +592,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
@@ -540,13 +606,13 @@
         </div>
     </section>
 
-    <section id="holidayclient">
+    <section id="preweddingclient">
         <main class="container px-4">
             <div
                 class="p-4 p-md-5 mb-4 text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-5 custom-text mt-3">Prewedding</h2>
-                    <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
+                    <h2 class="display-5 aesthetic-text-1 mt-3">Prewedding</h2>
+                    <div class="col-12 col-md-10 col-lg-8 mx-auto pt-3 custom-border-divider"></div>
                 </div>
             </div>
 
@@ -555,16 +621,63 @@
                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-4">
                         <div class="col">
                             <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/andiangginiprewedding" class="image-hover-wrapper text-decoration-none">
+                                <a href="/pirdadegusprewedding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture_110.jpg') }}" alt="Prewedding Picture"
+                                        <img src="{{ asset('pirdadegus_card.jpg') }}" alt="Prewedding Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en mb-3">Andi & Anggini
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Pirda & Degus Prewedding
+                                            </h2>
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Prewedding Pirda
+                                                & Degus</h2>
+                                            <h5 class="custom-text-2 lang-content lang-en">See more Pirda & Degus
+                                                Prewedding
+                                                Photos</h5>
+                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
+                                                foto-foto Prewedding Pirda & Degus
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Pirda & Degus Prewedding
+                                    </h3>
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Prewedding Pirda
+                                        & Degus</h3>
+                                    <p class="card-text custom-text-0 lang-content lang-en">
+                                        Beneath the witness of the sky, Pirda & Degus weave their vows into a timeless
+                                        love story.
+                                    </p>
+                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
+                                        Di bawah langit yang bersaksi, Pirda & Degus menenun janji dalam harmoni cinta
+                                        yang abadi.
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group"> <a href="/pirdadegusprewedding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
+                                                More</a>
+                                            <a href="/pirdadegusprewedding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
+                                                Lebih
+                                                Banyak</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card rounded-4 h-100 shadow-sm">
+                                <a href="/andiangginiprewedding" class="image-hover-wrapper text-decoration-none">
+                                    <div class="image-hover-container">
+                                        <img src="{{ asset('andianggini_card.jpg') }}" alt="Prewedding Picture"
+                                            class="card-img-top image-hover-img">
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Andi & Anggini
                                                 Prewedding at
                                                 Nyanyi Beach
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none mb-3">Prewedding Andi &
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Prewedding Andi &
                                                 Anggini di Pantai Nyanyi</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Andi & Anggini
                                                 Prewedding Photos</h5>
@@ -575,16 +688,15 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Andi & Anggini Prewedding
-                                        at
-                                        Nyanyi Beach</h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Prewedding Andi &
-                                        Anggini di Pantai Nyanyi</h3>
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Andi & Anggini
+                                        Prewedding</h3>
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Prewedding Andi &
+                                        Anggini</h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
-                                        Andi & Anggini’s romantic prewedding by the serene shores of Nyanyi Beach.
+                                        Andi & Anggini’s romantic prewedding by the serene shores of Beach.
                                     </p>
                                     <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Prewedding romantis Andi & Anggini di tepian tenang Pantai Nyanyi.
+                                        Prewedding romantis Andi & Anggini di tepian tenang Pantai.
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
@@ -605,12 +717,12 @@
                             <div class="card rounded-4 h-100 shadow-sm">
                                 <a href="/johancindyprewedding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture_130.jpg') }}" alt="Couple Picture"
+                                        <img src="{{ asset('johancindy_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en mb-3">Johan & Cindy Prewedding
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Johan & Cindy Prewedding
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none mb-3">Prewedding Johan
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Prewedding Johan
                                                 &
                                                 Cindy</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Johan & Cindy
@@ -622,9 +734,10 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Johan & Cindy Prewedding
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Johan & Cindy Prewedding
                                     </h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Prewedding Johan &
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Prewedding Johan
+                                        &
                                         Cindy</h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
                                         Amidst the golden breeze and silent glances, Johan & Cindy weave their love
@@ -652,12 +765,13 @@
                             <div class="card rounded-4 h-100 shadow-sm">
                                 <a href="/mettaiskandarprewedding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture_144.jpg') }}" alt="Couple Picture"
+                                        <img src="{{ asset('mettaiskandar1_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en">Metta & Iskandar Prewedding
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Metta & Iskandar
+                                                Prewedding
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Prewedding Metta &
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Prewedding Metta &
                                                 Iskandar</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Metta & Iskandar
                                                 Prewedding
@@ -669,9 +783,10 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Metta & Iskandar Prewedding
-                                    </h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Prewedding Metta &
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Metta & Iskandar
+                                        Prewedding</h3>
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Prewedding Metta
+                                        &
                                         Iskandar</h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
                                         Step by step, Metta & Iskandar walk a love story that’s about to become eternal.
@@ -694,53 +809,6 @@
                             </div>
                         </div>
 
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/pirdadegusprewedding" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('picture_189.jpg') }}" alt="Couple Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en mb-3">Pirda & Degus Prewedding
-                                            </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none mb-3">Prewedding Pirda
-                                                & Degus</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Pirda & Degus
-                                                Prewedding
-                                                Photos</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Prewedding Pirda & Degus
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Pirda & Degus Prewedding
-                                    </h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Prewedding Pirda
-                                        & Degus</h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Beneath the witness of the sky, Pirda & Degus weave their vows into a timeless
-                                        love story.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Di bawah langit yang bersaksi, Pirda & Degus menenun janji dalam harmoni cinta
-                                        yang abadi.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/pirdadegusprewedding"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                More</a>
-                                            <a href="/pirdadegusprewedding"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Lebih
-                                                Banyak</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                 </div>
@@ -754,12 +822,12 @@
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-en">Let's book your session now!</h2>
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
                         sekarang!</h2>
-                    <h5 class="display-10 custom-text lang-content lang-en">Are those photos aligned with your taste?
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those photos aligned with your taste?
                     </h5>
-                    <h5 class="display-10 custom-text lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
                         dengan seleramu?</h5>
                     <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
                         Now!</a>

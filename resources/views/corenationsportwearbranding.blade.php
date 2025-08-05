@@ -5,8 +5,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Corenation Sport Wear Branding</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Concetta Photos - Client" />
+    <meta property="og:description" content="Our Cient Photos." />
+    <meta property="og:image" content="{{ url('corenationpasutbranding_mobile.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concetta Photos - Client" />
+    <meta name="twitter:description" content="Our Cient Photos." />
+    <meta name="twitter:image" content="{{ url('corenationpasutbranding_mobile.jpg') }}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -204,6 +226,54 @@
             font-family: "Jost", sans-serif !important;
             font-optical-sizing: auto !important;
             font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
             font-style: normal !important;
         }
 
@@ -442,15 +512,15 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
-        <div class="position-relative w-100 d-none d-md-flex" style="height: 636px;">
+        <div class="position-relative w-100 d-none d-xl-flex" style="height: 636px;">
             <img src="{{ asset('corenationpasutbranding.jpg') }}" alt="Novita Family picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
-        <div class="position-relative w-100 d-flex d-md-none" style="height: 636px;">
+        <div class="position-relative w-100 d-flex d-xl-none" style="height: 636px;">
             <img src="{{ asset('corenationpasutbranding_mobile.jpg') }}" alt="Novita Family picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
@@ -459,38 +529,157 @@
     <section id="novitafamily">
         <div class="container-fluid py-5">
             <div class="px-4 py-3 text-center">
-                <h1 class="display-7 custom-text-3 mb-2 lang-content lang-en">Corenation Pasut Branding Album</h1>
-                <h1 class="display-7 custom-text-3 mb-2 lang-content lang-id d-none">Album Branding Pasut Corenation
+                <h1 class="display-7 aesthetic-text-1 mb-2 lang-content lang-en">Corenation Sport Wear Branding Album
+                </h1>
+                <h1 class="display-7 aesthetic-text-1 mb-2 lang-content lang-id d-none">Album Branding Sport Wear
+                    Corenation
                 </h1>
                 <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-4 mx-auto custom-border-divider mb-5"></div>
 
                 <div>
 
                     <div class="d-flex flex-wrap justify-content-center gap-1 px-3">
-                        @for ($col = 0; $col < 5; $col++)
-                            <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
-                                style="flex-basis: 180px;">
-                                @for ($row = 0; $row < 5; $row++)
-                                    @php $index = 246 + ($col * 5) + $row; @endphp
-                                    <img src="{{ asset('picture_' . $index . '.jpg') }}" alt="picture {{ $index }}"
-                                        class="w-100 mb-1 preview-image" id="picture_{{ $index }}">
-                                @endfor
-                            </div>
-                        @endfor
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_248.jpg') }}" alt="picture 248" class="w-100 mb-1 preview-image"
+                                id="picture_248">
+                            <img src="{{ asset('picture_249.jpg') }}" alt="picture 249" class="w-100 mb-1 preview-image"
+                                id="picture_249">
+                            <img src="{{ asset('picture_250.jpg') }}" alt="picture 250" class="w-100 mb-1 preview-image"
+                                id="picture_250">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_251.jpg') }}" alt="picture 251" class="w-100 mb-1 preview-image"
+                                id="picture_251">
+                            <img src="{{ asset('picture_252.jpg') }}" alt="picture 252" class="w-100 mb-1 preview-image"
+                                id="picture_252">
+                            <img src="{{ asset('picture_253.jpg') }}" alt="picture 253" class="w-100 mb-1 preview-image"
+                                id="picture_253">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_254.jpg') }}" alt="picture 254" class="w-100 mb-1 preview-image"
+                                id="picture_254">
+                            <img src="{{ asset('picture_255.jpg') }}" alt="picture 255" class="w-100 mb-1 preview-image"
+                                id="picture_255">
+                            <img src="{{ asset('picture_256.jpg') }}" alt="picture 256" class="w-100 mb-1 preview-image"
+                                id="picture_256">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_257.jpg') }}" alt="picture 257" class="w-100 mb-1 preview-image"
+                                id="picture_257">
+                            <img src="{{ asset('picture_258.jpg') }}" alt="picture 258" class="w-100 mb-1 preview-image"
+                                id="picture_258">
+                            <img src="{{ asset('picture_259.jpg') }}" alt="picture 259" class="w-100 mb-1 preview-image"
+                                id="picture_259">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_260.jpg') }}" alt="picture 260" class="w-100 mb-1 preview-image"
+                                id="picture_260">
+                            <img src="{{ asset('picture_261.jpg') }}" alt="picture 261" class="w-100 mb-1 preview-image"
+                                id="picture_261">
+                            <img src="{{ asset('picture_262.jpg') }}" alt="picture 262" class="w-100 mb-1 preview-image"
+                                id="picture_262">
+                        </div>
                     </div>
 
+                    <div class="d-flex flex-wrap justify-content-center gap-1 px-3 hidden-gallery d-none">
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_263.jpg') }}" alt="picture 263" class="w-100 mb-1 preview-image"
+                                id="picture_263">
+                            <img src="{{ asset('picture_264.jpg') }}" alt="picture 264" class="w-100 mb-1 preview-image"
+                                id="picture_264">
+                            <img src="{{ asset('picture_265.jpg') }}" alt="picture 265" class="w-100 mb-1 preview-image"
+                                id="picture_265">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_266.jpg') }}" alt="picture 266" class="w-100 mb-1 preview-image"
+                                id="picture_266">
+                            <img src="{{ asset('picture_267.jpg') }}" alt="picture 267" class="w-100 mb-1 preview-image"
+                                id="picture_267">
+                            <img src="{{ asset('picture_268.jpg') }}" alt="picture 268" class="w-100 mb-1 preview-image"
+                                id="picture_268">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_269.jpg') }}" alt="picture 269" class="w-100 mb-1 preview-image"
+                                id="picture_269">
+                            <img src="{{ asset('picture_270.jpg') }}" alt="picture 270" class="w-100 mb-1 preview-image"
+                                id="picture_270">
+                            <img src="{{ asset('picture_271.jpg') }}" alt="picture 271" class="w-100 mb-1 preview-image"
+                                id="picture_271">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_272.jpg') }}" alt="picture 272" class="w-100 mb-1 preview-image"
+                                id="picture_272">
+                            <img src="{{ asset('picture_273.jpg') }}" alt="picture 273" class="w-100 mb-1 preview-image"
+                                id="picture_273">
+                            <img src="{{ asset('picture_274.jpg') }}" alt="picture 274" class="w-100 mb-1 preview-image"
+                                id="picture_274">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_275.jpg') }}" alt="picture 275" class="w-100 mb-1 preview-image"
+                                id="picture_275">
+                            <img src="{{ asset('picture_276.jpg') }}" alt="picture 276" class="w-100 mb-1 preview-image"
+                                id="picture_276">
+                            <img src="{{ asset('picture_277.jpg') }}" alt="picture 277" class="w-100 mb-1 preview-image"
+                                id="picture_277">
+                        </div>
+                    </div>
 
                     <div class="d-flex flex-wrap justify-content-center gap-1 px-3 hidden-gallery d-none">
-                        @for ($col = 0; $col < 5; $col++)
-                            <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
-                                style="flex-basis: 180px;">
-                                @for ($row = 0; $row < 5; $row++)
-                                    @php $index = 271 + ($col * 5) + $row; @endphp
-                                    <img src="{{ asset('picture_' . $index . '.jpg') }}" alt="picture {{ $index }}"
-                                        class="w-100 mb-1 preview-image" id="picture_{{ $index }}">
-                                @endfor
-                            </div>
-                        @endfor
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_278.jpg') }}" alt="picture 278" class="w-100 mb-1 preview-image"
+                                id="picture_278">
+                            <img src="{{ asset('picture_279.jpg') }}" alt="picture 279" class="w-100 mb-1 preview-image"
+                                id="picture_279">
+                            <img src="{{ asset('picture_280.jpg') }}" alt="picture 280" class="w-100 mb-1 preview-image"
+                                id="picture_280">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_281.jpg') }}" alt="picture 281" class="w-100 mb-1 preview-image"
+                                id="picture_281">
+                            <img src="{{ asset('picture_282.jpg') }}" alt="picture 282" class="w-100 mb-1 preview-image"
+                                id="picture_282">
+                            <img src="{{ asset('picture_283.jpg') }}" alt="picture 283" class="w-100 mb-1 preview-image"
+                                id="picture_283">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_284.jpg') }}" alt="picture 284" class="w-100 mb-1 preview-image"
+                                id="picture_284">
+                            <img src="{{ asset('picture_285.jpg') }}" alt="picture 285" class="w-100 mb-1 preview-image"
+                                id="picture_285">
+                            <img src="{{ asset('picture_286.jpg') }}" alt="picture 286" class="w-100 mb-1 preview-image"
+                                id="picture_286">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_287.jpg') }}" alt="picture 287" class="w-100 mb-1 preview-image"
+                                id="picture_287">
+                            <img src="{{ asset('picture_288.jpg') }}" alt="picture 288" class="w-100 mb-1 preview-image"
+                                id="picture_288">
+                            <img src="{{ asset('picture_289.jpg') }}" alt="picture 289" class="w-100 mb-1 preview-image"
+                                id="picture_289">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_290.jpg') }}" alt="picture 290" class="w-100 mb-1 preview-image"
+                                id="picture_290">
+                            <img src="{{ asset('picture_291.jpg') }}" alt="picture 291" class="w-100 mb-1 preview-image"
+                                id="picture_291">
+                            <img src="{{ asset('picture_292.jpg') }}" alt="picture 292" class="w-100 mb-1 preview-image"
+                                id="picture_292">
+                        </div>
                     </div>
 
                 </div>
@@ -513,12 +702,12 @@
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-en">Let's book your session now!</h2>
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
                         sekarang!</h2>
-                    <h5 class="display-10 custom-text lang-content lang-en">Are those photos aligned with your taste?
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those photos aligned with your taste?
                     </h5>
-                    <h5 class="display-10 custom-text lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
                         dengan seleramu?</h5>
                     <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
                         Now!</a>

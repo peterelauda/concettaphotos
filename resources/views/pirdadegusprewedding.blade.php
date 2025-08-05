@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Pirda & Degus</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Concetta Photos - Client" />
+    <meta property="og:description" content="Our Cient Photos." />
+    <meta property="og:image" content="{{ url('picture_164.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concetta Photos - Client" />
+    <meta name="twitter:description" content="Our Cient Photos." />
+    <meta name="twitter:image" content="{{ url('picture_164.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -150,6 +164,11 @@
             transition: fill 0.3s !important;
         }
 
+        .icon-3 {
+            fill: #f7f7f7 !important;
+            transition: fill 0.3s !important;
+        }
+
         .custom-text {
             color: #393e46 !important;
             font-family: "Jost", sans-serif !important;
@@ -207,12 +226,62 @@
             font-style: normal !important;
         }
 
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
         .custom-border {
             border-bottom: 1px solid #578fca;
         }
 
         .custom-border-divider {
-            border-bottom: 5px solid #578fca;
+            border-bottom: 3px solid #f7f7f7;
         }
 
         .dropdown-item {
@@ -237,8 +306,8 @@
             scroll-behavior: smooth;
         }
 
-        #novitafamily {
-            scroll-margin-top: 120.55px;
+        #pirdadegus {
+            scroll-margin-top: 350.55px;
         }
 
         .transition-header {
@@ -304,6 +373,21 @@
             .gallery-column {
                 flex-basis: 100% !important;
                 max-width: 100%;
+            }
+
+            .mute-button {
+                position: absolute;
+                bottom: 140px !important;
+                right: 20px;
+                z-index: 10;
+            }
+
+            .video-overlay-text {
+                bottom: 140px !important;
+            }
+
+            #pirdadegus {
+                scroll-margin-top: 100.55px;
             }
         }
 
@@ -426,6 +510,59 @@
         .submenu-list.show {
             display: block;
         }
+
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mute-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+            box-shadow: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        .mute-button:focus,
+        .mute-button:active,
+        .mute-button:focus-visible,
+        .mute-button:focus-within,
+        .mute-button:focus:active {
+            border: none !important;
+        }
+
+        .mute-button svg {
+            fill: white;
+            width: 32px;
+            height: 32px;
+        }
+
+        .video-overlay-text {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            z-index: 2;
+            width: 100%;
+            padding: 0 1rem;
+        }
     </style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -442,27 +579,44 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
-        <div class="position-relative w-100 d-none d-xl-flex" style="height: 636px;">
-            <img src="{{ asset('pirdadegus.jpg') }}" alt="Novita Family picture"
-                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
-        </div>
-        <div class="position-relative w-100 d-flex d-xl-none" style="height: 636px;">
-            <img src="{{ asset('pirdadegus_mobile.jpg') }}" alt="Novita Family picture"
-                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+        <div class="video-section">
+            <video id="bgVideo" autoplay loop muted>
+                <source src="{{ asset('pirdadegus_video.mp4') }}" type="video/mp4" />
+                Your browser does not support HTML5 video.
+            </video>
+            <button id="muteBtn" class="btn mute-button">
+                <svg id="muteIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+                    class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0" />
+                </svg>
+            </button>
+
+            <div class="video-overlay-text text-center">
+                <h1 class="display-5 aesthetic-text-5 mb-2 lang-content lang-en">Pirda & Degus Prewedding Album</h1>
+                <h1 class="display-5 aesthetic-text-5 mb-2 lang-content lang-id d-none">Album Prewedding Pirda & Degus
+                </h1>
+                <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-4 mx-auto custom-border-divider mb-2"></div>
+                <div class="text-center">
+                    <a href="#pirdadegus">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="white"
+                            class="bi bi-chevron-down icon-3 carousel-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="novitafamily">
+    <section id="pirdadegus">
         <div class="container-fluid py-5">
             <div class="px-4 py-3 text-center">
-                <h1 class="display-7 custom-text-3 mb-2 lang-content lang-en">Pirda & Degus Prewedding Album</h1>
-                <h1 class="display-7 custom-text-3 mb-2 lang-content lang-id d-none">Album Prewedding Pirda & Degus
-                </h1>
-                <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-4 mx-auto custom-border-divider mb-5"></div>
 
                 <div>
 
@@ -583,12 +737,12 @@
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-en">Let's book your session now!</h2>
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
                         sekarang!</h2>
-                    <h5 class="display-10 custom-text lang-content lang-en">Are those photos aligned with your taste?
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those photos aligned with your taste?
                     </h5>
-                    <h5 class="display-10 custom-text lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
                         dengan seleramu?</h5>
                     <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
                         Now!</a>
@@ -777,6 +931,27 @@
                     }
                 });
             });
+        });
+
+        const video = document.getElementById('bgVideo');
+        const muteBtn = document.getElementById('muteBtn');
+        const muteIcon = document.getElementById('muteIcon');
+
+        const mutedSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
+  <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/>
+</svg>`;
+
+        const unmutedSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+  <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/>
+  <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/>
+  <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/>
+</svg>`;
+
+        muteBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            muteBtn.innerHTML = video.muted ? mutedSVG : unmutedSVG;
         });
     </script>
 

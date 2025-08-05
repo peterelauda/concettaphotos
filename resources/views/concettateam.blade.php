@@ -5,22 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Team</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
 
     <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
-    <meta property="og:title" content="Concetta Photos - Bali Photographer" />
-    <meta property="og:description" content="Let’s make your memories remains forever." />
-    <meta property="og:image" content="{{ url('seo_image.jpg') }}" />
-    <meta property="og:url" content="https://www.concettaphotos.com" />
+    <meta property="og:title" content="Concetta Team" />
+    <meta property="og:description" content="Let’s meet our team!" />
+    <meta property="og:image" content="{{ url('concettateam_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/concettateam" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Concetta Photos" />
 
     <!-- Twitter Card meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Concetta Photos - Bali Photographer" />
-    <meta name="twitter:description" content="Let’s make your memories remains forever." />
-    <meta name="twitter:image" content="{{ url('seo_image.jpg') }}" />
+    <meta name="twitter:title" content="Concetta Team" />
+    <meta name="twitter:description" content="Let’s meet our team!" />
+    <meta name="twitter:image" content="{{ url('concettateam_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -609,7 +609,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="profile">

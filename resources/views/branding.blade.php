@@ -5,8 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Branding</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Branding Session" />
+    <meta property="og:description"
+        content="Professional images that bring your brand to life. Ideal for entrepreneurs, businesses, and creatives seeking impactful visual content." />
+    <meta property="og:image" content="{{ url('branding_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/branding" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Branding Session" />
+    <meta name="twitter:description"
+        content="Professional images that bring your brand to life. Ideal for entrepreneurs, businesses, and creatives seeking impactful visual content." />
+    <meta name="twitter:image" content="{{ url('branding_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -228,6 +244,54 @@
             font-family: "Jost", sans-serif !important;
             font-optical-sizing: auto !important;
             font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
             font-style: normal !important;
         }
 
@@ -526,7 +590,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
@@ -545,7 +609,7 @@
             <div
                 class="p-4 p-md-5 mb-4 text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-5 custom-text mt-3">Branding</h2>
+                    <h2 class="display-5 aesthetic-text-1 mt-3">Branding</h2>
                     <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
                 </div>
             </div>
@@ -557,12 +621,13 @@
                             <div class="card rounded-4 h-100 shadow-sm">
                                 <a href="/corenationsportwearbranding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture_263.jpg') }}" alt="Prewedding Picture"
+                                        <img src="{{ asset('sportwear_card.jpg') }}" alt="Sportwear Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en">Corenation Sportwear Branding
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Corenation Sportwear
+                                                Branding
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Branding Sportwear
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Branding Sportwear
                                                 Corenation</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Corenation Sportwear
                                                 branding
@@ -574,16 +639,20 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Corenation Sportwear Branding
+                                    <h3 class="card-text aesthetic-text-1 lang-content lang-en">Corenation Sportwear
+                                        Branding
                                     </h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Branding Sportwear
+                                    <h3 class="card-text aesthetic-text-1 lang-content lang-id d-none">Branding
+                                        Sportwear
                                         Corenation</h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
-                                        Sportwear’s brand transformation with Corenation — shaping a powerful identity with
+                                        Sportwear’s brand transformation with Corenation — shaping a powerful identity
+                                        with
                                         purposeful meaning.
                                     </p>
                                     <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Transformasi identitas Sportwear bersama Corenation, merangkai kekuatan brand dengan
+                                        Transformasi identitas Sportwear bersama Corenation, merangkai kekuatan brand
+                                        dengan
                                         makna yang mendalam.
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -605,12 +674,14 @@
                             <div class="card rounded-4 h-100 shadow-sm">
                                 <a href="/corenationswimwearbranding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
-                                        <img src="{{ asset('picture_328.jpg') }}" alt="Couple Picture"
+                                        <img src="{{ asset('swimwear_card.jpg') }}" alt="Swimwear Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="custom-text-2 lang-content lang-en">Corenation Swimwear Branding
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Corenation Swimwear
+                                                Branding
                                             </h2>
-                                            <h2 class="custom-text-2 lang-content lang-id d-none">Branding Baju Renang
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Branding Baju
+                                                Renang
                                                 Corenation</h2>
                                             <h5 class="custom-text-2 lang-content lang-en">See more Corenation Swimwear
                                                 Branding
@@ -622,9 +693,10 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text custom-text-0 lang-content lang-en">Corenation Swimwear
+                                    <h3 class="card-text aesthetic-text-1 lang-content lang-en">Corenation Swimwear
                                         Branding</h3>
-                                    <h3 class="card-text custom-text-0 lang-content lang-id d-none">Branding Baju Renang
+                                    <h3 class="card-text aesthetic-text-1 lang-content lang-id d-none">Branding Baju
+                                        Renang
                                         Corenation</h3>
                                     <p class="card-text custom-text-0 lang-content lang-en">
                                         Corenation redefines swimwear branding — blending style, function, and a bold
@@ -648,6 +720,54 @@
                             </div>
                         </div>
 
+                        <div class="col">
+                            <div class="card rounded-4 h-100 shadow-sm">
+                                <a href="/tamakidsbranding" class="image-hover-wrapper text-decoration-none">
+                                    <div class="image-hover-container">
+                                        <img src="{{ asset('tamakids_card.jpg') }}" alt="Couple Picture"
+                                            class="card-img-top image-hover-img">
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Tama Kids
+                                                Branding
+                                            </h2>
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Branding Tama Kids
+                                            </h2>
+                                            <h5 class="custom-text-2 lang-content lang-en">See more Tama Kids
+                                                Branding
+                                                Photos</h5>
+                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
+                                                foto-foto Branding Tama Kids
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <h3 class="card-text aesthetic-text-1 lang-content lang-en">Tama Kids
+                                        Branding</h3>
+                                    <h3 class="card-text aesthetic-text-1 lang-content lang-id d-none">Branding Tama
+                                        Kids</h3>
+                                    <p class="card-text custom-text-0 lang-content lang-en">
+                                        Tama Kids steps into a vibrant new look—playful branding designed to grow with
+                                        every little dreamer.
+                                    </p>
+                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
+                                        Tama Kids hadir dengan wajah baru—branding yang ceria, penuh warna, dan siap
+                                        tumbuh bersama si kecil.
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group"> <a href="/tamakidsbranding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
+                                                More</a>
+                                            <a href="/tamakidsbranding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
+                                                Lebih
+                                                Banyak</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -661,12 +781,12 @@
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-en">Let's book your session now!</h2>
-                    <h2 class="display-7 custom-text mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
                         sekarang!</h2>
-                    <h5 class="display-10 custom-text lang-content lang-en">Are those photos aligned with your taste?
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those photos aligned with your taste?
                     </h5>
-                    <h5 class="display-10 custom-text lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
                         dengan seleramu?</h5>
                     <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
                         Now!</a>

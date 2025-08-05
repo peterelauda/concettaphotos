@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Price List</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="Concetta Photos - Price List" />
+    <meta property="og:description" content="Our Price List in Prewedding Service" />
+    <meta property="og:image" content="{{ url('pricelist_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/pricelist" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concetta Photos - Price List" />
+    <meta name="twitter:description" content="Our Price List in Prewedding Service" />
+    <meta name="twitter:image" content="{{ url('pricelist_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -461,7 +475,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
@@ -545,9 +559,11 @@
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 3,399K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    3,399K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     3,399K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -571,9 +587,11 @@
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 5,899K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    5,899K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     5,899K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">up to 3 locations</li>
@@ -605,9 +623,11 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 2,959K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    2,959K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     2,959K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -634,9 +654,11 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 5,099K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    5,099K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     5,099K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -669,9 +691,11 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 8,499K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    8,499K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     8,499K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">3 locations</li>
@@ -703,7 +727,8 @@
 
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
                 <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video with MUA</h2>
-                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video dengan MUA
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video dengan
+                    MUA
                 </h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
@@ -717,9 +742,11 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 3,549K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    3,549K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     3,549K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -758,9 +785,11 @@
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 6,199K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    6,199K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     6,199K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -844,8 +873,10 @@
                 </div>
 
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
-                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video with Gown</h2>
-                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video dengan Gaun
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video with Gown
+                </h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video dengan
+                    Gaun
                 </h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
 
@@ -859,9 +890,11 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 3,499K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    3,499K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     3,499K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -902,9 +935,11 @@
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 6,149K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    6,149K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     6,149K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -944,9 +979,11 @@
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 9,699K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    9,699K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     9,699K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">3 locations</li>
@@ -980,7 +1017,8 @@
                 </div>
 
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-3 custom-border"></div>
-                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video All Include</h2>
+                <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-en">Photo & Video All Include
+                </h2>
                 <h2 class="display-7 text-center aesthetic-text-1 my-4 lang-content lang-id d-none">Foto & Video Paket
                     Lengkap</h2>
                 <div class="col-12 col-md-10 col-lg-8 mx-auto mb-5 custom-border"></div>
@@ -995,9 +1033,11 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center flex-column text-center"
                                 style="height: 100%;">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 4,199K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    4,199K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     4,199K</h1>
                                 <ul class="list-unstyled mt-3 mb-3 custom-text-0">
                                     <li class="lang-content lang-en">1 location</li>
@@ -1037,9 +1077,11 @@
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 7,559K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    7,559K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     7,559K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">2 locations</li>
@@ -1084,9 +1126,11 @@
                             </div>
                             <div
                                 class="card-body d-flex justify-content-between align-items-center flex-column text-center">
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR 12,099K
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-en">IDR
+                                    12,099K
                                 </h1>
-                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">RP
+                                <h1 class="card-title pricing-card-title aesthetic-text-3 lang-content lang-id d-none">
+                                    RP
                                     12,099K</h1>
                                 <ul class="list-unstyled mt-3 mb-4 custom-text-0">
                                     <li class="lang-content lang-en">3 locations</li>

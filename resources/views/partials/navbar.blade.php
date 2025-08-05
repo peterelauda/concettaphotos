@@ -99,22 +99,35 @@
     </div>
 
     <div class="d-none d-xxl-block text-end" style="width: 20%">
-        @if (Route::has('login'))
-            <nav>
+        @if (Route::has('your-inquiries'))
+            <nav class="d-flex flex-wrap justify-content-center justify-content-xxl-end">
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="btn btn-primary mx-4 lang-content lang-en">COME IN</a>
-                    <a href="{{ url('/dashboard') }}" class="btn btn-primary mx-4 lang-content lang-id d-none">MASUK</a>
+                    @php
+                        $user = Auth::user();
+                        $dashboardRoute = match ($user->role) {
+                            'admin' => route('admin.dashboard'),
+                            'client' => route('client.dashboard'),
+                            default => '#',
+                        };
+                    @endphp
+
+                    <a href="{{ $dashboardRoute }}" class="btn btn-primary flex-fill mx-4 my-2 lang-content lang-en"
+                        style="max-width: 154px">COME
+                        IN</a>
+                    <a href="{{ $dashboardRoute }}" class="btn btn-primary flex-fill mx-4 my-2 lang-content lang-id d-none"
+                        style="max-width: 154px">MASUK</a>
                 @else
-                    <a href="{{ route('login') }}" class="btn btn-outline-primary mx-3 my-2 lang-content lang-en"
-                        style="width: 154px">YOUR
+                    <a href="{{ route('your-inquiries') }}"
+                        class="btn btn-outline-primary flex-fill me-3 my-2 lang-content lang-en" style="max-width: 154px">YOUR
                         INQUIRIES</a>
-                    <a href="{{ route('login') }}" class="btn btn-outline-primary mx-3 my-2 lang-content lang-id d-none"
-                        style="width: 154px">PERTANYAANMU</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="btn btn-primary me-3 my-2 lang-content lang-en"
-                            style="width: 154px">JOIN</a>
-                        <a href="{{ route('register') }}" class="btn btn-primary me-3 my-2 lang-content lang-id d-none"
-                            style="width: 154px">GABUNG</a>
+                    <a href="{{ route('your-inquiries') }}"
+                        class="btn btn-outline-primary flex-fill me-3 my-2 lang-content lang-id d-none"
+                        style="max-width: 154px">PERTANYAANMU</a>
+                    @if (Route::has('join'))
+                        <a href="{{ route('join') }}" class="btn btn-primary flex-fill me-3 my-2 lang-content lang-en"
+                            style="max-width: 154px">JOIN</a>
+                        <a href="{{ route('join') }}" class="btn btn-primary flex-fill me-3 my-2 lang-content lang-id d-none"
+                            style="max-width: 154px">GABUNG</a>
                     @endif
                 @endauth
             </nav>
@@ -210,7 +223,8 @@
                                 <ul class="list-unstyled submenu-list pt-4 ps-3">
                                     <li><a class="nav-link text-start" href="{{ url('/about#tac') }}">HOLIDAY &
                                             FAMILY</a></li>
-                                    <li><a class="nav-link text-start" href="{{ url('/about#privacy') }}">PREWEDDING</a>
+                                    <li><a class="nav-link text-start"
+                                            href="{{ url('/about#tac-prewedding') }}">PREWEDDING</a>
                                     </li>
                                 </ul>
                             </li>
@@ -304,19 +318,27 @@
         </div>
 
         <div class="mt-4">
-            @if (Route::has('login'))
+            @if (Route::has('join'))
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="btn btn-primary w-100 mb-2 lang-content lang-en">COME
-                        IN</a>
-                    <a href="{{ url('/dashboard') }}" class="btn btn-primary w-100 mb-2 lang-content lang-id d-none">MASUK</a>
+                    @php
+                        $user = Auth::user();
+                        $dashboardRoute = match ($user->role) {
+                            'admin' => route('admin.dashboard'),
+                            'client' => route('client.dashboard'),
+                            default => '#',
+                        };
+                    @endphp
+
+                    <a href="{{ $dashboardRoute }}" class="btn btn-primary w-100 mb-2 lang-content lang-en">COME IN</a>
+                    <a href="{{ $dashboardRoute }}" class="btn btn-primary w-100 mb-2 lang-content lang-id d-none">MASUK</a>
                 @else
-                    <a href="{{ route('login') }}" class="btn btn-outline-primary w-100 mb-2 lang-content lang-en">YOUR
+                    <a href="{{ route('your-inquiries') }}" class="btn btn-outline-primary w-100 mb-2 lang-content lang-en">YOUR
                         INQUIRIES</a>
-                    <a href="{{ route('login') }}"
+                    <a href="{{ route('your-inquiries') }}"
                         class="btn btn-outline-primary w-100 mb-2 lang-content lang-id d-none">PERTANYAANMU</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-en">JOIN</a>
-                        <a href="{{ route('register') }}" class="btn btn-primary w-100 lang-content lang-id d-none">GABUNG</a>
+                    @if (Route::has('join'))
+                        <a href="{{ route('join') }}" class="btn btn-primary w-100 lang-content lang-en">JOIN</a>
+                        <a href="{{ route('join') }}" class="btn btn-primary w-100 lang-content lang-id d-none">GABUNG</a>
                     @endif
                 @endauth
             @endif

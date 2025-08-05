@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - About</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+
+    <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
+    <meta property="og:title" content="About Concetta Photos" />
+    <meta property="og:description" content="Learn about Us!" />
+    <meta property="og:image" content="{{ url('about_seo_image.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com/about" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Concetta Photos" />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Concetta Team" />
+    <meta name="twitter:description" content="Learn about Us!" />
+    <meta name="twitter:image" content="{{ url('about_seo_image.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -210,6 +224,27 @@
             font-optical-sizing: auto !important;
             font-weight: 700 !important;
             font-style: normal !important;
+        }
+
+        a>.custom-text-0 {
+            text-decoration: underline !important;
+            text-decoration-color: #929AAB !important;
+        }
+
+        a>.custom-text-0:hover {
+            color: #3674b5 !important;
+            text-decoration: underline !important;
+            text-decoration-color: #A1E3F9 !important;
+        }
+
+        a>.custom-text-0:active {
+            color: #A1E3F9 !important;
+            text-decoration-color: #D1F8EF !important;
+        }
+
+        .text-justify-center {
+            text-align: justify;
+            text-align-last: center;
         }
 
         .aesthetic-text-1 {
@@ -417,7 +452,7 @@
 
 <body>
     <section id="header">
-        @include('partials.navbar')
+        @include('layouts.navigation')
     </section>
 
     <section id="picture" class="position-relative">
@@ -477,12 +512,19 @@
             <h1 class="display-7 aesthetic-text-1 mt-5 lang-content lang-id d-none">Sosial Media Kami</h1>
 
             <div class="container px-4" id="icon-grid">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 pt-5">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5 g-4 pt-5">
                     <div class="col d-flex justify-content-center">
                         <div class="text-center">
                             <img class="mb-3" src="{{ asset('instagram_logo.png') }}" alt="Instagram Logo" width="35px">
                             <h3 class="fw-bold mb-1 fs-4 text-body-emphasis aesthetic-text-1">Instagram</h3>
-                            <p>@concettaphotos & @lovestorybyconcettaphotos</p>
+                            <a class="text-body-secondary" href="https://www.instagram.com/concettaphotos/"
+                                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <p class="custom-text-0">@concettaphotos</p>
+                            </a>
+                            <a class="text-body-secondary" href="https://www.instagram.com/lovestorybyconcetta/"
+                                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <p class="custom-text-0">@lovestorybyconcettaphotos</p>
+                            </a>
                         </div>
                     </div>
 
@@ -490,7 +532,11 @@
                         <div class="text-center">
                             <img class="mb-3" src="{{ asset('tiktok_logo.png') }}" alt="Tiktok Logo" width="35px">
                             <h3 class="fw-bold mb-1 fs-4 text-body-emphasis aesthetic-text-1">Tiktok</h3>
-                            <p>@concettaphotos</p>
+                            <a class="text-body-secondary"
+                                href="https://www.tiktok.com/@concettaphotos?is_from_webapp=1&sender_device=pc"
+                                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <p class="custom-text-0">@concettaphotos</p>
+                            </a>
                         </div>
                     </div>
 
@@ -498,7 +544,10 @@
                         <div class="text-center">
                             <img class="mb-3" src="{{ asset('thread_logo.png') }}" alt="Thread Logo" width="35px">
                             <h3 class="fw-bold mb-1 fs-4 text-body-emphasis aesthetic-text-1">Thread</h3>
-                            <p>@concettaphotos</p>
+                            <a class="text-body-secondary" href="https://www.threads.com/@concettaphotos"
+                                target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <p class="custom-text-0">@concettaphotos</p>
+                            </a>
                         </div>
                     </div>
 
@@ -506,7 +555,10 @@
                         <div class="text-center">
                             <img class="mb-3" src="{{ asset('twitter_logo.png') }}" alt="Twitter Logo" width="35px">
                             <h3 class="fw-bold mb-1 fs-4 text-body-emphasis aesthetic-text-1">Twitter</h3>
-                            <p>@ConcettaPhotos_</p>
+                            <a class="text-body-secondary" href="https://x.com/ConcettaPhotos_" target="_blank"
+                                rel="noopener noreferrer" aria-label="Twitter">
+                                <p class="custom-text-0">@ConcettaPhotos_</p>
+                            </a>
                         </div>
                     </div>
 
@@ -514,7 +566,7 @@
                         <div class="text-center">
                             <img class="mb-3" src="{{ asset('email_logo.png') }}" alt="Email Logo" width="35px">
                             <h3 class="fw-bold mb-1 fs-4 text-body-emphasis aesthetic-text-1">Email</h3>
-                            <p>concettaphotosbali@gmail.com</p>
+                            <p class="custom-text-0">concettaphotosbali@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -536,7 +588,7 @@
                 <div class="row g-4">
 
                     <div class="col-12">
-                        <div class="bg-light p-4 rounded shadow-sm border custom-text-0 text-center">
+                        <div class="bg-light p-4 rounded shadow-sm border custom-text-0 text-justify-center">
                             <h6 class="lang-content lang-en custom-line-height fw-bold">
                                 Make sure the client read this terms and conditions carefully. By placing an order and
                                 making payment, the client must have agreed to and read all the terms and conditions
@@ -745,7 +797,7 @@
                     </div>
 
                     <div class="col-12">
-                        <div class="bg-light p-4 rounded shadow-sm border custom-text-0 text-center">
+                        <div class="bg-light p-4 rounded shadow-sm border custom-text-0 text-justify-center">
                             <h6 class="lang-content lang-en custom-line-height fw-bold">
                                 By paid deposit, the client is considered to have agreed with the T&Cs
                                 above.
@@ -772,7 +824,7 @@
 
                 <div class="row g-4">
                     <div class="col-12">
-                        <div class="p-4 rounded shadow-sm border custom-text-0 text-center">
+                        <div class="p-4 rounded shadow-sm border custom-text-0 text-justify-center">
                             <h6 class="lang-content lang-en custom-line-height fw-bold">
                                 Make sure the client read this terms and conditions carefully. By placing an order
                                 and
@@ -1226,7 +1278,7 @@
                     </div>
 
                     <div class="col-12 mb-3">
-                        <div class="p-4 rounded shadow-sm border custom-text-0 text-center">
+                        <div class="p-4 rounded shadow-sm border custom-text-0 text-justify-center">
                             <h6 class="lang-content lang-en custom-line-height fw-bold">
                                 By paid deposit, the client is considered to have agreed with the T&Cs
                                 above.
