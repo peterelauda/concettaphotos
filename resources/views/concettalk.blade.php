@@ -214,6 +214,72 @@
             font-style: normal !important;
         }
 
+        .responsive-text {
+            font-size: clamp(0.8rem, 0.8vw, 1rem);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            text-align: left;
+        }
+
+        .responsive-text-1 {
+            font-size: clamp(0.8rem, 0.8vw, 1rem);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            text-align: right;
+        }
+
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
         .custom-border {
             border-bottom: 1px solid #578fca;
         }
@@ -378,6 +444,50 @@
         .submenu-list.show {
             display: block;
         }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Common button styles */
+        .video-btn {
+            position: absolute;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 8px;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .video-container:not(:hover) .video-btn.fade {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-btn svg {
+            fill: #F7F7F7;
+        }
+
+        /* Positioning */
+        .center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
     </style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -416,538 +526,162 @@
                 <path
                     d="M12.318 3h2.015C15.253 3 16 3.746 16 4.667v6.666c0 .92-.746 1.667-1.667 1.667h-2.015A5.97 5.97 0 0 1 9 14a5.97 5.97 0 0 1-3.318-1H1.667C.747 13 0 12.254 0 11.333V4.667C0 3.747.746 3 1.667 3H2a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1h.682A5.97 5.97 0 0 1 9 2c1.227 0 2.367.368 3.318 1M2 4.5a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0M14 8A5 5 0 1 0 4 8a5 5 0 0 0 10 0" />
             </svg>
-            <h1 class="display-5 custom-text-3">Vlogs & Blogs</h1>
+            <h1 class="display-5 aesthetic-text-1">Vlogs & Blogs</h1>
             <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-2 mx-auto mb-3 custom-border-divider mb-5"></div>
 
             <div class="container-fluid py-5">
 
-                <div
-                    class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 row-cols-xxl-7 g-3 mb-4">
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/70/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 1</h3>
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-4">
+                    @foreach($concettalks as $item)
+                        @if($item->category === 'vlog')
+                            <div class="col">
+                                <div class="card border-0 h-100">
+                                    @if(Str::contains($item->image_url, ['.mp4', '.mov', '.webm']))
+                                        <div class="video-container">
+                                            <video class="myVideo rounded" src="{{ asset('storage/' . $item->image_url) }}"
+                                                muted></video>
+
+                                            <!-- Play/Pause Button -->
+                                            <button class="playPauseBtn video-btn center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor"
+                                                    class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                                                </svg>
+                                            </button>
+
+                                            <!-- Mute/Unmute Button -->
+                                            <button class="muteBtn video-btn bottom-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="#F7F7F7" width="28" height="28"
+                                                    class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    @else
+                                        <img src="{{ asset('storage/' . $item->image_url) }}" class="card-img-top rounded"
+                                            alt="Image">
+                                    @endif
+
+                                    <div class="card-body d-flex flex-column justify-content-start px-0">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group align-items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#578FCA"
+                                                    class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                                                </svg>
+                                                <p class="mx-2 my-0 responsive-text">0 Likes</p>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#578FCA"
+                                                    class="bi bi-chat-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15" />
+                                                </svg>
+                                                <p class="mx-2 my-0 responsive-text">0 Comments</p>
+                                            </div>
+
+                                            <small
+                                                class="text-muted responsive-text-1">{{ $item->created_at->diffForHumans() }}</small>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center mt-3">
+                                            <p class="card-text text-start">{{ $item->caption }}</p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/71/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 2</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/72/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 3</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/73/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 4</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/74/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 5</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/75/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 6</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/76/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 7</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/77/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 8</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/9/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 9</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/10/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 10</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/11/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 11</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/12/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 12</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/13/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 13</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/14/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 14</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/15/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 15</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/16/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 16</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/17/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 17</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/18/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 18</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/19/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 19</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/20/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 20</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/21/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 21</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/22/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 22</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/23/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 23</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/24/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 24</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/25/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 25</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/26/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 26</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/27/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 27</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/28/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 28</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/29/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 29</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/30/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 30</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/31/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 31</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/32/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 32</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/33/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 33</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/34/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 34</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/35/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 35</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/36/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Vlog & Blog 36</h3>
-                            </div>
-                        </div>
-                    </div>
+                        @endif
+                    @endforeach
+
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section id="best">
+    <section id="location">
         <div class="p-5 text-center bg-body-custom d-flex flex-column align-items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="77" height="77" fill="currentColor"
                 class="bi bi-map-fill icon my-4" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                     d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.5.5 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.5.5 0 0 0-.196 0zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1z" />
             </svg>
-            <h1 class="display-5 custom-text-3 lang-content lang-en">Favorite & Best Location</h1>
-            <h1 class="display-5 custom-text-3 lang-content lang-id d-none">Lokasi Favorit & Terbaik</h1>
+            <h1 class="display-5 aesthetic-text-1 lang-content lang-en">Favorite & Best Location</h1>
+            <h1 class="display-5 aesthetic-text-1 lang-content lang-id d-none">Lokasi Favorit & Terbaik</h1>
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto mb-3 custom-border-divider mb-5"></div>
 
             <div class="container-fluid py-5">
 
-                <div
-                    class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 row-cols-xxl-7 g-3 mb-4">
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/101/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 1</h3>
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-4">
+                    @foreach($concettalks as $item)
+                        @if($item->category === 'location')
+                            <div class="col">
+                                <div class="card border-0 h-100 bg-body-custom">
+                                    @if(Str::contains($item->image_url, ['.mp4', '.mov', '.webm']))
+                                        <div class="video-container">
+                                            <video class="myVideo rounded" src="{{ asset('storage/' . $item->image_url) }}"
+                                                muted></video>
+
+                                            <!-- Play/Pause Button -->
+                                            <button class="playPauseBtn video-btn center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor"
+                                                    class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                                                </svg>
+                                            </button>
+
+                                            <!-- Mute/Unmute Button -->
+                                            <button class="muteBtn video-btn bottom-right">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="#F7F7F7" width="28" height="28"
+                                                    class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    @else
+                                        <img src="{{ asset('storage/' . $item->image_url) }}" class="card-img-top rounded"
+                                            alt="Image">
+                                    @endif
+
+                                    <div class="card-body d-flex flex-column justify-content-start px-0">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group align-items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#578FCA"
+                                                    class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                                                </svg>
+                                                <p class="mx-2 my-0 responsive-text">0 Likes</p>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#578FCA"
+                                                    class="bi bi-chat-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15" />
+                                                </svg>
+                                                <p class="mx-2 my-0 responsive-text">0 Comments</p>
+                                            </div>
+
+                                            <small
+                                                class="text-muted responsive-text-1">{{ $item->created_at->diffForHumans() }}</small>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center mt-3">
+                                            <p class="card-text text-start">{{ $item->caption }}</p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/102/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 2</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/103/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 3</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/104/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 4</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/200/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 5</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/106/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 6</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/107/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 7</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/108/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 8</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/109/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 9</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/110/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 10</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/111/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 11</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/112/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 12</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/113/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 13</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/114/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 14</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/115/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 15</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/116/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 16</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/117/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 17</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/118/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 18</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/119/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 19</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/120/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 20</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/121/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 21</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/122/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 22</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/123/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 23</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/124/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 24</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/125/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 25</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/126/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 26</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/127/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 27</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/128/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 28</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/129/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 29</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/130/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 30</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/131/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 31</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/132/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 32</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/133/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 33</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/134/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 34</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/135/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 35</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="img-wrapper"><img src="https://picsum.photos/id/136/300/200">
-                            <div class="img-overlay">
-                                <h3 class="custom-text-2">Location 36</h3>
-                            </div>
-                        </div>
-                    </div>
+                        @endif
+                    @endforeach
+
                 </div>
 
             </div>
@@ -1111,6 +845,54 @@
                 });
             });
         });
+
+        const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="#F7F7F7" width="56" height="56" class="bi bi-pause-fill" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/></svg>`;
+        const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="#F7F7F7" width="56" height="56" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>`;
+        const muteIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="#F7F7F7" width="28" height="28" class="bi bi-volume-mute-fill" viewBox="0 0 16 16"><path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06m7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/></svg>`;
+        const unmuteIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="#F7F7F7" width="28" height="28" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16"><path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/><path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/><path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/></svg>`;
+
+        document.querySelectorAll('.video-container').forEach(container => {
+            const video = container.querySelector('.myVideo');
+            const playPauseBtn = container.querySelector('.playPauseBtn');
+            const muteBtn = container.querySelector('.muteBtn');
+
+            // Play/Pause toggle
+            playPauseBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.innerHTML = pauseIcon;
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = playIcon;
+                }
+            });
+
+            // Mute/Unmute toggle
+            muteBtn.addEventListener('click', () => {
+                video.muted = !video.muted;
+                muteBtn.innerHTML = video.muted ? muteIcon : unmuteIcon;
+            });
+
+            // Fade out after inactivity
+            const controls = document.querySelectorAll('.video-btn');
+            let fadeTimeout;
+
+            const resetFade = () => {
+                controls.forEach(btn => btn.classList.remove('fade'));
+                clearTimeout(fadeTimeout);
+                fadeTimeout = setTimeout(() => {
+                    if (!video.paused) {
+                        controls.forEach(btn => btn.classList.add('fade'));
+                    }
+                }, 2000);
+            };
+
+            video.addEventListener('play', resetFade);
+            video.addEventListener('mousemove', resetFade);
+            video.addEventListener('pause', () => controls.forEach(btn => btn.classList.remove('fade')));
+            controls.forEach(btn => btn.addEventListener('mouseenter', resetFade));
+        });
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"

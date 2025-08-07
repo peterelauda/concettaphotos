@@ -1,4 +1,28 @@
 <!-- resources/views/partials/navbar.blade.php -->
+<style>
+    /* Style saat tombol diklik dan dropdown aktif */
+    /* Style default */
+    .dropdown-toggle {
+        border-color: #3674b5 !important;
+        background-color: transparent !important;
+        font-family: "Jost", sans-serif !important;
+        transition: all 0.2s ease-in-out;
+    }
+
+    /* Saat hover */
+    .dropdown-toggle:hover {}
+
+    /* Saat diklik (active) */
+    .dropdown-toggle:active {}
+
+    .btn-outline-danger:active {
+        border-color: #ff6060ff !important;
+        background-color: #ff6060ff !important;
+        color: #f7f7f7 !important;
+
+    }
+</style>
+
 <header id="mainHeader"
     class="d-flex align-items-center justify-content-between py-3 position-fixed top-0 start-0 w-100 z-3 transition-header">
     <div class="d-none d-xxl-flex align-items-start" style="width: 20%">
@@ -118,7 +142,7 @@
 
                         $buttonLabelId = match ($user->role) {
                             'admin' => 'DASBOR ADMIN',
-                            'client' => 'RIWAYAT PERTANYAAN',
+                            'client' => 'RIWAYAT TANYA',
                             default => 'Dasbor',
                         };
                     @endphp
@@ -141,36 +165,42 @@
         @endif
 
         @auth
-            <a href="{{ $dashboardRoute }}" class="btn btn-primary flex-fill me-3 my-1 lang-content lang-en"
-                style="max-width: 190px">{{ $buttonLabelEn }}</a>
-            <a href="{{ $dashboardRoute }}" class="btn btn-primary flex-fill me-3 my-1 lang-content lang-id d-none"
-                style="max-width: 190px">{{ $buttonLabelId }}</a>
+            <div class="d-flex flex-wrap justify-content-center justify-content-xxl-end">
+                <a href="{{ $dashboardRoute }}" class="btn btn-primary flex-fill me-3 my-1 lang-content lang-en"
+                    style="max-width: 180px">{{ $buttonLabelEn }}</a>
+                <a href="{{ $dashboardRoute }}" class="btn btn-primary flex-fill me-3 my-1 lang-content lang-id d-none"
+                    style="max-width: 180px">{{ $buttonLabelId }}</a>
 
-            <button class="btn btn-light dropdown-toggle me-3 my-1" type="button" id="userDropdown" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                {{ Str::before(Auth::user()->full_name, ' ') }}
-            </button>
+                <button class="btn btn-outline-primary flex-fill dropdown-toggle me-3 my-1" type="button" id="userDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 180px">
+                    {{ Str::before(Auth::user()->full_name, ' ') }}
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li>
+                        <a class="dropdown-item lang-content lang-en"
+                            href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item lang-content lang-id d-none"
+                            href="{{ route('profile.edit') }}">{{ __('Profil') }}</a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item lang-content lang-en">{{ __('Log Out') }}</button>
+                            <button type="submit"
+                                class="dropdown-item lang-content lang-id d-none">{{ __('Keluar') }}</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         @endauth
 
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-            <li>
-                <a class="dropdown-item lang-content lang-en" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
-            </li>
-            <li>
-                <a class="dropdown-item lang-content lang-id d-none"
-                    href="{{ route('profile.edit') }}">{{ __('Profil') }}</a>
-            </li>
-            <li>
-                <hr class="dropdown-divider">
-            </li>
-            <li>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="dropdown-item lang-content lang-en">{{ __('Log Out') }}</button>
-                    <button type="submit" class="dropdown-item lang-content lang-id d-none">{{ __('Keluar') }}</button>
-                </form>
-            </li>
-        </ul>
+
     </div>
 
     <div class="d-flex align-items-center d-xxl-none w-100 justify-content-between px-3">
@@ -208,6 +238,14 @@
         <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="offcanvas"
             aria-label="Close"></button>
     </div>
+
+    <div class="mt-4 ms-3">
+        @auth
+            <div class="custom-text">{{ Auth::user()->full_name }}</div>
+            <div class="custom-text-0">{{ Auth::user()->email }}</div>
+        @endauth
+    </div>
+
     <div class="offcanvas-body">
         <div class="accordion" id="accordionMenu">
 
@@ -356,12 +394,7 @@
 
         </div>
 
-        <div class="mt-4">
-            @auth
-                <div class="fw-bold text-base text-dark">{{ Auth::user()->full_name }}</div>
-                <div class="text-muted text-sm">{{ Auth::user()->email }}</div>
-            @endauth
-        </div>
+
 
         <div class="mt-4">
             @if (Route::has('join'))
@@ -403,23 +436,26 @@
                 @endauth
             @endif
 
-            <a href="{{ route('profile.edit') }}" class="btn btn-primary w-100 mb-2 lang-content lang-en">
-                {{ __('Profile') }}
-            </a>
-            <a href="{{ route('profile.edit') }}" class="btn btn-primary w-100 mb-2 lang-content lang-id d-none">
-                {{ __('Profil') }}
-            </a>
+            @auth
+                <a href="{{ route('profile.edit') }}" class="btn btn-outline-primary w-100 mb-2 lang-content lang-en">
+                    {{ __('Profile') }}
+                </a>
+                <a href="{{ route('profile.edit') }}"
+                    class="btn btn-outline-primary w-100 mb-2 lang-content lang-id d-none">
+                    {{ __('Profil') }}
+                </a>
 
-            <!-- Logout -->
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="btn btn-outline-danger w-100 mb-2 lang-content lang-en">
-                    {{ __('Log Out') }}
-                </button>
-                <button type="submit" class="btn btn-outline-danger w-100 mb-2 lang-content lang-id d-none">
-                    {{ __('Keluar') }}
-                </button>
-            </form>
+                <!-- Logout -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-danger w-100 mb-2 lang-content lang-en">
+                        {{ __('Log Out') }}
+                    </button>
+                    <button type="submit" class="btn btn-outline-danger w-100 mb-2 lang-content lang-id d-none">
+                        {{ __('Keluar') }}
+                    </button>
+                </form>
+            @endauth
 
         </div>
     </div>

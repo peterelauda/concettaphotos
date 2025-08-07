@@ -650,6 +650,145 @@
     <div class="p-6">
         <p>Welcome, Admin!</p>
     </div>
+
+    <div class="container mt-5">
+        <h2>Concettalk Upload</h2>
+
+        <form action="{{ isset($concettalk) ? route('concettalks.update', $concettalk) : route('concettalks.store') }}"
+            method="POST" enctype="multipart/form-data">
+            @csrf
+            @if(isset($concettalk)) @method('PUT') @endif
+
+            <div>
+                <label>File (Image / Video)</label>
+                <input type="file" name="image_url" accept="image/*,video/*" required>
+                @if(isset($concettalk))
+                    <div style="margin-top: 10px;">
+                        @if(Str::contains($concettalk->image_url, ['.mp4', '.mov', '.webm']))
+                            <video width="200" controls>
+                                <source src="{{ asset('storage/' . $concettalk->image_url) }}" type="video/mp4">
+                            </video>
+                        @else
+                            <img src="{{ asset('storage/' . $concettalk->image_url) }}" width="200">
+                        @endif
+                    </div>
+                @endif
+            </div>
+
+            <div>
+                <label>Caption</label>
+                <input type="text" name="caption" value="{{ old('caption', $concettalk->caption ?? '') }}" required>
+            </div>
+
+            <div>
+                <label>Category</label>
+                <input type="text" name="category" value="{{ old('category', $concettalk->category ?? '') }}" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Thumbnail</th>
+                    <th>Caption</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($concettalks as $item)
+                    <tr>
+                        <td>
+                            @if(Str::contains($item->image_url, ['.mp4', '.mov', '.webm']))
+                                <video width="100" muted loop>
+                                    <source src="{{ asset('storage/' . $item->image_url) }}" type="video/mp4">
+                                </video>
+                            @else
+                                <img src="{{ asset('storage/' . $item->image_url) }}" width="100">
+                            @endif
+                        </td>
+                        <td>{{ $item->caption }}</td>
+                        <td>{{ $item->category }}</td>
+                        <td>
+                            <button
+                                onclick="openEditModal({{ $item->id }}, '{{ $item->caption }}', '{{ $item->category }}')">Edit</button>
+
+                            <button onclick="openDeleteModal({{ $item->id }})">Delete</button>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal Edit -->
+    <div id="editModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+     background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:white; padding:20px; border-radius:10px; width:400px;">
+            <form id="editForm" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="_method" value="PUT" />
+                <input type="hidden" name="id" id="edit_id" />
+                <div>
+                    <label>Caption</label>
+                    <input type="text" name="caption" id="edit_caption" required />
+                </div>
+                <div>
+                    <label>Category</label>
+                    <input type="text" name="category" id="edit_category" required />
+                </div>
+                <div>
+                    <label>Replace File</label>
+                    <input type="file" name="image_url" accept="image/*,video/*" />
+                </div>
+                <div style="margin-top:10px;">
+                    <button type="submit">Update</button>
+                    <button type="button" onclick="closeEditModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+     background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:white; padding:20px; border-radius:10px; text-align:center;">
+            <p>Apakah yakin ingin menghapus item ini?</p>
+            <form id="deleteForm" method="POST">
+                @csrf @method('DELETE')
+                <button type="submit">Ya</button>
+                <button type="button" onclick="closeDeleteModal()">Tidak</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <h2>All Inquiries</h2>
+
+        @foreach ($inquiries as $inquiry)
+            <div class="card my-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $inquiry->full_name }} ({{ $inquiry->email }})</h5>
+                    <p class="card-text">
+                        <strong>Phone:</strong> {{ $inquiry->phone_number }}<br>
+                        <strong>Domicile:</strong> {{ $inquiry->domicile }}<br>
+                        <strong>Country:</strong> {{ $inquiry->country }}<br>
+                        <strong>Preference:</strong> {{ $inquiry->preference ?? '—' }}<br>
+                        <strong>Category:</strong> {{ $inquiry->category }}<br>
+                        <strong>Payment Method:</strong> {{ $inquiry->payment_method }}<br>
+                        <strong>Reference:</strong> {{ $inquiry->reference }}<br>
+                        <strong>Message:</strong><br>
+                        {{ $inquiry->message }}
+                    </p>
+                    <small class="text-muted">Submitted at {{ $inquiry->created_at->format('d M Y H:i') }}</small>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </x-app-layout>
 
 <script>
@@ -803,6 +942,27 @@
             return new bootstrap.Toast(toastEl).show();
         });
     });
+
+    function openEditModal(id, caption, category) {
+        document.getElementById('edit_id').value = id;
+        document.getElementById('edit_caption').value = caption;
+        document.getElementById('edit_category').value = category;
+        document.getElementById('editForm').action = '/concettalks/' + id; // Update URL
+        document.getElementById('editModal').style.display = 'flex';
+    }
+
+    function closeEditModal() {
+        document.getElementById('editModal').style.display = 'none';
+    }
+
+    function openDeleteModal(id) {
+        document.getElementById('deleteForm').action = '/concettalks/' + id;
+        document.getElementById('deleteModal').style.display = 'flex';
+    }
+
+    function closeDeleteModal() {
+        document.getElementById('deleteModal').style.display = 'none';
+    }
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"

@@ -642,6 +642,10 @@
     .submenu-list.show {
         display: block;
     }
+
+    .grecaptcha-badge {
+        bottom: 135px !important;
+    }
 </style>
 
 <x-app-layout>
@@ -649,9 +653,133 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">Client Dashboard</h2>
     </x-slot>
 
-    <div class="p-6">
+    <div class="p-6 mt-5">
         <p>Welcome, Client!</p>
+
+        <section id="notification-faqs" class="position-fixed end-0 p-3" style="top: 100px; z-index: 1055;">
+            @if(session('success'))
+                <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
+                    aria-atomic="true" data-bs-delay="4000">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            {{ session('success') }}
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+            @endif
+        </section>
+
+        @php
+            $user = Auth::user();
+        @endphp
+
+        <form id="inquiry-form" action="{{ route('inquiry.store') }}" method="POST">
+            @csrf
+
+            <div class="row g-3 d-flex justify-content-center align-items-center">
+
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
+
+                <input type="hidden" name="full_name" value="{{ $user->full_name }}">
+
+                <input type="hidden" name="phone_number" value="{{ $user->phone_number }}">
+
+                <input type="hidden" name="domicile" value="{{ $user->domicile }}">
+
+                <input type="hidden" name="country" value="{{ $user->country }}">
+
+                <input type="hidden" name="email" value="{{ $user->email }}">
+
+                <!-- Message -->
+                <div class="col-12">
+                    <label for="message" class="form-label">Message</label>
+                    <input type="text" class="form-control" id="message" name="message"
+                        placeholder="We would like to hear your message!" required>
+                    <div class="invalid-feedback">Message required.</div>
+                </div>
+
+                <!-- Preference -->
+                <div class="col-12">
+                    <label for="taste" class="form-label">Preference (Optional)</label>
+                    <input type="text" class="form-control" id="taste" name="preference"
+                        placeholder="We would like to hear more about you!">
+                </div>
+
+                <!-- Category -->
+                <div class="col-md-6">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" id="category" name="category" required>
+                        <option value="">Choose Session Category</option>
+                        <option>Holiday & Family</option>
+                        <option>Couple</option>
+                        <option>Prewedding</option>
+                        <option>Wedding</option>
+                        <option>Branding</option>
+                    </select>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="col-md-6">
+                    <label for="payment_method" class="form-label">Payment Method</label>
+                    <select class="form-select" id="payment_method" name="payment_method" required>
+                        <option value="">-- Choose Payment Method --</option>
+                        <option value="bank_transfer">Bank Transfer (Local Client)</option>
+                        <option value="credit_card">Wise (International Client)</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a payment method.</div>
+                </div>
+
+                <!-- Reference -->
+                <div class="col-12 mb-4">
+                    <label for="reference" class="form-label">How did you hear about us?</label>
+                    <input type="text" class="form-control" id="reference" name="reference"
+                        placeholder="e.g. Instagram, Google, Friend" required>
+                    <div class="invalid-feedback">This field is required.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 mb-4">
+                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                </div>
+
+            </div>
+        </form>
+
+        <p>Inquiry History</p>
+
+        @if($inquiries->isEmpty())
+            <p>You haven't submitted any inquiries yet.</p>
+        @else
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Message</th>
+                        <th>Preference</th>
+                        <th>Category</th>
+                        <th>Payment</th>
+                        <th>Reference</th>
+                        <th>Submitted At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($inquiries as $inquiry)
+                        <tr>
+                            <td>{{ $inquiry->message }}</td>
+                            <td>{{ $inquiry->preference }}</td>
+                            <td>{{ $inquiry->category }}</td>
+                            <td>{{ $inquiry->payment_method }}</td>
+                            <td>{{ $inquiry->reference }}</td>
+                            <td>{{ $inquiry->created_at->format('d M Y H:i') }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @endif
     </div>
+
+
 </x-app-layout>
 
 <script>
@@ -799,10 +927,37 @@
         });
     });
 
+    $(document).ready(function () {
+        $('#country').select2({
+            placeholder: "-- Select Country --",
+            allowClear: true,
+            width: '100%'
+        });
+    });
+</script>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6Le8GJsrAAAAALJJ5kqD24IfHUDxDKtg5feF2-T6"></script>
+
+<script>
+    grecaptcha.ready(function () {
+        grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'submit' }).then(function (token) {
+            const form = document.getElementById('inquiry-form');
+            const input = document.createElement('input');
+            input.setAttribute('type', 'hidden');
+            input.setAttribute('name', 'g-recaptcha-response');
+            input.setAttribute('value', token);
+            form.appendChild(input);
+        });
+    });
+</script>
+
+
+<script>
     document.addEventListener('DOMContentLoaded', function () {
-        const toastElList = [].slice.call(document.querySelectorAll('.toast'))
-        toastElList.map(function (toastEl) {
-            return new bootstrap.Toast(toastEl).show();
+        const toastElList = document.querySelectorAll('.toast');
+        toastElList.forEach(function (toastEl) {
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
         });
     });
 </script>

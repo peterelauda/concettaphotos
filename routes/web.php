@@ -2,21 +2,27 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InquiryController;
+use App\Http\Controllers\ConcettalkController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    Route::get(
+        '/admin/dashboard',
+        [InquiryController::class, 'adminIndex']
+    )->name('admin.dashboard');
+
+    Route::resource('concettalks', ConcettalkController::class);
 });
 
 Route::middleware(['auth', 'verified', 'client'])->group(function () {
-    Route::get('/client/dashboard', function () {
-        return view('client.dashboard');
-    })->name('client.dashboard');
+    Route::get(
+        '/client/dashboard',
+        [InquiryController::class, 'clientIndex']
+    )->name('client.dashboard');
 });
 
 Route::get('/dashboard', function () {
@@ -27,6 +33,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::post('/submit-inquiry', [InquiryController::class, 'store'])->name('inquiry.store');
+
+Route::get('/concettalk', function () {
+    $concettalks = \App\Models\Concettalks::latest()->get();
+    return view('concettalk', compact('concettalks'));
 });
 
 require __DIR__ . '/auth.php';
@@ -65,10 +78,6 @@ Route::get('/wedding', function () {
 
 Route::get('/branding', function () {
     return view('branding');
-});
-
-Route::get('/concettalk', function () {
-    return view('concettalk');
 });
 
 Route::get('/novitafamily', function () {
@@ -129,4 +138,8 @@ Route::get('/tamakidsbranding', function () {
 
 Route::get('/test-toast', function () {
     return redirect('/')->with('success', 'The client has been successfully registered');
+});
+
+Route::get('/test-toast-faqs', function () {
+    return redirect('/faqs')->with('success', 'Inquiry submitted successfully.');
 });
