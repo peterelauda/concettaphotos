@@ -6,7 +6,8 @@ use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\ConcettalkController;
 
 Route::get('/', function () {
-    return view('welcome');
+    $concettalks = \App\Models\Concettalks::latest()->get();
+    return view('welcome', compact('concettalks'));
 });
 
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
@@ -136,10 +137,7 @@ Route::get('/tamakidsbranding', function () {
     return view('tamakidsbranding');
 });
 
-Route::get('/test-toast', function () {
-    return redirect('/')->with('success', 'The client has been successfully registered');
-});
-
-Route::get('/test-toast-faqs', function () {
-    return redirect('/faqs')->with('success', 'Inquiry submitted successfully.');
-});
+// Toast messages for testing
+// Route::get('/test-toast', function () {
+//     return redirect('/')->with('success', 'The client has been successfully registered');
+// });

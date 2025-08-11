@@ -1,7 +1,5 @@
 <!-- resources/views/partials/navbar.blade.php -->
 <style>
-    /* Style saat tombol diklik dan dropdown aktif */
-    /* Style default */
     .dropdown-toggle {
         border-color: #3674b5 !important;
         background-color: transparent !important;
@@ -9,23 +7,34 @@
         transition: all 0.2s ease-in-out;
     }
 
-    /* Saat hover */
     .dropdown-toggle:hover {}
 
-    /* Saat diklik (active) */
     .dropdown-toggle:active {}
 
     .btn-outline-danger:active {
         border-color: #ff6060ff !important;
         background-color: #ff6060ff !important;
         color: #f7f7f7 !important;
+    }
 
+    @media (min-width: 1928px) {
+        .d-1928-block {
+            display: block !important;
+        }
+
+        .d-1928-flex {
+            display: flex !important;
+        }
+
+        .d-1928-none {
+            display: none !important;
+        }
     }
 </style>
 
 <header id="mainHeader"
     class="d-flex align-items-center justify-content-between py-3 position-fixed top-0 start-0 w-100 z-3 transition-header">
-    <div class="d-none d-xxl-flex align-items-start" style="width: 20%">
+    <div class="d-none d-1928-flex align-items-start" style="width: 20%">
 
         <div class="lang-toggle mx-3">
             <input type="checkbox" id="langSwitch">
@@ -36,7 +45,7 @@
 
     </div>
 
-    <div class="d-none d-xxl-flex align-items-center justify-content-center" style="width: 80%">
+    <div class="d-none d-1928-flex align-items-center justify-content-center" style="width: 80%">
 
         <div class="d-flex align-items-center justify-content-end" style="width: 45%">
             <li class="nav-item dropdown list-unstyled me-5">
@@ -54,7 +63,7 @@
                             <span class="submenu-arrow me-0">›</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item lang-content lang-en" href="/about#tac">HOLIDAY &
+                            <li><a class="dropdown-item lang-content lang-en" href="/about#tac-holidayfamily">HOLIDAY &
                                     FAMILY</a></li>
                             <li><a class="dropdown-item lang-content lang-en"
                                     href="/about#tac-prewedding">PREWEDDING</a></li>
@@ -67,7 +76,8 @@
                             <span class="submenu-arrow">›</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item lang-content lang-id d-none" href="/about#tac">HOLIDAY &
+                            <li><a class="dropdown-item lang-content lang-id d-none"
+                                    href="/about#tac-holidayfamily">HOLIDAY &
                                     FAMILY</a></li>
                             <li><a class="dropdown-item lang-content lang-id d-none"
                                     href="/about#tac-prewedding">PREWEDDING</a></li>
@@ -122,7 +132,7 @@
 
     </div>
 
-    <div class="dropdown d-none d-xxl-block text-end" style="width: 20%">
+    <div class="dropdown d-none d-1928-block text-end" style="width: 20%">
         @if (Route::has('your-inquiries'))
             <nav class="d-flex flex-wrap justify-content-center justify-content-xxl-end">
                 @auth
@@ -137,13 +147,13 @@
                         $buttonLabelEn = match ($user->role) {
                             'admin' => 'ADMIN DASHBOARD',
                             'client' => 'INQUIRY HISTORY',
-                            default => 'Dashboard',
+                            default => 'DASHBOARD',
                         };
 
                         $buttonLabelId = match ($user->role) {
                             'admin' => 'DASBOR ADMIN',
                             'client' => 'RIWAYAT TANYA',
-                            default => 'Dasbor',
+                            default => 'DASBOR',
                         };
                     @endphp
 
@@ -156,9 +166,9 @@
                         style="max-width: 154px">PERTANYAANMU</a>
                     @if (Route::has('join'))
                         <a href="{{ route('join') }}" class="btn btn-primary flex-fill me-3 my-1 lang-content lang-en"
-                            style="max-width: 154px">JOIN</a>
+                            style="max-width: 154px">SUBSCRIBE</a>
                         <a href="{{ route('join') }}" class="btn btn-primary flex-fill me-3 my-1 lang-content lang-id d-none"
-                            style="max-width: 154px">GABUNG</a>
+                            style="max-width: 154px">LANGGANAN</a>
                     @endif
                 @endauth
             </nav>
@@ -167,33 +177,33 @@
         @auth
             <div class="d-flex flex-wrap justify-content-center justify-content-xxl-end">
                 <a href="{{ $dashboardRoute }}" class="btn btn-primary flex-fill me-3 my-1 lang-content lang-en"
-                    style="max-width: 180px">{{ $buttonLabelEn }}</a>
+                    style="max-width: 185px">{{ $buttonLabelEn }}</a>
                 <a href="{{ $dashboardRoute }}" class="btn btn-primary flex-fill me-3 my-1 lang-content lang-id d-none"
-                    style="max-width: 180px">{{ $buttonLabelId }}</a>
+                    style="max-width: 185px">{{ $buttonLabelId }}</a>
 
                 <button class="btn btn-outline-primary flex-fill dropdown-toggle me-3 my-1" type="button" id="userDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 180px">
-                    {{ Str::before(Auth::user()->full_name, ' ') }}
+                    data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 185px">
+                    {{ auth()->user()->role === 'admin' ? 'ADMIN' : 'CLIENT' }}
                 </button>
 
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                     <li>
                         <a class="dropdown-item lang-content lang-en"
-                            href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
+                            href="{{ route('profile.edit') }}">{{ __('PROFILE') }}</a>
                     </li>
                     <li>
                         <a class="dropdown-item lang-content lang-id d-none"
-                            href="{{ route('profile.edit') }}">{{ __('Profil') }}</a>
+                            href="{{ route('profile.edit') }}">{{ __('PROFIL') }}</a>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('logout') }}" class="mb-0">
                             @csrf
-                            <button type="submit" class="dropdown-item lang-content lang-en">{{ __('Log Out') }}</button>
+                            <button type="submit" class="dropdown-item lang-content lang-en">{{ __('LOG OUT') }}</button>
                             <button type="submit"
-                                class="dropdown-item lang-content lang-id d-none">{{ __('Keluar') }}</button>
+                                class="dropdown-item lang-content lang-id d-none">{{ __('KELUAR AKUN') }}</button>
                         </form>
                     </li>
                 </ul>
@@ -203,7 +213,7 @@
 
     </div>
 
-    <div class="d-flex align-items-center d-xxl-none w-100 justify-content-between px-3">
+    <div class="d-flex align-items-center d-1928-none w-100 justify-content-between px-3">
         <button class="btn p-0 bg-transparent border-0" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#mobileMenu" aria-controls="mobileMenu" style="width: 60px; height: 32px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="32" fill="#444" class="bi bi-list icon"
@@ -281,7 +291,8 @@
                                     </svg>
                                 </button>
                                 <ul class="list-unstyled submenu-list pt-4 ps-3">
-                                    <li><a class="nav-link text-start" href="{{ url('/about#tac') }}">HOLIDAY &
+                                    <li><a class="nav-link text-start"
+                                            href="{{ url('/about#tac-holidayfamily') }}">HOLIDAY &
                                             FAMILY</a></li>
                                     <li><a class="nav-link text-start"
                                             href="{{ url('/about#tac-prewedding') }}">PREWEDDING</a></li>
@@ -298,7 +309,8 @@
                                     </svg>
                                 </button>
                                 <ul class="list-unstyled submenu-list pt-4 ps-3">
-                                    <li><a class="nav-link text-start" href="{{ url('/about#tac') }}">HOLIDAY &
+                                    <li><a class="nav-link text-start"
+                                            href="{{ url('/about#tac-holidayfamily') }}">HOLIDAY &
                                             FAMILY</a></li>
                                     <li><a class="nav-link text-start"
                                             href="{{ url('/about#tac-prewedding') }}">PREWEDDING</a>
@@ -430,8 +442,8 @@
                     <a href="{{ route('your-inquiries') }}"
                         class="btn btn-outline-primary w-100 mb-2 lang-content lang-id d-none">PERTANYAANMU</a>
                     @if (Route::has('join'))
-                        <a href="{{ route('join') }}" class="btn btn-primary w-100 lang-content lang-en">JOIN</a>
-                        <a href="{{ route('join') }}" class="btn btn-primary w-100 lang-content lang-id d-none">GABUNG</a>
+                        <a href="{{ route('join') }}" class="btn btn-primary w-100 lang-content lang-en">SUBSCRIBE</a>
+                        <a href="{{ route('join') }}" class="btn btn-primary w-100 lang-content lang-id d-none">LANGGANAN</a>
                     @endif
                 @endauth
             @endif
@@ -445,7 +457,6 @@
                     {{ __('Profil') }}
                 </a>
 
-                <!-- Logout -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="btn btn-outline-danger w-100 mb-2 lang-content lang-en">

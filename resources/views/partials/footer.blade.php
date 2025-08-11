@@ -1,4 +1,5 @@
 <!-- resources/views/partials/footer.blade.php -->
+
 <hr class="featurette-divider mt-0">
 
 <div class="container-fluid">

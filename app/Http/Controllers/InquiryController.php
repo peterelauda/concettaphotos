@@ -11,10 +11,13 @@ use App\Models\Concettalks;
 
 class InquiryController extends Controller
 {
+    /**
+     * Store a newly created inquiry in storage.
+     */
     public function store(Request $request)
     {
         $data = $request->validate([
-            'user_id' => 'nullable|exists:users,id',
+            'user_id' => 'nullable|exists:users,id', // Optional, if user is logged in
             'full_name' => 'required|string',
             'phone_number' => 'required|string',
             'domicile' => 'required|string',
@@ -28,23 +31,24 @@ class InquiryController extends Controller
             'g-recaptcha-response' => 'required',
         ]);
 
-        // Kirim token ke Google untuk verifikasi
+        // Sent reCAPTCHA verification request
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
             'secret' => env('RECAPTCHA_SECRET_KEY'),
             'response' => $request->input('g-recaptcha-response'),
             'remoteip' => $request->ip(),
         ]);
 
-        $result = $response->json();
+        $result = $response->json(); // Decode the JSON response and store it in $result
 
         if (!($result['success'] ?? false) || ($result['score'] ?? 0) < 0.5) {
             return back()->withErrors(['captcha' => 'reCAPTCHA verification failed.'])->withInput();
         }
 
-        // Jika lolos reCAPTCHA, lanjutkan simpan data
+        // If reCAPTCHA passes, proceed to save the data
         $inquiry = Inquiry::create($data);
         Log::info('Inquiry berhasil disimpan', ['id' => $inquiry->id]);
 
+        // Redirect based on whether the client submitted the inquiry in client dashboard or guest in FAQs
         if ($inquiry->user_id) {
             return redirect('/client/dashboard')->with('success', 'Inquiry submitted successfully.');
         } else {
@@ -52,6 +56,9 @@ class InquiryController extends Controller
         }
     }
 
+    /**
+     * Display the inquiries for the client dashboard.
+     */
     public function clientIndex()
     {
         $user = Auth::user();
@@ -61,6 +68,9 @@ class InquiryController extends Controller
         return view('client.dashboard', compact('inquiries'));
     }
 
+    /**
+     * Display the inquiries for the admin dashboard.
+     */
     public function adminIndex()
     {
         $inquiries = Inquiry::latest()->get();

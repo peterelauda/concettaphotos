@@ -10,7 +10,8 @@
 
     <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
     <meta property="og:title" content="Holiday and Family Session" />
-    <meta property="og:description" content="Capture meaningful moments while traveling—whether you're relaxing on the beach, hiking the mountains, or exploring a new city with family." />
+    <meta property="og:description"
+        content="Capture meaningful moments while traveling—whether you're relaxing on the beach, hiking the mountains, or exploring a new city with family." />
     <meta property="og:image" content="{{ url('holidayfamily_seo_image.jpg') }}" />
     <meta property="og:url" content="https://www.concettaphotos.com/holidayfamily" />
     <meta property="og:type" content="website" />
@@ -19,7 +20,8 @@
     <!-- Twitter Card meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Holiday and Family Session" />
-    <meta name="twitter:description" content="Capture meaningful moments while traveling—whether you're relaxing on the beach, hiking the mountains, or exploring a new city with family." />
+    <meta name="twitter:description"
+        content="Capture meaningful moments while traveling—whether you're relaxing on the beach, hiking the mountains, or exploring a new city with family." />
     <meta name="twitter:image" content="{{ url('holidayfamily_seo_image.jpg') }}" />
 
     <!-- Fonts -->
@@ -32,30 +34,6 @@
 
     <!-- Styles / Scripts -->
     <style>
-        #holiday {
-            scroll-margin-top: 120.55px;
-        }
-
-        #couple {
-            scroll-margin-top: 120.55px;
-        }
-
-        #family {
-            scroll-margin-top: 120.55px;
-        }
-
-        #prewedding {
-            scroll-margin-top: 120.55px;
-        }
-
-        #wedding {
-            scroll-margin-top: 120.55px;
-        }
-
-        #brandphotoshoot {
-            scroll-margin-top: 120.55px;
-        }
-
         .transition-header {
             background-color: transparent;
             transition: background-color 0.7s ease, box-shadow 0.7s ease;
@@ -395,47 +373,6 @@
             }
         }
 
-        .img-modal {
-            position: fixed;
-            z-index: 1050;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.56);
-            backdrop-filter: blur(3.5px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .img-modal.show {
-            display: flex;
-        }
-
-        .img-modal-content {
-            max-width: 98%;
-            max-height: 84%;
-            object-fit: contain;
-            box-shadow: 0 3.5px 14px rgba(0, 0, 0, 0.35);
-            animation: zoom 0.3s ease-in-out;
-        }
-
-        .img-modal-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #3674B5;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1100;
-        }
-
-        .hidden-gallery {
-            transition: all 0.4s ease-in-out;
-        }
-
         @keyframes zoom {
             from {
                 transform: scale(0.7);
@@ -444,38 +381,6 @@
             to {
                 transform: scale(1);
             }
-        }
-
-        @keyframes bounceDown {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(10px) rotate(0deg);
-            }
-        }
-
-        @keyframes bounceUp {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(180deg);
-            }
-
-            50% {
-                transform: translateY(-10px) rotate(180deg);
-            }
-        }
-
-        .carousel-chevron-down {
-            animation: bounceDown 1s infinite ease-in-out;
-        }
-
-        .chevron-up {
-            animation: bounceUp 1s infinite ease-in-out;
         }
 
         .card-body {
@@ -638,7 +543,8 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Novita's Family Holiday at
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Novita's Family Holiday
+                                        at
                                         Bali Farm House</h3>
                                     <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Liburan Keluarga
                                         Novita di Bali Farm House</h3>
@@ -684,7 +590,8 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Aditya's Family Holiday at
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Aditya's Family Holiday
+                                        at
                                         Lake Garden</h3>
                                     <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Liburan Keluarga
                                         Aditya di Lake Garden</h3>
@@ -715,7 +622,8 @@
                                         <img src="{{ asset('amelita_card.jpg') }}" alt="Couple Picture"
                                             class="card-img-top image-hover-img">
                                         <div class="image-hover-overlay p-4">
-                                            <h2 class="aesthetic-text-5 lang-content lang-en">Amelita's Family Holiday at
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Amelita's Family Holiday
+                                                at
                                                 Apurva Kempinski
                                             </h2>
                                             <h2 class="aesthetic-text-5 lang-content lang-id d-none">Liburan Keluarga
@@ -729,7 +637,8 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Amelita's Family Holiday at
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Amelita's Family Holiday
+                                        at
                                         Apurva Kempinski</h3>
                                     <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Liburan Keluarga
                                         Amelita di Apurva Kempinski</h3>
@@ -774,7 +683,8 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Linda's Family Holiday at
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Linda's Family Holiday
+                                        at
                                         Petitenget Beach</h3>
                                     <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Liburan Keluarga
                                         Linda di Pantai Petitenget</h3>
@@ -819,7 +729,8 @@
                                     </div>
                                 </a>
                                 <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Sekar's Family Holiday at
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Sekar's Family Holiday
+                                        at
                                         Padma Legian</h3>
                                     <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Liburan Keluarga
                                         Sekar di Padma Legian</h3>

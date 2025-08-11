@@ -301,10 +301,6 @@
             scroll-behavior: smooth;
         }
 
-        #novitafamily {
-            scroll-margin-top: 120.55px;
-        }
-
         .transition-header {
             background-color: transparent;
             transition: background-color 0.7s ease, box-shadow 0.7s ease;

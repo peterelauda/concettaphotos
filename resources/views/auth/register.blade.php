@@ -1,4 +1,12 @@
 <x-guest-layout>
+    <style>
+        .grecaptcha-badge {
+            bottom: 135px !important;
+        }
+    </style>
+
+
+
     <div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center px-3">
         <div class="w-100" style="max-width: 500px;">
 
@@ -12,7 +20,7 @@
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body p-4">
 
-                    <form method="POST" action="{{ route('join') }}">
+                    <form id="register-form" method="POST" action="{{ route('join') }}">
                         @csrf
 
                         <!-- Full Name -->
@@ -372,6 +380,21 @@
                 placeholder: "-- Select Country --",
                 allowClear: true,
                 width: '100%'
+            });
+        });
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6Le8GJsrAAAAALJJ5kqD24IfHUDxDKtg5feF2-T6"></script>
+
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'submit' }).then(function (token) {
+                const form = document.getElementById('register-form');
+                const input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', 'g-recaptcha-response');
+                input.setAttribute('value', token);
+                form.appendChild(input);
             });
         });
     </script>

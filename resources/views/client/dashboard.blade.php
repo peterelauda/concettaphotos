@@ -12,649 +12,29 @@
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
 <!-- Styles / Scripts -->
+<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
 <style>
-    /* #3674B5 = Biru laut */
-    /* #578FCA = Biru tua */
-    /* #A1E3F9 = Biru langit */
-    /* #D1F8EF = Biru muda */
-
-    /* #F7F7F7 = Putih */
-    /* #EEEEEE = Abu-abu muda */
-    /* #393E46 = Hitam */
-    /* #929AAB = Abu-abu tua */
-
-    .bg-body-custom {
-        background-color: #f7f7f7 !important;
-    }
-
-    .accordion-button,
-    .nav-link {
-        color: #3674b5 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 600 !important;
-        font-style: normal !important;
-        text-align: center;
-    }
-
-    .nav-link:hover {
-        color: #a1e3f9 !important;
-    }
-
-    .lang-toggle {
-        display: inline-block;
-        position: relative;
-    }
-
-    .lang-toggle input {
-        display: none;
-    }
-
-    .lang-toggle label {
-        display: block;
-        width: 60px;
-        height: 35px;
-        border: 2px solid #3674b5;
-        border-radius: 30px;
-        background: transparent;
-        position: relative;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .lang-toggle .switch-thumb {
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 27px;
-        height: 27px;
-        border-radius: 50%;
-        background-color: white;
-        background-image: url('{{ asset('en_flag.jpg') }}');
-        background-size: cover;
-        background-position: center;
-        transition: all 0.3s;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    }
-
-    .lang-toggle input:checked+label .switch-thumb {
-        left: 27px;
-        background-image: url('{{ asset('id_flag.jpg') }}');
-    }
-
-    .btn-sm {
-        border-radius: 4px !important;
-    }
-
-    .btn-outline-primary {
-        border-color: #3674b5 !important;
-        color: #3674b5 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 600 !important;
-        font-style: normal !important;
-    }
-
-    .btn-outline-primary:hover {
-        border-color: #a1e3f9 !important;
-        background-color: #a1e3f9 !important;
-        color: #f7f7f7 !important;
-    }
-
-    .btn-outline-primary:active {
-        border-color: #d1f8ef !important;
-        background-color: #d1f8ef !important;
-        color: #f7f7f7 !important;
-    }
-
-    .btn-primary {
-        border-color: #3674b5 !important;
-        background-color: #3674b5 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 600 !important;
-        font-style: normal !important;
-    }
-
-    .btn-primary:hover {
-        border-color: #a1e3f9 !important;
-        background-color: #a1e3f9 !important;
-        color: #f7f7f7 !important;
-    }
-
-    .btn-primary:active {
-        border-color: #d1f8ef !important;
-        background-color: #d1f8ef !important;
-        color: #f7f7f7 !important;
-    }
-
-    .icon {
-        fill: #3674b5 !important;
-        transition: fill 0.3s !important;
-    }
-
-    .icon-2 {
-        fill: #393e46 !important;
-        transition: fill 0.3s !important;
-    }
-
-    .motto {
-        color: #393e46 !important;
-        font-family: "Roboto Condensed", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 700 !important;
-        font-style: normal !important;
-    }
-
-    .aesthetic-text-1 {
-        color: #393e46 !important;
-        font-family: "Baskervville", serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 700 !important;
-        font-style: normal !important;
-    }
-
-    .aesthetic-text-2 {
-        color: #393e46 !important;
-        font-family: "Baskervville", serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 600 !important;
-        font-style: normal !important;
-    }
-
-    .aesthetic-text-3 {
-        color: #393e46 !important;
-        font-family: "Baskervville", serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 400 !important;
-        font-style: normal !important;
-    }
-
-    .aesthetic-text-4 {
-        color: #f7f7f7 !important;
-        font-family: "Baskervville", serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 700 !important;
-        font-style: normal !important;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
-    }
-
-    .aesthetic-text-5 {
-        color: #f7f7f7 !important;
-        font-family: "Baskervville", serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 600 !important;
-        font-style: normal !important;
-    }
-
-    .aesthetic-text-6 {
-        color: #f7f7f7 !important;
-        font-family: "Baskervville", serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 400 !important;
-        font-style: normal !important;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
-    }
-
-    .custom-text {
-        color: #393e46 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 600 !important;
-        font-style: normal !important;
-    }
-
-    .custom-text-0 {
-        color: #393e46 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 400 !important;
-        font-style: normal !important;
-    }
-
-    .custom-text-1 {
-        color: #f7f7f7 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 600 !important;
-        font-style: normal !important;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
-    }
-
-    .custom-text-2 {
-        color: #f7f7f7 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 400 !important;
-        font-style: normal !important;
-    }
-
-    .custom-text-3 {
-        color: #393e46 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 700 !important;
-        font-style: normal !important;
-    }
-
-    .custom-text-4 {
-        color: #f7f7f7 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 700 !important;
-        font-style: normal !important;
-    }
-
-    .custom-text-5 {
-        color: #3674b5 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 700 !important;
-        font-style: normal !important;
-    }
-
-    mark {
-        background-color: transparent !important;
-        font-weight: 600 !important;
-        padding: 0 0.2rem !important;
-        border-radius: 4px !important;
-    }
-
-    .custom-border {
-        border-bottom: 1px solid #578fca;
-    }
-
-    .custom-border-divider {
-        border-bottom: 5px solid #578fca;
-    }
-
-    .carousel-zoom img {
-        transition: transform 0.7s ease;
-    }
-
-    .carousel-zoom:hover img {
-        transform: scale(1.14);
-    }
-
-    .image-hover-wrapper {
-        display: block;
-        position: relative;
-        border-radius: 15px 15px 0 0;
-        width: 100%;
-    }
-
-    .image-hover-container {
-        position: relative;
-        overflow: hidden;
-        border-radius: 15px 15px 0 0;
-        height: 280px;
-    }
-
-    .image-hover-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 15px 15px 0 0;
-        transition: transform 0.7s ease;
-    }
-
-    .image-hover-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 15px 15px 0 0;
-        background-color: rgba(0, 123, 255, 0);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        opacity: 0;
-        transition: background-color 0.7s ease, opacity 0.7s ease;
-    }
-
-    .image-hover-overlay h1,
-    .image-hover-overlay h4 {
-        margin: 0.25rem 0;
-    }
-
-    .image-hover-container:hover .image-hover-img {
-        transform: scale(1.14);
-        transition: transform 0.7s ease;
-        border-radius: 15px 15px 0 0;
-    }
-
-    .image-hover-container:hover .image-hover-overlay {
-        background-color: #578fca;
-        border-radius: 15px 15px 0 0;
-        opacity: 0.77;
-    }
-
-    .custom-dropdown {
-        height: 100%;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        font-size: 1.25rem;
-    }
-
-    button[aria-expanded="true"].custom-dropdown {
-        background-color: #a1e3f9;
-        border-color: #3674b5;
-        color: #3674b5;
-        height: 100%;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        font-size: 1.25rem;
-    }
-
-    .dropdown-item {
-        color: #393E46 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 500 !important;
-        font-style: normal !important;
-    }
-
-    .dropdown-item:hover {
-        background-color: #A1E3F9 !important;
-        color: #EEEEEE !important;
-    }
-
-    .dropdown-item:active {
-        background-color: #D1F8EF !important;
-        color: #F7F7F7 !important;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    #opening {
-        scroll-margin-top: 120.55px;
-    }
-
-    #testimonial {
-        scroll-margin-top: 120.55px;
-    }
-
-    #service {
-        scroll-margin-top: 120.55px;
-    }
-
-    .transition-header {
-        background-color: transparent;
-        transition: background-color 0.7s ease, box-shadow 0.7s ease;
-    }
-
-    .scrolled {
-        background-color: rgba(255, 255, 255);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.7s ease;
-    }
-
-    #slide {
-        margin-top: 0px;
-    }
-
-    #slide,
-    #carouselExampleFade,
-    .carousel-inner,
-    .carousel-item,
-    .carousel-item img {
-        height: 100vh;
-    }
-
-    #carouselExampleCaptions1 .carousel-item img {
-        height: 850px !important;
-    }
-
-    #carouselExampleCaptions1 .carousel-item .carousel-caption {
-        height: 850px !important;
-        top: 5% !important;
-    }
-
-    .carousel-item img {
-        object-fit: cover;
-    }
-
-    .carousel-chevron-down {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        text-decoration: none;
-        animation: basketball-bounce 2.5s ease-in-out infinite;
-    }
-
-    .carousel-chevron-down svg {
-        width: 40px;
-        height: 40px;
-        fill: white;
-        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
-        transition: transform 0.3s ease;
-    }
-
-    .carousel-chevron-down:hover svg {
-        transform: scale(1.2);
-    }
-
-    @keyframes basketball-bounce {
-        0% {
-            transform: translate(-50%, 0);
-        }
-
-        10% {
-            transform: translate(-50%, 25px);
-        }
-
-        20% {
-            transform: translate(-50%, 0);
-        }
-
-        30% {
-            transform: translate(-50%, 15px);
-        }
-
-        40% {
-            transform: translate(-50%, 0);
-        }
-
-        50% {
-            transform: translate(-50%, 8px);
-        }
-
-        60% {
-            transform: translate(-50%, 0);
-        }
-
-        70% {
-            transform: translate(-50%, 4px);
-        }
-
-        80% {
-            transform: translate(-50%, 0);
-        }
-
-        100% {
-            transform: translate(-50%, 0);
-        }
-    }
-
-    .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
-    }
-
-    .dropdown-menu {
-        transition: none !important;
-    }
-
-    .accordion-item,
-    .accordion-button,
-    .accordion-button:not(.collapsed),
-    .accordion-collapse {
-        border: none !important;
-        box-shadow: none !important;
-        background-color: transparent !important;
-        color: #3674B5 !important;
-        font-family: "Jost", sans-serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 600 !important;
-        font-style: normal !important;
-    }
-
-    .accordion-body a {
-        font-weight: 400;
-        color: #555;
-        text-decoration: none;
-        padding: 6px 0;
-        display: block;
-    }
-
-    .accordion-body a:hover {
-        color: #003366;
-        text-decoration: underline;
-    }
-
-    .no-dropdown::after {
-        display: none !important;
-    }
-
-    .zoom-on-scroll {
-        transition: transform 1s ease;
-        transform: scale(0.9);
-        opacity: 1;
-    }
-
-    .zoom-on-scroll.zoomed {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    .custom-carousel-nav {
-        --icon-color: #3674b5;
-    }
-
-    .custom-carousel-nav .carousel-control-prev,
-    .custom-carousel-nav .carousel-control-next {
-        width: auto;
-        top: 50%;
-        transform: translateY(45%);
-        z-index: 1;
-    }
-
-    .custom-carousel-nav .carousel-control-prev {
-        left: 15px;
-    }
-
-    .custom-carousel-nav .carousel-control-next {
-        right: 15px;
-    }
-
-    .card {
-        height: 450px !important;
-    }
-
-    @media (max-width: 720px) {
-        .carousel-chevron-down {
-            bottom: 140px;
-        }
-
-        .copyright-text {
-            font-size: 0.8rem;
-        }
-
-        .card {
-            height: fit-content !important;
-        }
-    }
-
-    .custom-carousel-btn {
-        background-color: transparent;
-        border: none;
-    }
-
-    .custom-carousel-btn svg {
-        fill: var(--icon-color);
-    }
-
-    .custom-carousel-nav .carousel-control-prev-icon,
-    .custom-carousel-nav .carousel-control-next-icon {
-        border-radius: 50%;
-        width: 3rem;
-        height: 3rem;
-        background-size: 1.5rem;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .custom-carousel-nav .carousel-indicators {
-        position: relative;
-        margin-top: 1rem;
-        bottom: unset;
-        justify-content: center;
-    }
-
-    .custom-carousel-nav .carousel-indicators [data-bs-target] {
-        background-color: var(--icon-color);
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 5px;
-    }
-
-    .dropdown-submenu .dropdown-menu {
-        display: none !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: 100% !important;
-        margin-top: -0.25rem !important;
-        z-index: 1000 !important;
-    }
-
-    .dropdown-submenu .dropdown-menu.show {
-        display: block !important;
-    }
-
-    .submenu-arrow {
-        font-size: 20px;
-        margin-left: auto;
-        margin-bottom: 2px;
-    }
-
-    .dropdown-submenu>.dropdown-toggle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .dropdown-submenu>.dropdown-toggle::after {
-        display: none !important;
-    }
-
-    .submenu-list {
-        display: none;
-    }
-
-    .submenu-list.show {
-        display: block;
-    }
-
     .grecaptcha-badge {
         bottom: 135px !important;
     }
 </style>
 
+<!-- Content -->
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Client Dashboard</h2>
-    </x-slot>
 
-    <div class="p-6 mt-5">
-        <p>Welcome, Client!</p>
+    @php
+        $user = Auth::user();
+    @endphp
+
+    <div class="container p-4" style="margin-top: 210px; min-height: 70%;">
+        <h1 class="aesthetic-text-1 display-6 mb-2">Inquiry</h1>
+
+        <p class="custom-text-0 mb-5" style="font-size: 2rem;">Welcome,
+            {{ (Str::before(Auth::user()->full_name, ' ')) }}!
+        </p>
+
+        <h2 class="custom-text-3 mb-3" style="font-size: 1.7rem;">Inquiry Upload</h2>
 
         <section id="notification-faqs" class="position-fixed end-0 p-3" style="top: 100px; z-index: 1055;">
             @if(session('success'))
@@ -670,10 +50,6 @@
                 </div>
             @endif
         </section>
-
-        @php
-            $user = Auth::user();
-        @endphp
 
         <form id="inquiry-form" action="{{ route('inquiry.store') }}" method="POST">
             @csrf
@@ -694,49 +70,50 @@
 
                 <!-- Message -->
                 <div class="col-12">
-                    <label for="message" class="form-label">Message</label>
-                    <input type="text" class="form-control" id="message" name="message"
+                    <label for="message" class="form-label custom-text-0">Message</label>
+                    <input type="text" class="form-control custom-text-0 rounded" id="message" name="message"
                         placeholder="We would like to hear your message!" required>
                     <div class="invalid-feedback">Message required.</div>
                 </div>
 
                 <!-- Preference -->
                 <div class="col-12">
-                    <label for="taste" class="form-label">Preference (Optional)</label>
-                    <input type="text" class="form-control" id="taste" name="preference"
-                        placeholder="We would like to hear more about you!">
+                    <label for="taste" class="form-label custom-text-0">Preference (Optional)</label>
+                    <input type="text" class="form-control custom-text-0 rounded" id="taste" name="preference"
+                        placeholder="We would like to hear more about your wanted style in photo session!">
                 </div>
 
                 <!-- Category -->
                 <div class="col-md-6">
-                    <label for="category" class="form-label">Category</label>
-                    <select class="form-select" id="category" name="category" required>
-                        <option value="">Choose Session Category</option>
-                        <option>Holiday & Family</option>
-                        <option>Couple</option>
-                        <option>Prewedding</option>
-                        <option>Wedding</option>
-                        <option>Branding</option>
+                    <label for="category" class="form-label custom-text-0">Category</label>
+                    <select class="form-select custom-text-0 rounded" id="category" name="category" required>
+                        <option value="">-- Choose Session Category --</option>
+                        <option value="Holiday & Family">Holiday & Family</option>
+                        <option value="Couple">Couple</option>
+                        <option value="Prewedding">Prewedding</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Branding">Branding</option>
                     </select>
                 </div>
 
                 <!-- Payment Method -->
                 <div class="col-md-6">
-                    <label for="payment_method" class="form-label">Payment Method</label>
-                    <select class="form-select" id="payment_method" name="payment_method" required>
+                    <label for="payment_method" class="form-label custom-text-0">Payment Method</label>
+                    <select class="form-select custom-text-0 rounded" id="payment_method" name="payment_method"
+                        required>
                         <option value="">-- Choose Payment Method --</option>
-                        <option value="bank_transfer">Bank Transfer (Local Client)</option>
-                        <option value="credit_card">Wise (International Client)</option>
+                        <option value="Bank Transfer">Bank Transfer (Local Client)</option>
+                        <option value="Credit Card">Wise (International Client)</option>
                     </select>
                     <div class="invalid-feedback">Please select a payment method.</div>
                 </div>
 
                 <!-- Reference -->
                 <div class="col-12 mb-4">
-                    <label for="reference" class="form-label">How did you hear about us?</label>
-                    <input type="text" class="form-control" id="reference" name="reference"
+                    <label for="reference" class="form-label custom-text-0">How did you hear about us?</label>
+                    <input type="text" class="form-control custom-text-0 rounded" id="reference" name="reference"
                         placeholder="e.g. Instagram, Google, Friend" required>
-                    <div class="invalid-feedback">This field is required.</div>
+                    <div class="invalid-feedback">Please select a payment method.</div>
                 </div>
 
                 <!-- Submit Button -->
@@ -747,186 +124,60 @@
             </div>
         </form>
 
-        <p>Inquiry History</p>
+        <h2 class="custom-text-3 mb-3" style="font-size: 1.7rem;">Inquiries History</h2>
 
         @if($inquiries->isEmpty())
-            <p>You haven't submitted any inquiries yet.</p>
+            <p class="custom-text-0">You have not submitted any inquiries yet.</p>
         @else
-            <table class="table table-striped mt-4">
-                <thead>
-                    <tr>
-                        <th>Message</th>
-                        <th>Preference</th>
-                        <th>Category</th>
-                        <th>Payment</th>
-                        <th>Reference</th>
-                        <th>Submitted At</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($inquiries as $inquiry)
-                        <tr>
-                            <td>{{ $inquiry->message }}</td>
-                            <td>{{ $inquiry->preference }}</td>
-                            <td>{{ $inquiry->category }}</td>
-                            <td>{{ $inquiry->payment_method }}</td>
-                            <td>{{ $inquiry->reference }}</td>
-                            <td>{{ $inquiry->created_at->format('d M Y H:i') }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                @foreach ($inquiries as $inquiry)
+                    <div class="col mb-4">
+                        <div class="card border-1 shadow-sm rounded-4 h-100">
+                            <div class="card-body px-3 py-3 d-flex flex-column justify-content-between" style="height: 100%;">
+
+                                <div>
+                                    <h5 class="card-title mb-2 custom-text-3">{{ $inquiry->full_name ?? 'Nama tidak tersedia' }}
+                                    </h5>
+                                    <p class="text-muted mb-2 custom-text-0">{{ $inquiry->email ?? 'Email tidak tersedia' }}</p>
+
+                                    <p class="card-text small mb-3 custom-text-0">
+                                        <strong>Message:</strong> {{ $inquiry->message }}<br>
+                                        <strong>Preference:</strong> {{ $inquiry->preference ?? '—' }}<br>
+                                        <strong>Category:</strong> {{ $inquiry->category }}<br>
+                                        <strong>Payment Method:</strong> {{ $inquiry->payment_method }}<br>
+                                        <strong>Reference:</strong> {{ $inquiry->reference }}<br>
+                                    </p>
+                                </div>
+
+                                <div class="mt-auto d-flex justify-content-between align-items-center custom-text-0">
+                                    <small class="text-muted">
+                                        Submitted at {{ $inquiry->created_at->format('d M Y H:i') }}
+                                    </small>
+                                    @if(!empty($inquiry->email))
+                                        <a href="mailto:{{ $inquiry->email }}" class="btn btn-sm btn-outline-primary">
+                                            Reply
+                                        </a>
+                                    @endif
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         @endif
     </div>
+
+    <section id="footer" class="mt-5">
+        @include('partials.footer')
+    </section>
 
 
 </x-app-layout>
 
+<script src="{{ asset('js/custom.js') }}"></script>
+
 <script>
-    window.addEventListener("scroll", function () {
-        const header = document.getElementById("mainHeader");
-        if (window.scrollY > 14) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const zoomElements = document.querySelectorAll(".zoom-on-scroll");
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("zoomed");
-                } else {
-                    entry.target.classList.remove("zoomed");
-                }
-            });
-        }, {
-            threshold: 0.5
-        });
-
-        zoomElements.forEach(el => observer.observe(el));
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const switches = document.querySelectorAll("#langSwitch, #langSwitch1");
-        const langEN = document.querySelectorAll(".lang-en");
-        const langID = document.querySelectorAll(".lang-id");
-
-        function updateLanguageUI(lang) {
-            if (lang === "id") {
-                langEN.forEach(el => el.classList.add("d-none"));
-                langID.forEach(el => el.classList.remove("d-none"));
-                switches.forEach(sw => sw.checked = true);
-            } else {
-                langEN.forEach(el => el.classList.remove("d-none"));
-                langID.forEach(el => el.classList.add("d-none"));
-                switches.forEach(sw => sw.checked = false);
-            }
-        }
-
-        const savedLang = localStorage.getItem("selectedLang") || "id";
-        updateLanguageUI(savedLang);
-
-        switches.forEach(switcher => {
-            switcher.addEventListener("change", function () {
-                const lang = switcher.checked ? "id" : "en";
-                localStorage.setItem("selectedLang", lang);
-                updateLanguageUI(lang);
-            });
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const offcanvasEl = document.getElementById('mobileMenu');
-        const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
-
-        offcanvasEl.querySelectorAll('a.nav-link, a.accordion-button, a.text-decoration-none').forEach(function (link) {
-            link.addEventListener('click', function () {
-                offcanvas.hide();
-            });
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
-        let manuallyOpened = null;
-
-        document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-            menu.classList.remove('show');
-        });
-
-        submenuToggles.forEach(toggle => {
-            const parentLi = toggle.parentElement;
-            const submenu = toggle.nextElementSibling;
-
-            parentLi.addEventListener('mouseenter', () => {
-                if (manuallyOpened !== submenu) {
-                    submenu.classList.add('show');
-                }
-            });
-
-            parentLi.addEventListener('mouseleave', () => {
-                if (manuallyOpened !== submenu) {
-                    submenu.classList.remove('show');
-                }
-            });
-
-            toggle.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const isOpen = submenu.classList.contains('show');
-
-                if (manuallyOpened === submenu) {
-                    submenu.classList.remove('show');
-                    manuallyOpened = null;
-                } else {
-                    document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-                        menu.classList.remove('show');
-                    });
-
-                    submenu.classList.add('show');
-                    manuallyOpened = submenu;
-                }
-            });
-        });
-
-        document.addEventListener('click', function (e) {
-            if (!e.target.closest('.dropdown-menu')) {
-                document.querySelectorAll('.dropdown-submenu .dropdown-menu').forEach(menu => {
-                    menu.classList.remove('show');
-                });
-                manuallyOpened = null;
-            }
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const submenuToggles = document.querySelectorAll('.submenu-toggle');
-
-        submenuToggles.forEach(toggle => {
-            toggle.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const submenu = this.nextElementSibling;
-
-                const isShown = submenu.classList.contains('show');
-
-                document.querySelectorAll('.submenu-list').forEach(list => {
-                    list.classList.remove('show');
-                });
-
-                if (!isShown) {
-                    submenu.classList.add('show');
-                }
-            });
-        });
-    });
-
     $(document).ready(function () {
         $('#country').select2({
             placeholder: "-- Select Country --",
@@ -947,17 +198,6 @@
             input.setAttribute('name', 'g-recaptcha-response');
             input.setAttribute('value', token);
             form.appendChild(input);
-        });
-    });
-</script>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const toastElList = document.querySelectorAll('.toast');
-        toastElList.forEach(function (toastEl) {
-            const toast = new bootstrap.Toast(toastEl);
-            toast.show();
         });
     });
 </script>

@@ -9,6 +9,6 @@ class Concettalks extends Model
     protected $fillable = [
         'image_url',
         'caption',
-        'category'
+        'category',
     ];
 }

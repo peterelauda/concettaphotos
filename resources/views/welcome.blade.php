@@ -293,7 +293,15 @@
             transition: transform 0.7s ease;
         }
 
+        .carousel-zoom video {
+            transition: transform 0.7s ease;
+        }
+
         .carousel-zoom:hover img {
+            transform: scale(1.14);
+        }
+
+        .carousel-zoom:hover video {
             transform: scale(1.14);
         }
 
@@ -1083,82 +1091,69 @@
             </div>
 
             <div class="container-fluid px-0">
-                <div id="carouselExampleCaptions1" class="carousel slide custom-carousel-nav">
-                    <div class="carousel-inner rounded-4 overflow-hidden shadow-sm mb-4 w-100" style="height: 630px;">
-                        <div class="carousel-item active carousel-zoom position-relative">
-                            <a href="/concettalk">
-                                <img src="{{ asset('concettalk_1.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="1st Concettalk Photo">
-                                <div
-                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-5">
-                                    <h3 class="display-5 aesthetic-text-4 text-white text-center lang-content lang-en">
-                                        Exercise while taking a photoshoot? Absolutely possible!</h3>
-                                    <h3
-                                        class="display-5 aesthetic-text-4 text-white text-center lang-content lang-id d-none">
-                                        Olahraga sambil photoshoot? Bisa banget!</h3>
-                                    <p class="display-9 custom-text-1 text-white text-center lang-content lang-en">
-                                        Who says you can't break a sweat and strike a pose at the same time? Let’s make
-                                        fitness fun and photogenic!</p>
-                                    <p
-                                        class="display-9 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Siapa bilang nggak bisa olahraga sambil bergaya? Yuk, bikin aktivitas sehat jadi
-                                        momen yang Instagramable!</p>
-                                </div>
-                            </a>
-                        </div>
+                <div id="carouselExampleCaptions1" class="carousel slide custom-carousel-nav" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded-4 overflow-hidden shadow-sm mb-4 w-100" style="height: 700px;">
 
-                        <div class="carousel-item carousel-zoom position-relative">
-                            <a href="/concettalk">
-                                <img src="{{ asset('concettalk_2.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="2nd Concettalk Photo">
-                                <div
-                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-5">
-                                    <h3 class="display-5 aesthetic-text-4 text-white text-center lang-content lang-en">
-                                        Escape to Bali: Where Every Moment Feels Like Paradise!</h3>
-                                    <h3
-                                        class="display-5 aesthetic-text-4 text-white text-center lang-content lang-id d-none">
-                                        Liburan ke Bali: Setiap Detik Serasa di Surga!</h3>
-                                    <p class="display-9 custom-text-1 text-white text-center lang-content lang-en">
-                                        From golden beaches to lush rice fields, Bali is the getaway your soul has been
-                                        craving!</p>
-                                    <p
-                                        class="display-9 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Dari pantai berpasir emas hingga sawah hijau yang menenangkan, Bali adalah
-                                        tempat liburan yang bikin hati tenang!</p>
-                                </div>
-                            </a>
-                        </div>
+                        @foreach($concettalks->sortByDesc('created_at')->take(7) as $index => $item)
+                            @php
+                                // Ambil caption tanpa HTML berlebih
+                                $rawCaption = strip_tags($item->caption);
 
-                        <div class="carousel-item carousel-zoom position-relative">
-                            <a href="/concettalk">
-                                <img src="{{ asset('concettalk_3.jpg') }}" class="d-block w-100 h-100 object-fit-cover"
-                                    alt="3rd Concettalk Photo">
-                                <div
-                                    class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-5">
-                                    <h3 class="display-5 aesthetic-text-4 text-white text-center lang-content lang-en">
-                                        Family, Sun, and Snapshots: A Beach Day to Remember!</h3>
-                                    <h3
-                                        class="display-5 aesthetic-text-4 text-white text-center lang-content lang-id d-none">
-                                        Keluarga, Pantai, dan Momen Indah yang Diabadikan!</h3>
-                                    <p class="display-9 custom-text-1 text-white text-center lang-content lang-en">
-                                        Capture laughter, sunshine, and sandy toes—because beach days with family are
-                                        made for memories!</p>
-                                    <p
-                                        class="display-9 custom-text-1 text-white text-center lang-content lang-id d-none">
-                                        Abadikan tawa, sinar matahari, dan jejak kaki di pasir—karena liburan di pantai
-                                        bersama keluarga selalu penuh kenangan!</p>
-                                </div>
-                            </a>
-                        </div>
+                                // Ganti &nbsp; jadi spasi biasa
+                                $rawCaption = str_replace("\xC2\xA0", ' ', html_entity_decode($rawCaption));
+
+                                // Pecah jadi array kalimat (titik, tanda tanya, tanda seru)
+                                preg_match_all('/[^.?!]+[.?!]*/u', $rawCaption, $matches);
+                                $sentences = array_map('trim', $matches[0] ?? []);
+
+                                // Kalimat pertama jadi title (max 50 char)
+                                $title = isset($sentences[0]) ? Str::limit($sentences[0], 100) : '';
+
+                                // Kalimat kedua jadi desc (max 100 char)
+                                $desc = isset($sentences[1]) ? Str::limit($sentences[1], 140) : '';
+                            @endphp
+
+                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }} carousel-zoom position-relative">
+                                <a href="/concettalk">
+                                    @php
+                                        $path = asset('storage/' . $item->image_url);
+                                        $ext = strtolower(pathinfo($item->image_url, PATHINFO_EXTENSION));
+                                    @endphp
+
+                                    @if(in_array($ext, ['mp4', 'mov', 'webm']))
+                                        {{-- Video: ambil frame pertama sebagai thumbnail --}}
+                                        <video class="d-block w-100 h-100" style="object-fit: cover; object-position: center;"
+                                            preload="metadata">
+                                            <source src="{{ $path }}#t=0.1" type="video/{{ $ext }}">
+                                        </video>
+                                    @else
+                                        {{-- Gambar biasa --}}
+                                        <img src="{{ $path }}" class="d-block w-100 h-100"
+                                            style="object-fit: cover; object-position: center;" alt="Concettalk Thumbnail">
+                                    @endif
+
+                                    <div
+                                        class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-5">
+                                        <h3 class="display-5 aesthetic-text-4 text-white text-center">
+                                            {{ $title }}
+                                        </h3>
+                                        <p class="display-9 custom-text-1 text-white text-center">
+                                            {{ $desc }}
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+
                     </div>
 
                     <div class="carousel-indicators mb-5">
-                        <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+                        @for ($i = 0; $i < $concettalks->sortByDesc('created_at')->take(7)->count(); $i++)
+                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="{{ $i }}"
+                                class="{{ $i === 0 ? 'active' : '' }}" @if($i === 0) aria-current="true" @endif
+                                aria-label="Slide {{ $i + 1 }}">
+                            </button>
+                        @endfor
                     </div>
 
                     <button class="carousel-control-prev custom-carousel-btn" type="button"
