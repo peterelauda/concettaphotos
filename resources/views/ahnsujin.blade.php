@@ -5,24 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Concetta Photos - Couple Session</title>
+    <title>Concetta Photos - Ahn Sujin</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
+    <meta name="description"
+        content="Professional Bali photographer specializing in prewedding, couple, wedding, branding, holiday & family photography. Fotografer profesional di Bali untuk prewedding, pasangan, pernikahan, branding, liburan & keluarga. Abadikan momen terbaik Anda dengan sentuhan seni.">
+    <meta name="keywords"
+        content="Concetta Photos, Bali photographer, Bali wedding photographer, Bali prewedding photographer, couple photography Bali, holiday photography Bali, Bali family photographer, Bali branding photography, fotografer Bali, fotografer pernikahan Bali, fotografer prewedding Bali, foto pasangan Bali, foto liburan Bali, fotografer keluarga Bali, fotografer branding Bali">
+    <meta name="robots" content="index, follow">
 
     <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
-    <meta property="og:title" content="Couple Session" />
-    <meta property="og:description"
-        content="Celebrate love through intimate and timeless photographs. Perfect for anniversaries, special dates, or just a moment to remember together." />
-    <meta property="og:image" content="{{ url('couple_seo_image.jpg') }}" />
-    <meta property="og:url" content="https://www.concettaphotos.com/couple" />
+    <meta property="og:title" content="Concetta Photos - Ahn Sujin" />
+    <meta property="og:description" content="Ahn Sujin Photos." />
+    <meta property="og:image" content="{{ url('ahnsujin_mobile.jpg') }}" />
+    <meta property="og:url" content="https://www.concettaphotos.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Concetta Photos" />
 
     <!-- Twitter Card meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Couple Session" />
-    <meta name="twitter:description"
-        content="Celebrate love through intimate and timeless photographs. Perfect for anniversaries, special dates, or just a moment to remember together." />
-    <meta name="twitter:image" content="{{ url('couple_seo_image.jpg') }}" />
+    <meta name="twitter:title" content="Concetta Photos - Ahn Sujin" />
+    <meta name="twitter:description" content="Ahn Sujin Photos." />
+    <meta name="twitter:image" content="{{ url('ahnsujin_mobile.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -34,6 +37,16 @@
 
     <!-- Styles / Scripts -->
     <style>
+        /* #3674B5 = Biru laut */
+        /* #578FCA = Biru tua */
+        /* #A1E3F9 = Biru langit */
+        /* #D1F8EF = Biru muda */
+
+        /* #F7F7F7 = Putih */
+        /* #EEEEEE = Abu-abu muda */
+        /* #393E46 = Hitam */
+        /* #929AAB = Abu-abu tua */
+
         .transition-header {
             background-color: transparent;
             transition: background-color 0.7s ease, box-shadow 0.7s ease;
@@ -44,16 +57,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: background-color 0.7s ease;
         }
-
-        /* #3674B5 = Biru laut */
-        /* #578FCA = Biru tua */
-        /* #A1E3F9 = Biru langit */
-        /* #D1F8EF = Biru muda */
-
-        /* #F7F7F7 = Putih */
-        /* #EEEEEE = Abu-abu muda */
-        /* #393E46 = Hitam */
-        /* #929AAB = Abu-abu tua */
 
         .bg-body-custom {
             background-color: #f7f7f7 !important;
@@ -303,6 +306,10 @@
             scroll-behavior: smooth;
         }
 
+        #novitafamily {
+            scroll-margin-top: 120.55px;
+        }
+
         .transition-header {
             background-color: transparent;
             transition: background-color 0.7s ease, box-shadow 0.7s ease;
@@ -369,6 +376,47 @@
             }
         }
 
+        .img-modal {
+            position: fixed;
+            z-index: 1050;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.56);
+            backdrop-filter: blur(3.5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-modal.show {
+            display: flex;
+        }
+
+        .img-modal-content {
+            max-width: 98%;
+            max-height: 84%;
+            object-fit: contain;
+            box-shadow: 0 3.5px 14px rgba(0, 0, 0, 0.35);
+            animation: zoom 0.3s ease-in-out;
+        }
+
+        .img-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #3674B5;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .hidden-gallery {
+            transition: all 0.4s ease-in-out;
+        }
+
         @keyframes zoom {
             from {
                 transform: scale(0.7);
@@ -379,64 +427,36 @@
             }
         }
 
-        .card-body {
-            height: 250px !important;
+        @keyframes bounceDown {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(10px) rotate(0deg);
+            }
         }
 
-        .image-hover-wrapper {
-            display: block;
-            position: relative;
-            border-radius: 15px 15px 0 0;
-            width: 100%;
+        @keyframes bounceUp {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(180deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(180deg);
+            }
         }
 
-        .image-hover-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px 15px 0 0;
-            height: 280px;
+        .carousel-chevron-down {
+            animation: bounceDown 1s infinite ease-in-out;
         }
 
-        .image-hover-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px 15px 0 0;
-            transition: transform 0.7s ease;
-        }
-
-        .image-hover-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 15px 15px 0 0;
-            background-color: rgba(0, 123, 255, 0);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            opacity: 0;
-            transition: background-color 0.7s ease, opacity 0.7s ease;
-        }
-
-        .image-hover-overlay h1,
-        .image-hover-overlay h4 {
-            margin: 0.25rem 0;
-        }
-
-        .image-hover-container:hover .image-hover-img {
-            transform: scale(1.14);
-            transition: transform 0.7s ease;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .image-hover-container:hover .image-hover-overlay {
-            background-color: #578fca;
-            border-radius: 15px 15px 0 0;
-            opacity: 0.77;
+        .chevron-up {
+            animation: bounceUp 1s infinite ease-in-out;
         }
 
         .dropdown-submenu .dropdown-menu {
@@ -488,120 +508,165 @@
     </section>
 
     <section id="picture" class="position-relative">
-        <div class="position-relative w-100 d-none d-lg-flex" style="height: 636px;">
-            <img src="{{ asset('couple.jpg') }}" alt="Holiday and Family Picture"
+        <div class="position-relative w-100 d-none d-md-flex" style="height: 636px;">
+            <img src="{{ asset('ahnsujin.jpg') }}" alt="Novita Family picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
-        <div class="position-relative w-100 d-flex d-lg-none" style="height: 636px;">
-            <img src="{{ asset('couple_mobile.jpg') }}" alt="Holiday and Family Picture"
+        <div class="position-relative w-100 d-flex d-md-none" style="height: 636px;">
+            <img src="{{ asset('ahnsujin_mobile.jpg') }}" alt="Novita Family picture"
                 class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
     </section>
 
-    <section id="coupleclient">
-        <main class="container px-4">
-            <div
-                class="p-4 p-md-5 mb-4 text-body-emphasis d-flex justify-content-center align-items-center text-center">
-                <div class="col-lg-6 px-0">
-                    <h2 class="display-5 aesthetic-text-1 mt-3">Couple</h2>
-                    <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
-                </div>
-            </div>
+    <section id="novitafamily">
+        <div class="container-fluid py-5">
+            <div class="px-4 py-3 text-center">
+                <h1 class="display-7 aesthetic-text-1 mb-2 lang-content lang-en">Ahn Sujin Album</h1>
+                <h1 class="display-7 aesthetic-text-1 mb-2 lang-content lang-id d-none">Album Ahn Sujin
+                </h1>
+                <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-3 mx-auto custom-border-divider mb-5"></div>
 
-            <div class="album">
-                <div class="container pb-5 px-0">
-                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-4">
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/emiemieha" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('emiemieha_card.jpg') }}" alt="Couple Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay p-4">
-                                            <h2 class="aesthetic-text-5 lang-content lang-en">Emie & Mieha
-                                            </h2>
-                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Emie & Mieha</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Emie & Mieha
-                                                Photos</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Emie & Mieha
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Emie & Mieha</h3>
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Emie & Mieha</h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        "Emie & Mieha — two souls, one journey, bound by love and guided by destiny."
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        "Emie & Mieha, dua hati yang dipertemukan takdir, berjalan bersama menuju cinta
-                                        tanpa akhir."
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a href="/emiemieha"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                More</a>
-                                            <a href="/emiemieha"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Lebih
-                                                Banyak</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-1 px-3">
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_436.jpg') }}" alt="picture 436" class="w-100 mb-1 preview-image"
+                                id="picture_436">
+                            <img src="{{ asset('picture_437.jpg') }}" alt="picture 437" class="w-100 mb-1 preview-image"
+                                id="picture_437">
+                            <img src="{{ asset('picture_438.jpg') }}" alt="picture 438" class="w-100 mb-1 preview-image"
+                                id="picture_438">
+                            <img src="{{ asset('picture_439.jpg') }}" alt="picture 439" class="w-100 mb-1 preview-image"
+                                id="picture_439">
                         </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/ahnsujin" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('ahnsujin_card.jpg') }}" alt="Couple Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay p-4">
-                                            <h2 class="aesthetic-text-5 lang-content lang-en">Ahn Sujin
-                                            </h2>
-                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Ahn Sujin</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more Ahn Sujin
-                                                Photos</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                foto-foto Ahn Sujin
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Ahn Sujin</h3>
-                                    <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Ahn Sujin</h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        "Ahn Sujin, weaving a love story so simple yet endless."
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        "Ahn Sujin, merangkai kisah cinta yang sederhana namun terasa tak berujung."
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a href="/ahnsujin"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                More</a>
-                                            <a href="/ahnsujin"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Lebih
-                                                Banyak</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_440.jpg') }}" alt="picture 440" class="w-100 mb-1 preview-image"
+                                id="picture_440">
+                            <img src="{{ asset('picture_441.jpg') }}" alt="picture 441" class="w-100 mb-1 preview-image"
+                                id="picture_441">
+                            <img src="{{ asset('picture_442.jpg') }}" alt="picture 442" class="w-100 mb-1 preview-image"
+                                id="picture_442">
+                            <img src="{{ asset('picture_443.jpg') }}" alt="picture 443" class="w-100 mb-1 preview-image"
+                                id="picture_443">
                         </div>
-
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_444.jpg') }}" alt="picture 444" class="w-100 mb-1 preview-image"
+                                id="picture_444">
+                            <img src="{{ asset('picture_445.jpg') }}" alt="picture 445" class="w-100 mb-1 preview-image"
+                                id="picture_445">
+                            <img src="{{ asset('picture_446.jpg') }}" alt="picture 446" class="w-100 mb-1 preview-image"
+                                id="picture_446">
+                            <img src="{{ asset('picture_447.jpg') }}" alt="picture 447" class="w-100 mb-1 preview-image"
+                                id="picture_447">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_448.jpg') }}" alt="picture 448" class="w-100 mb-1 preview-image"
+                                id="picture_448">
+                            <img src="{{ asset('picture_449.jpg') }}" alt="picture 449" class="w-100 mb-1 preview-image"
+                                id="picture_449">
+                            <img src="{{ asset('picture_450.jpg') }}" alt="picture 450" class="w-100 mb-1 preview-image"
+                                id="picture_450">
+                            <img src="{{ asset('picture_451.jpg') }}" alt="picture 451" class="w-100 mb-1 preview-image"
+                                id="picture_451">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_452.jpg') }}" alt="picture 452" class="w-100 mb-1 preview-image"
+                                id="picture_452">
+                            <img src="{{ asset('picture_453.jpg') }}" alt="picture 453" class="w-100 mb-1 preview-image"
+                                id="picture_453">
+                            <img src="{{ asset('picture_454.jpg') }}" alt="picture 454" class="w-100 mb-1 preview-image"
+                                id="picture_454">
+                            <img src="{{ asset('picture_455.jpg') }}" alt="picture 455" class="w-100 mb-1 preview-image"
+                                id="picture_455">
+                        </div>
                     </div>
 
+                    <div class="d-flex flex-wrap justify-content-center gap-1 px-3 hidden-gallery d-none">
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_456.jpg') }}" alt="picture 456" class="w-100 mb-1 preview-image"
+                                id="picture_456">
+                            <img src="{{ asset('picture_457.jpg') }}" alt="picture 457" class="w-100 mb-1 preview-image"
+                                id="picture_457">
+                            <img src="{{ asset('picture_458.jpg') }}" alt="picture 458" class="w-100 mb-1 preview-image"
+                                id="picture_458">
+                            <img src="{{ asset('picture_459.jpg') }}" alt="picture 459" class="w-100 mb-1 preview-image"
+                                id="picture_459">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_460.jpg') }}" alt="picture 460" class="w-100 mb-1 preview-image"
+                                id="picture_460">
+                            <img src="{{ asset('picture_461.jpg') }}" alt="picture 461" class="w-100 mb-1 preview-image"
+                                id="picture_461">
+                            <img src="{{ asset('picture_462.jpg') }}" alt="picture 462" class="w-100 mb-1 preview-image"
+                                id="picture_462">
+                            <img src="{{ asset('picture_463.jpg') }}" alt="picture 463" class="w-100 mb-1 preview-image"
+                                id="picture_463">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_464.jpg') }}" alt="picture 464" class="w-100 mb-1 preview-image"
+                                id="picture_464">
+                            <img src="{{ asset('picture_465.jpg') }}" alt="picture 465" class="w-100 mb-1 preview-image"
+                                id="picture_465">
+                            <img src="{{ asset('picture_466.jpg') }}" alt="picture 466" class="w-100 mb-1 preview-image"
+                                id="picture_466">
+                            <img src="{{ asset('picture_467.jpg') }}" alt="picture 467" class="w-100 mb-1 preview-image"
+                                id="picture_467">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_468.jpg') }}" alt="picture 468" class="w-100 mb-1 preview-image"
+                                id="picture_468">
+                            <img src="{{ asset('picture_469.jpg') }}" alt="picture 469" class="w-100 mb-1 preview-image"
+                                id="picture_469">
+                            <img src="{{ asset('picture_470.jpg') }}" alt="picture 470" class="w-100 mb-1 preview-image"
+                                id="picture_470">
+                            <img src="{{ asset('picture_471.jpg') }}" alt="picture 471" class="w-100 mb-1 preview-image"
+                                id="picture_471">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_472.jpg') }}" alt="picture 472" class="w-100 mb-1 preview-image"
+                                id="picture_472">
+                            <img src="{{ asset('picture_473.jpg') }}" alt="picture 473" class="w-100 mb-1 preview-image"
+                                id="picture_473">
+                            <img src="{{ asset('picture_474.jpg') }}" alt="picture 474" class="w-100 mb-1 preview-image"
+                                id="picture_474">
+                            <img src="{{ asset('picture_475.jpg') }}" alt="picture 475" class="w-100 mb-1 preview-image"
+                                id="picture_475">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_476.jpg') }}" alt="picture 476" class="w-100 mb-1 preview-image"
+                                id="picture_476">
+                            <img src="{{ asset('picture_477.jpg') }}" alt="picture 477" class="w-100 mb-1 preview-image"
+                                id="picture_477">
+                            <img src="{{ asset('picture_478.jpg') }}" alt="picture 478" class="w-100 mb-1 preview-image"
+                                id="picture_478">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="text-center mt-5">
+                    <a id="toggleGallery">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="white"
+                            class="bi bi-chevron-down icon carousel-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </a>
                 </div>
             </div>
-        </main>
-        <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
+        </div>
     </section>
 
     <section id="hook" class="bg-body-custom">
@@ -809,6 +874,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
+
+    <div id="imgModal" class="img-modal">
+        <span class="img-modal-close" id="modalClose">&times;</span>
+        <img class="img-modal-content" id="modalImg" />
+    </div>
 </body>
 
 </html>

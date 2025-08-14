@@ -633,6 +633,51 @@
 
                         <div class="col">
                             <div class="card rounded-4 h-100 shadow-sm">
+                                <a href="/lyannabonnieprewedding" class="image-hover-wrapper text-decoration-none">
+                                    <div class="image-hover-container">
+                                        <img src="{{ asset('lyannabonnie_card.jpg') }}" alt="Prewedding Picture"
+                                            class="card-img-top image-hover-img">
+                                        <div class="image-hover-overlay p-4">
+                                            <h2 class="aesthetic-text-5 lang-content lang-en">Lyanna Bonnie Prewedding
+                                            </h2>
+                                            <h2 class="aesthetic-text-5 lang-content lang-id d-none">Prewedding Lyanna
+                                                Bonnie</h2>
+                                            <h5 class="custom-text-2 lang-content lang-en">See more Lyanna Bonnie
+                                                Prewedding
+                                                Photos</h5>
+                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
+                                                foto-foto Prewedding Lyanna Bonnie
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-en">Lyanna Bonnie Prewedding
+                                    </h3>
+                                    <h3 class="card-text aesthetic-text-2 lang-content lang-id d-none">Prewedding Lyanna
+                                        Bonnie</h3>
+                                    <p class="card-text custom-text-0 lang-content lang-en">
+                                        Lyanna Bonnie, writing love across a twilight sky that will last forever.
+                                    </p>
+                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
+                                        Lyanna Bonnie, menulis cinta di langit senja yang akan abadi selamanya.
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group"> <a href="/lyannabonnieprewedding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
+                                                More</a>
+                                            <a href="/lyannabonnieprewedding"
+                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
+                                                Lebih
+                                                Banyak</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card rounded-4 h-100 shadow-sm">
                                 <a href="/andiangginiprewedding" class="image-hover-wrapper text-decoration-none">
                                     <div class="image-hover-container">
                                         <img src="{{ asset('andianggini_card.jpg') }}" alt="Prewedding Picture"

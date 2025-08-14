@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    @yield('meta_tags')
-
-    <title>Concetta Photos</title>
+    <title>Concetta Photos - Lyanna Bonnie Prewedding</title>
     <link rel="icon" type="image/png" href="{{ asset('head_logo.png') }}">
     <meta name="description"
         content="Professional Bali photographer specializing in prewedding, couple, wedding, branding, holiday & family photography. Fotografer profesional di Bali untuk prewedding, pasangan, pernikahan, branding, liburan & keluarga. Abadikan momen terbaik Anda dengan sentuhan seni.">
@@ -16,18 +14,18 @@
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph meta tags (Facebook, WhatsApp, LinkedIn, etc) -->
-    <meta property="og:title" content="Concetta Photos - Bali Photographer" />
-    <meta property="og:description" content="Let’s make your memories remains forever." />
-    <meta property="og:image" content="{{ url('seo_image.jpg') }}" />
+    <meta property="og:title" content="Concetta Photos - Lyanna Bonnie Prewedding" />
+    <meta property="og:description" content="Lyanna Bonnie Prewedding Photos." />
+    <meta property="og:image" content="{{ url('lyannabonnieprewedding_mobile.jpg') }}" />
     <meta property="og:url" content="https://www.concettaphotos.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Concetta Photos" />
 
     <!-- Twitter Card meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Concetta Photos - Bali Photographer" />
-    <meta name="twitter:description" content="Let’s make your memories remains forever." />
-    <meta name="twitter:image" content="{{ url('seo_image.jpg') }}" />
+    <meta name="twitter:title" content="Concetta Photos - Lyanna Bonnie Prewedding" />
+    <meta name="twitter:description" content="Our Cient Photos." />
+    <meta name="twitter:image" content="{{ url('lyannabonnieprewedding_mobile.jpg') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -35,8 +33,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
 
     <!-- Styles / Scripts -->
@@ -50,6 +46,17 @@
         /* #EEEEEE = Abu-abu muda */
         /* #393E46 = Hitam */
         /* #929AAB = Abu-abu tua */
+
+        .transition-header {
+            background-color: transparent;
+            transition: background-color 0.7s ease, box-shadow 0.7s ease;
+        }
+
+        .scrolled {
+            background-color: rgba(255, 255, 255) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.7s ease;
+        }
 
         .bg-body-custom {
             background-color: #f7f7f7 !important;
@@ -110,10 +117,6 @@
             background-image: url('{{ asset('id_flag.jpg') }}');
         }
 
-        .btn-sm {
-            border-radius: 4px !important;
-        }
-
         .btn-outline-primary {
             border-color: #3674b5 !important;
             color: #3674b5 !important;
@@ -164,64 +167,6 @@
         .icon-2 {
             fill: #393e46 !important;
             transition: fill 0.3s !important;
-        }
-
-        .motto {
-            color: #393e46 !important;
-            font-family: "Roboto Condensed", sans-serif !important;
-            font-optical-sizing: auto !important;
-            font-weight: 700 !important;
-            font-style: normal !important;
-        }
-
-        .aesthetic-text-1 {
-            color: #393e46 !important;
-            font-family: "Baskervville", serif !important;
-            font-optical-sizing: auto !important;
-            font-weight: 700 !important;
-            font-style: normal !important;
-        }
-
-        .aesthetic-text-2 {
-            color: #393e46 !important;
-            font-family: "Baskervville", serif !important;
-            font-optical-sizing: auto !important;
-            font-weight: 600 !important;
-            font-style: normal !important;
-        }
-
-        .aesthetic-text-3 {
-            color: #393e46 !important;
-            font-family: "Baskervville", serif !important;
-            font-optical-sizing: auto !important;
-            font-weight: 400 !important;
-            font-style: normal !important;
-        }
-
-        .aesthetic-text-4 {
-            color: #f7f7f7 !important;
-            font-family: "Baskervville", serif !important;
-            font-optical-sizing: auto !important;
-            font-weight: 700 !important;
-            font-style: normal !important;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
-        }
-
-        .aesthetic-text-5 {
-            color: #f7f7f7 !important;
-            font-family: "Baskervville", serif !important;
-            font-optical-sizing: auto !important;
-            font-weight: 600 !important;
-            font-style: normal !important;
-        }
-
-        .aesthetic-text-6 {
-            color: #f7f7f7 !important;
-            font-family: "Baskervville", serif !important;
-            font-optical-sizing: auto !important;
-            font-weight: 400 !important;
-            font-style: normal !important;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
         }
 
         .custom-text {
@@ -281,11 +226,54 @@
             font-style: normal !important;
         }
 
-        mark {
-            background-color: transparent !important;
+        .aesthetic-text-1 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-2 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
             font-weight: 600 !important;
-            padding: 0 0.2rem !important;
-            border-radius: 4px !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-3 {
+            color: #393e46 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-4 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .aesthetic-text-5 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 600 !important;
+            font-style: normal !important;
+        }
+
+        .aesthetic-text-6 {
+            color: #f7f7f7 !important;
+            font-family: "Baskervville", serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
         }
 
         .custom-border {
@@ -294,95 +282,6 @@
 
         .custom-border-divider {
             border-bottom: 5px solid #578fca;
-        }
-
-        .carousel-zoom img {
-            transition: transform 0.7s ease;
-        }
-
-        .carousel-zoom video {
-            transition: transform 0.7s ease;
-        }
-
-        .carousel-zoom:hover img {
-            transform: scale(1.14);
-        }
-
-        .carousel-zoom:hover video {
-            transform: scale(1.14);
-        }
-
-        .image-hover-wrapper {
-            display: block;
-            position: relative;
-            border-radius: 15px 15px 0 0;
-            width: 100%;
-        }
-
-        .image-hover-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px 15px 0 0;
-            height: 280px;
-        }
-
-        .image-hover-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px 15px 0 0;
-            transition: transform 0.7s ease;
-        }
-
-        .image-hover-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 15px 15px 0 0;
-            background-color: rgba(0, 123, 255, 0);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            opacity: 0;
-            transition: background-color 0.7s ease, opacity 0.7s ease;
-        }
-
-        .image-hover-overlay h1,
-        .image-hover-overlay h4 {
-            margin: 0.25rem 0;
-        }
-
-        .image-hover-container:hover .image-hover-img {
-            transform: scale(1.14);
-            transition: transform 0.7s ease;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .image-hover-container:hover .image-hover-overlay {
-            background-color: #578fca;
-            border-radius: 15px 15px 0 0;
-            opacity: 0.77;
-        }
-
-        .custom-dropdown {
-            height: 100%;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            font-size: 1.25rem;
-        }
-
-        button[aria-expanded="true"].custom-dropdown {
-            background-color: #a1e3f9;
-            border-color: #3674b5;
-            color: #3674b5;
-            height: 100%;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            font-size: 1.25rem;
         }
 
         .dropdown-item {
@@ -407,18 +306,6 @@
             scroll-behavior: smooth;
         }
 
-        #opening {
-            scroll-margin-top: 120.55px;
-        }
-
-        #testimonial {
-            scroll-margin-top: 120.55px;
-        }
-
-        #service {
-            scroll-margin-top: 120.55px;
-        }
-
         .transition-header {
             background-color: transparent;
             transition: background-color 0.7s ease, box-shadow 0.7s ease;
@@ -432,91 +319,6 @@
 
         #slide {
             margin-top: 0px;
-        }
-
-        #slide,
-        #carouselExampleFade,
-        .carousel-inner,
-        .carousel-item,
-        .carousel-item img {
-            height: 100vh;
-        }
-
-        #carouselExampleCaptions1 .carousel-item img {
-            height: 850px !important;
-        }
-
-        #carouselExampleCaptions1 .carousel-item .carousel-caption {
-            height: 850px !important;
-            top: 5% !important;
-        }
-
-        .carousel-item img {
-            object-fit: cover;
-        }
-
-        .carousel-chevron-down {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-            text-decoration: none;
-            animation: basketball-bounce 2.5s ease-in-out infinite;
-        }
-
-        .carousel-chevron-down svg {
-            width: 40px;
-            height: 40px;
-            fill: white;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
-            transition: transform 0.3s ease;
-        }
-
-        .carousel-chevron-down:hover svg {
-            transform: scale(1.2);
-        }
-
-        @keyframes basketball-bounce {
-            0% {
-                transform: translate(-50%, 0);
-            }
-
-            10% {
-                transform: translate(-50%, 25px);
-            }
-
-            20% {
-                transform: translate(-50%, 0);
-            }
-
-            30% {
-                transform: translate(-50%, 15px);
-            }
-
-            40% {
-                transform: translate(-50%, 0);
-            }
-
-            50% {
-                transform: translate(-50%, 8px);
-            }
-
-            60% {
-                transform: translate(-50%, 0);
-            }
-
-            70% {
-                transform: translate(-50%, 4px);
-            }
-
-            80% {
-                transform: translate(-50%, 0);
-            }
-
-            100% {
-                transform: translate(-50%, 0);
-            }
         }
 
         .nav-item.dropdown:hover .dropdown-menu {
@@ -559,87 +361,98 @@
             display: none !important;
         }
 
-        .zoom-on-scroll {
-            transition: transform 1s ease;
-            transform: scale(0.9);
-            opacity: 1;
-        }
-
-        .zoom-on-scroll.zoomed {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .custom-carousel-nav {
-            --icon-color: #3674b5;
-        }
-
-        .custom-carousel-nav .carousel-control-prev,
-        .custom-carousel-nav .carousel-control-next {
-            width: auto;
-            top: 50%;
-            transform: translateY(45%);
-            z-index: 1;
-        }
-
-        .custom-carousel-nav .carousel-control-prev {
-            left: 15px;
-        }
-
-        .custom-carousel-nav .carousel-control-next {
-            right: 15px;
-        }
-
-        .card {
-            height: 450px !important;
-        }
-
         @media (max-width: 720px) {
-            .carousel-chevron-down {
-                bottom: 140px;
-            }
-
             .copyright-text {
                 font-size: 0.8rem;
             }
 
-            .card {
-                height: fit-content !important;
+            .gallery-column {
+                flex-basis: 100% !important;
+                max-width: 100%;
             }
         }
 
-        .custom-carousel-btn {
-            background-color: transparent;
-            border: none;
-        }
-
-        .custom-carousel-btn svg {
-            fill: var(--icon-color);
-        }
-
-        .custom-carousel-nav .carousel-control-prev-icon,
-        .custom-carousel-nav .carousel-control-next-icon {
-            border-radius: 50%;
-            width: 3rem;
-            height: 3rem;
-            background-size: 1.5rem;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .custom-carousel-nav .carousel-indicators {
-            position: relative;
-            margin-top: 1rem;
-            bottom: unset;
+        .img-modal {
+            position: fixed;
+            z-index: 1050;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.56);
+            backdrop-filter: blur(3.5px);
+            display: none;
             justify-content: center;
+            align-items: center;
         }
 
-        .custom-carousel-nav .carousel-indicators [data-bs-target] {
-            background-color: var(--icon-color);
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin: 0 5px;
+        .img-modal.show {
+            display: flex;
+        }
+
+        .img-modal-content {
+            max-width: 98%;
+            max-height: 84%;
+            object-fit: contain;
+            box-shadow: 0 3.5px 14px rgba(0, 0, 0, 0.35);
+            animation: zoom 0.3s ease-in-out;
+        }
+
+        .img-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #3674B5;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .hidden-gallery {
+            transition: all 0.4s ease-in-out;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.7);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceDown {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(10px) rotate(0deg);
+            }
+        }
+
+        @keyframes bounceUp {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(180deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(180deg);
+            }
+        }
+
+        .carousel-chevron-down {
+            animation: bounceDown 1s infinite ease-in-out;
+        }
+
+        .chevron-up {
+            animation: bounceUp 1s infinite ease-in-out;
         }
 
         .dropdown-submenu .dropdown-menu {
@@ -697,494 +510,158 @@
         @include('layouts.navigation')
     </section>
 
-    <section id="notification" class="position-fixed end-0 p-3" style="top: 100px; z-index: 1055;">
-        @if(session('success'))
-            <div class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive"
-                aria-atomic="true" data-bs-delay="4000">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        {{ session('success') }}
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                </div>
-            </div>
-        @endif
-    </section>
-
-    <section id="slide">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
-            data-bs-interval="4000">
-
-            <div class="carousel-inner">
-
-                <div class="carousel-item active">
-                    <img src="{{ asset('picture1.jpg') }}" class="d-block w-100" alt="picture 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture2.jpg') }}" class="d-block w-100" alt="picture 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture3.jpg') }}" class="d-block w-100" alt="picture 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture4.jpg') }}" class="d-block w-100" alt="picture 4">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture5.jpg') }}" class="d-block w-100" alt="picture 5">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture6.jpg') }}" class="d-block w-100" alt="picture 6">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture7.jpg') }}" class="d-block w-100" alt="picture 7">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture8.jpg') }}" class="d-block w-100" alt="picture 8">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture9.jpg') }}" class="d-block w-100" alt="picture 9">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture10.jpg') }}" class="d-block w-100" alt="picture 10">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture11.jpg') }}" class="d-block w-100" alt="picture 11">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture12.jpg') }}" class="d-block w-100" alt="picture 12">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture13.jpg') }}" class="d-block w-100" alt="picture 13">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture14.jpg') }}" class="d-block w-100" alt="picture 14">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture15.jpg') }}" class="d-block w-100" alt="picture 15">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('picture16.jpg') }}" class="d-block w-100" alt="picture 16">
-                </div>
-
-                <a href="#opening" class="carousel-chevron-down">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white"
-                        class="bi bi-chevron-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
-                    </svg>
-                </a>
-
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-
+    <section id="picture" class="position-relative">
+        <div class="position-relative w-100 d-none d-lg-flex" style="height: 636px;">
+            <img src="{{ asset('lyannabonnieprewedding.jpg') }}" alt="Lyanna Bonnie Prewedding"
+                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
+        </div>
+        <div class="position-relative w-100 d-flex d-lg-none" style="height: 636px;">
+            <img src="{{ asset('lyannabonnieprewedding_mobile.jpg') }}" alt="Lyanna Bonnie Prewedding"
+                class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-n1">
         </div>
     </section>
 
-    <section id="motto">
-        <div id="opening" class="container mt-5">
-            <div class="position-relative p-5 text-center text-muted bg-body">
-                <svg xmlns="http://www.w3.org/2000/svg" width="77" height="77" fill="currentColor"
-                    class="bi bi-quote icon-2" viewBox="0 0 16 16">
-                    <path
-                        d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z" />
-                </svg>
-                <h1 class="col-lg-6 mx-auto mb-4 motto">
-                    "Let’s make your memories remains forever."
+    <section id="novitafamily">
+        <div class="container-fluid py-5">
+            <div class="px-4 py-3 text-center">
+                <h1 class="display-7 aesthetic-text-1 mb-2 lang-content lang-en">Lyanna Bonnie Prewedding Album</h1>
+                <h1 class="display-7 aesthetic-text-1 mb-2 lang-content lang-id d-none">Album Prewedding Lyanna Bonnie
                 </h1>
+                <div class="col-12 col-sm-12 col-md-9 col-lg-6 col-xl-3 mx-auto custom-border-divider mb-5"></div>
+
+                <div>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-1 px-3">
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_480.jpg') }}" alt="picture 480" class="w-100 mb-1 preview-image"
+                                id="picture_480">
+                            <img src="{{ asset('picture_481.jpg') }}" alt="picture 481" class="w-100 mb-1 preview-image"
+                                id="picture_481">
+                            <img src="{{ asset('picture_482.jpg') }}" alt="picture 482" class="w-100 mb-1 preview-image"
+                                id="picture_482">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_483.jpg') }}" alt="picture 483" class="w-100 mb-1 preview-image"
+                                id="picture_483">
+                            <img src="{{ asset('picture_484.jpg') }}" alt="picture 484" class="w-100 mb-1 preview-image"
+                                id="picture_484">
+                            <img src="{{ asset('picture_485.jpg') }}" alt="picture 485" class="w-100 mb-1 preview-image"
+                                id="picture_485">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_486.jpg') }}" alt="picture 486" class="w-100 mb-1 preview-image"
+                                id="picture_486">
+                            <img src="{{ asset('picture_487.jpg') }}" alt="picture 487" class="w-100 mb-1 preview-image"
+                                id="picture_487">
+                            <img src="{{ asset('picture_488.jpg') }}" alt="picture 488" class="w-100 mb-1 preview-image"
+                                id="picture_488">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_489.jpg') }}" alt="picture 489" class="w-100 mb-1 preview-image"
+                                id="picture_489">
+                            <img src="{{ asset('picture_490.jpg') }}" alt="picture 490" class="w-100 mb-1 preview-image"
+                                id="picture_490">
+                            <img src="{{ asset('picture_491.jpg') }}" alt="picture 491" class="w-100 mb-1 preview-image"
+                                id="picture_491">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_492.jpg') }}" alt="picture 492" class="w-100 mb-1 preview-image"
+                                id="picture_492">
+                            <img src="{{ asset('picture_493.jpg') }}" alt="picture 493" class="w-100 mb-1 preview-image"
+                                id="picture_493">
+                            <img src="{{ asset('picture_494.jpg') }}" alt="picture 494" class="w-100 mb-1 preview-image"
+                                id="picture_494">
+                        </div>
+                        
+                    </div>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-1 px-3 hidden-gallery d-none">
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_495.jpg') }}" alt="picture 495" class="w-100 mb-1 preview-image"
+                                id="picture_495">
+                            <img src="{{ asset('picture_496.jpg') }}" alt="picture 496" class="w-100 mb-1 preview-image"
+                                id="picture_496">
+                            <img src="{{ asset('picture_497.jpg') }}" alt="picture 497" class="w-100 mb-1 preview-image"
+                                id="picture_497">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_498.jpg') }}" alt="picture 498" class="w-100 mb-1 preview-image"
+                                id="picture_498">
+                            <img src="{{ asset('picture_499.jpg') }}" alt="picture 499" class="w-100 mb-1 preview-image"
+                                id="picture_499">
+                            <img src="{{ asset('picture_500.jpg') }}" alt="picture 500" class="w-100 mb-1 preview-image"
+                                id="picture_500">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_501.jpg') }}" alt="picture 501" class="w-100 mb-1 preview-image"
+                                id="picture_501">
+                            <img src="{{ asset('picture_502.jpg') }}" alt="picture 502" class="w-100 mb-1 preview-image"
+                                id="picture_502">
+                            <img src="{{ asset('picture_503.jpg') }}" alt="picture 503" class="w-100 mb-1 preview-image"
+                                id="picture_503">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_504.jpg') }}" alt="picture 504" class="w-100 mb-1 preview-image"
+                                id="picture_504">
+                            <img src="{{ asset('picture_505.jpg') }}" alt="picture 505" class="w-100 mb-1 preview-image"
+                                id="picture_505">
+                            <img src="{{ asset('picture_506.jpg') }}" alt="picture 506" class="w-100 mb-1 preview-image"
+                                id="picture_506">
+                        </div>
+                        <div class="d-flex flex-column flex-grow-1 flex-shrink-0 gallery-column"
+                            style="flex-basis: 180px;">
+                            <img src="{{ asset('picture_507.jpg') }}" alt="picture 507" class="w-100 mb-1 preview-image"
+                                id="picture_507">
+                            <img src="{{ asset('picture_508.jpg') }}" alt="picture 508" class="w-100 mb-1 preview-image"
+                                id="picture_508">
+                            <img src="{{ asset('picture_509.jpg') }}" alt="picture 509" class="w-100 mb-1 preview-image"
+                                id="picture_509">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-5">
+                    <a id="toggleGallery">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="white"
+                            class="bi bi-chevron-down icon carousel-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-10 col-md-8 col-lg-6 mx-auto pt-5 custom-border"></div>
     </section>
 
-    <section id="service" class="bg-body-custom">
-        <main class="container px-4">
-            <div
-                class="p-4 p-md-5 mb-4 text-body-emphasis d-flex justify-content-center align-items-center text-center">
-                <div class="col-lg-6 px-0">
-                    <h2 class="display-7 lang-content lang-en aesthetic-text-1">Our Services</h2>
-                    <h2 class="display-7 lang-content lang-id d-none aesthetic-text-1">Layanan Kami</h2>
-                    <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
-                </div>
-            </div>
-
-            <div class="album">
-                <div class="container pb-5 px-0">
-                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-4">
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/holidayfamily" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('family_card.jpg') }}" alt="Holiday & Family Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay p-4">
-                                            <h2 class="aesthetic-text-5">Holiday & Family</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more holiday & Family
-                                                albums</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                album holiday & Family
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2">Holiday & Family</h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Capture meaningful moments while traveling—whether you're relaxing on the beach,
-                                        hiking the mountains, or exploring a new city with family.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Abadikan momen berharga saat berlibur—baik saat bersantai di pantai, mendaki
-                                        gunung, atau menjelajahi kota baru bersama keluarga.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a href="/holidayfamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                Albums</a>
-                                            <a href="/holidayfamily"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Album</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/couple" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('couple_card.jpg') }}" alt="Couple Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay p-4">
-                                            <h2 class="aesthetic-text-5">Couple</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more couple albums</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                album couple
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2">Couple
-                                    </h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Celebrate love through intimate and timeless photographs. Perfect for
-                                        anniversaries, special dates, or just a moment to remember together.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Rayakan cinta melalui foto-foto yang intim dan abadi. Cocok untuk hari jadi,
-                                        kencan spesial, atau sekadar momen berharga bersama.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/couple"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                Albums</a>
-                                            <a href="/couple"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Album</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/prewedding" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('prewedding_card.jpg') }}" alt="Prewedding Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay p-4">
-                                            <h2 class="aesthetic-text-5">Prewedding</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more prewedding albums
-                                            </h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                album prewedding
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2">Prewedding
-                                    </h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Tell your love story before the big day. Artistic and personalized sessions that
-                                        reflect your chemistry and excitement.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Ceritakan kisah cinta kamu sebelum hari bahagia. Sesi foto artistik dan personal
-                                        yang mencerminkan chemistry dan kebahagiaan kalian.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/prewedding"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                Albums</a>
-                                            <a href="/prewedding"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Album</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/wedding" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('wedding_card.jpg') }}" alt="Wedding Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay p-4">
-                                            <h2 class="aesthetic-text-5">Wedding</h2>
-                                            <h5 class="custom-text-2 lang-content lang-en">See more wedding albums</h5>
-                                            <h5 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                album wedding
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2">Wedding
-                                    </h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Capture the joy, emotion, and unforgettable details of your wedding day. From
-                                        intimate moments to grand celebrations, every photo tells a story.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Abadikan kebahagiaan, emosi, dan momen tak terlupakan di hari pernikahanmu. Dari
-                                        momen intim hingga pesta meriah, setiap foto punya cerita.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/wedding"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                Albums</a>
-                                            <a href="/wedding"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Album</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card rounded-4 h-100 shadow-sm">
-                                <a href="/branding" class="image-hover-wrapper text-decoration-none">
-                                    <div class="image-hover-container">
-                                        <img src="{{ asset('branding_card.jpg') }}" alt="Branding Picture"
-                                            class="card-img-top image-hover-img">
-                                        <div class="image-hover-overlay p-4">
-                                            <h2 class="aesthetic-text-5">Branding</h2>
-                                            <h6 class="custom-text-2 lang-content lang-en">See more Branding
-                                                albums</h6>
-                                            <h6 class="custom-text-2 lang-content lang-id d-none">Lihat lebih banyak
-                                                album Branding</h6>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body d-flex flex-column justify-content-between">
-                                    <h3 class="card-text aesthetic-text-2">Branding
-                                    </h3>
-                                    <p class="card-text custom-text-0 lang-content lang-en">
-                                        Professional images that bring your brand to life. Ideal for entrepreneurs,
-                                        businesses, and creatives seeking impactful visual content.
-                                    </p>
-                                    <p class="card-text custom-text-0 lang-content lang-id d-none">
-                                        Gambar profesional yang menghidupkan merek kamu. Ideal untuk pebisnis, brand,
-                                        dan kreator yang ingin menonjol secara visual.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group"> <a href="/branding"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-en">View
-                                                Albums</a>
-                                            <a href="/branding"
-                                                class="btn btn-sm btn-primary rounded-3 lang-content lang-id d-none">Lihat
-                                                Album</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
-
-        </main>
-    </section>
-
-    <section id="hook">
+    <section id="hook" class="bg-body-custom">
         <main class="container">
             <div
                 class="p-4 p-md-5 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
                 <div class="col-lg-6 px-0">
-                    <h2 class="display-7 aesthetic-text-1 mb-3">
-                        <span class="lang-content lang-en">Let's book your session now!</span>
-                        <span class="lang-content lang-id d-none">Yuk, jadwalkan sesi kamu sekarang!</span>
-                    </h2>
-
-                    <h5 class="display-10 custom-text-0">
-                        <span class="lang-content lang-en">Are those photos aligned with your style?</span>
-                        <span class="lang-content lang-id d-none">Apakah foto-foto tersebut sesuai dengan gaya
-                            kamu?</span>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-en">Let's book your session now!</h2>
+                    <h2 class="display-7 aesthetic-text-1 mb-3 lang-content lang-id d-none">Yuk, jadwalkan sesi kamu
+                        sekarang!</h2>
+                    <h5 class="display-10 custom-text-0 lang-content lang-en">Are those photos aligned with your taste?
                     </h5>
-
-                    <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg mt-3">
-                        <span class="lang-content lang-en">Book Now!</span>
-                        <span class="lang-content lang-id d-none">Booking Sekarang!</span>
-                    </a>
+                    <h5 class="display-10 custom-text-0 lang-content lang-id d-none">Apakah foto-foto tersebut sesuai
+                        dengan seleramu?</h5>
+                    <a href="/faqs#inquiry" type="button" class="btn btn-primary btn-lg my-3 lang-content lang-en">Book
+                        Now!</a>
+                    <a href="/faqs#inquiry" type="button"
+                        class="btn btn-primary btn-lg my-3 lang-content lang-id d-none">Booking Sekarang!</a>
                 </div>
-            </div>
-            <div class="col-10 col-md-8 col-lg-6 mx-auto custom-border"></div>
-        </main>
-    </section>
-
-    <section id="testimonial" class="bg-body-custom">
-        <main class="container px-4">
-            <div
-                class="p-4 p-md-5 mb-3 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
-                <div class="col-lg-6 px-0">
-                    <h2 class="display-7 aesthetic-text-1 lang-content lang-en">Testimonials</h2>
-                    <h2 class="display-7 aesthetic-text-1 lang-content lang-id d-none">Testimoni</h2>
-                    <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
-                </div>
-            </div>
-
-            <div class="padlet-embed mb-5 rounded-4"
-                style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
-                <p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/8eenhn71li4mvssp" frameborder="0"
-                        allow="camera;microphone;geolocation;display-capture;clipboard-write"
-                        style="width:100%;height:630px;display:block;padding:0;margin:0"></iframe></p>
-                <div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a
-                        href="https://padlet.com?ref=embed"
-                        style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none"
-                        target="_blank">
-                        <div style="display:flex;align-items:center;"><img
-                                src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28"
-                                style="padding:0;margin:0;background:0 0;border:none;box-shadow:none"
-                                alt="Made with Padlet"></div>
-                    </a></div>
             </div>
         </main>
-
-        <div class="col-10 col-md-8 col-lg-6 mx-auto pt-4 custom-border"></div>
-    </section>
-
-    <section id="concettalk">
-
-        <main class="container px-4">
-            <div
-                class="p-4 p-md-5 mb-4 rounded text-body-emphasis d-flex justify-content-center align-items-center text-center">
-                <div class="col-lg-6 px-0">
-                    <h2 class="display-7 aesthetic-text-1">Concettalk</h2>
-                    <div class="col-10 col-md-8 col-lg-6 mx-auto pt-3 custom-border-divider"></div>
-                </div>
-            </div>
-
-            <div class="container-fluid px-0">
-                <div id="carouselExampleCaptions1" class="carousel slide custom-carousel-nav" data-bs-ride="carousel">
-                    <div class="carousel-inner rounded-4 overflow-hidden shadow-sm mb-4 w-100" style="height: 700px;">
-
-                        @foreach($concettalks->sortByDesc('created_at')->take(7) as $index => $item)
-                            @php
-                                // Ambil caption tanpa HTML berlebih
-                                $rawCaption = strip_tags($item->caption);
-
-                                // Ganti &nbsp; jadi spasi biasa
-                                $rawCaption = str_replace("\xC2\xA0", ' ', html_entity_decode($rawCaption));
-
-                                // Pecah jadi array kalimat (titik, tanda tanya, tanda seru)
-                                preg_match_all('/[^.?!]+[.?!]*/u', $rawCaption, $matches);
-                                $sentences = array_map('trim', $matches[0] ?? []);
-
-                                // Kalimat pertama jadi title (max 50 char)
-                                $title = isset($sentences[0]) ? Str::limit($sentences[0], 100) : '';
-
-                                // Kalimat kedua jadi desc (max 100 char)
-                                $desc = isset($sentences[1]) ? Str::limit($sentences[1], 140) : '';
-                            @endphp
-
-                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }} carousel-zoom position-relative">
-                                <a href="/concettalk">
-                                    @php
-                                        $path = asset('storage/' . $item->image_url);
-                                        $ext = strtolower(pathinfo($item->image_url, PATHINFO_EXTENSION));
-                                    @endphp
-
-                                    @if(in_array($ext, ['mp4', 'mov', 'webm']))
-                                        {{-- Video: ambil frame pertama sebagai thumbnail --}}
-                                        <video class="d-block w-100 h-100" style="object-fit: cover; object-position: center;"
-                                            preload="metadata">
-                                            <source src="{{ $path }}#t=0.1" type="video/{{ $ext }}">
-                                        </video>
-                                    @else
-                                        {{-- Gambar biasa --}}
-                                        <img src="{{ $path }}" class="d-block w-100 h-100"
-                                            style="object-fit: cover; object-position: center;" alt="Concettalk Thumbnail">
-                                    @endif
-
-                                    <div
-                                        class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-5">
-                                        <h3 class="display-5 aesthetic-text-4 text-white text-center">
-                                            {{ $title }}
-                                        </h3>
-                                        <p class="display-9 custom-text-1 text-white text-center">
-                                            {{ $desc }}
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-
-                    </div>
-
-                    <div class="carousel-indicators mb-5">
-                        @for ($i = 0; $i < $concettalks->sortByDesc('created_at')->take(7)->count(); $i++)
-                            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="{{ $i }}"
-                                class="{{ $i === 0 ? 'active' : '' }}" @if($i === 0) aria-current="true" @endif
-                                aria-label="Slide {{ $i + 1 }}">
-                            </button>
-                        @endfor
-                    </div>
-
-                    <button class="carousel-control-prev custom-carousel-btn" type="button"
-                        data-bs-target="#carouselExampleCaptions1" data-bs-slide="prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3674b5"
-                            viewBox="0 0 16 16">
-                            <path d="M11 1.5a.5.5 0 0 1 .8.4v12.2a.5.5 0 0 1-.8.4L4.2 8.4a.5.5 0 0 1 0-.8L11 1.5z" />
-                        </svg>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-
-                    <button class="carousel-control-next custom-carousel-btn" type="button"
-                        data-bs-target="#carouselExampleCaptions1" data-bs-slide="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3674b5"
-                            viewBox="0 0 16 16">
-                            <path d="M5 14.5a.5.5 0 0 1-.8-.4V1.9a.5.5 0 0 1 .8-.4l6.8 6.3a.5.5 0 0 1 0 .8L5 14.5z" />
-                        </svg>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-
-        </main>
-
     </section>
 
     <section id="footer">
@@ -1199,24 +676,6 @@
             } else {
                 header.classList.remove("scrolled");
             }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const zoomElements = document.querySelectorAll(".zoom-on-scroll");
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("zoomed");
-                    } else {
-                        entry.target.classList.remove("zoomed");
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            zoomElements.forEach(el => observer.observe(el));
         });
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -1255,6 +714,55 @@
             offcanvasEl.querySelectorAll('a.nav-link, a.accordion-button, a.text-decoration-none').forEach(function (link) {
                 link.addEventListener('click', function () {
                     offcanvas.hide();
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("imgModal");
+            const modalImg = document.getElementById("modalImg");
+            const closeBtn = document.getElementById("modalClose");
+
+            document.querySelectorAll("img.preview-image").forEach(img => {
+                img.addEventListener("click", () => {
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                    modal.classList.add("show");
+                });
+            });
+
+            closeBtn.onclick = function () {
+                modal.classList.remove("show");
+            };
+
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.classList.remove("show");
+                }
+            };
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButtons = document.querySelectorAll("[id^='toggleGallery']");
+
+            toggleButtons.forEach(button => {
+                const icon = button.querySelector("svg");
+                const hiddenGallery = button.closest("section").querySelectorAll(".hidden-gallery");
+                let isExpanded = false;
+
+                button.addEventListener("click", function () {
+                    hiddenGallery.forEach(el => el.classList.toggle("d-none"));
+                    isExpanded = !isExpanded;
+
+                    icon.classList.toggle("carousel-chevron-down", !isExpanded);
+                    icon.classList.toggle("chevron-up", isExpanded);
+
+                    if (!isExpanded) {
+                        const parentSection = button.closest("section");
+                        if (parentSection) {
+                            parentSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
                 });
             });
         });
@@ -1335,18 +843,16 @@
                 });
             });
         });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const toastElList = [].slice.call(document.querySelectorAll('.toast'))
-            toastElList.map(function (toastEl) {
-                return new bootstrap.Toast(toastEl).show();
-            });
-        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
+
+    <div id="imgModal" class="img-modal">
+        <span class="img-modal-close" id="modalClose">&times;</span>
+        <img class="img-modal-content" id="modalImg" />
+    </div>
 </body>
 
 </html>

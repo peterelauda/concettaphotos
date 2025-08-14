@@ -105,6 +105,10 @@ Route::get('/emiemieha', function () {
     return view('emiemieha');
 });
 
+Route::get('/ahnsujin', function () {
+    return view('ahnsujin');
+});
+
 Route::get('/andiangginiprewedding', function () {
     return view('andiangginiprewedding');
 });
@@ -119,6 +123,10 @@ Route::get('/mettaiskandarprewedding', function () {
 
 Route::get('/pirdadegusprewedding', function () {
     return view('pirdadegusprewedding');
+});
+
+Route::get('/lyannabonnieprewedding', function () {
+    return view('lyannabonnieprewedding');
 });
 
 Route::get('/mettaiskandarwedding', function () {
